@@ -3,3 +3,40 @@
     font-family: "Zekton";
     src: url("Font/Zekton/Zekton\ Rg.otf");
 }
+
+.img-container {
+    display: flex;
+}
+
+#milo {
+    display: flex;
+    height: 300px;
+}
+
+#milo-front{}
+#milo-side{}
+
+.rur-container{}
+#rur-img{}
+.mhe-container{}
+#mhe-img{}
+.transformers-container{}
+#transformers-img{}
+.asr-container{}
+#asr-img{}
+.dbh-container{}
+#dbh-img{}
+
+.buttons{}
+#next-room-button{}
+#exit-button{}
+#back-to-main-button{}
+
+.text-container{}
+#rur-text{}
+#mhe-text{}
+#transformers-text{}
+#asr-text{}
+#dbh-text{}
+#welcome-text{}
+#next-room-text{}
