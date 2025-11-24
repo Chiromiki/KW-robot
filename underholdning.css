@@ -2,89 +2,75 @@ body {
     margin: 0;
 }
 
+.container {
+    /* width: 3443.3px;
+    height: auto; */
+    aspect-ratio: 34443.3 / 906;
+}
+
 #bg-img {
     height: 100vh;
 }
 
 #milo-front {
     position: absolute;
-    height: 450px;
-    top: 400px;
-    left: 170px;
+    height: 50%;
+    top: 45%;
+    left: 9.5%;
 }
 
 .img-container {
+    display: flex;
+    top: 0%;
+}
+
+#rur-img {
+    position: absolute;
+    top: 15%;
+    left: 37%;
+    width: 40%;
+}
+
+#mhe-img {
+    position: absolute;
+    top: 15%;
+    left: 80%;
+    width: 40%;
+}
+
+#transformers-img {
+    position: absolute;
+    top: 15%;
+    left: 125%;
+    width: 20%;
+}
+
+#asr-img {
+    position: absolute;
+    top: 15%;
+    left: 148.5%;
+    width: 18%;
+}
+
+#dbh-img {
+    position: absolute;
+    top: 15%;
+    left: 170%;
+    width: 25%;
+}
+
+/* .rur-container, .mhe-container, .transformers-container, .asr-container, .dbh-container {
+    position: absolute;
+    top: 15%;
+    left: 170%;
+    width: 25%;
+} */
+
+/* .img-container {
     position: absolute;
     display: flex;
     justify-content: space-evenly;
     width: 2750px;
     top: 0px;
-    left: 650px;
-    height: 100vh;
-    border: solid black 2px;
-}
-
-.rur-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 673px;
-    height: 700px;
-}
-
-.mhe-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 750px;
-    height: 700px;
-}
-
-.transformers-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    height: 700px;
-}
-
-.asr-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    height: 700px;
-}
-
-.dbh-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 700px;
-}
-
-#rur-img {
-    position: absolute;
-    height: 350px;
-}
-
-#mhe-img {
-    position: absolute;
-    height: 350px;
-}
-
-#transformers-img {
-    position: absolute;
-    width: 300px;
-}
-
-#asr-img {
-    position: absolute;
-    width: 300px;
-}
-
-#dbh-img {
-    position: absolute;
-    width: 450px;
-}
+    left: 37%;
+} */
