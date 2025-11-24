@@ -1,42 +1,90 @@
-/* Kilde til fonten: https://www.dafont.com/zekton.font */
-@font-face {
-    font-family: "Zekton";
-    src: url("Font/Zekton/Zekton\ Rg.otf");
+body {
+    margin: 0;
+}
+
+#bg-img {
+    height: 100vh;
+}
+
+#milo-front {
+    position: absolute;
+    height: 450px;
+    top: 400px;
+    left: 170px;
 }
 
 .img-container {
+    position: absolute;
     display: flex;
+    justify-content: space-evenly;
+    width: 2750px;
+    top: 0px;
+    left: 650px;
+    height: 100vh;
+    border: solid black 2px;
 }
 
-#milo {
+.rur-container {
     display: flex;
-    height: 300px;
+    justify-content: center;
+    align-items: center;
+    width: 673px;
+    height: 700px;
 }
 
-#milo-front{}
-#milo-side{}
+.mhe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 700px;
+}
 
-.rur-container{}
-#rur-img{}
-.mhe-container{}
-#mhe-img{}
-.transformers-container{}
-#transformers-img{}
-.asr-container{}
-#asr-img{}
-.dbh-container{}
-#dbh-img{}
+.transformers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 700px;
+}
 
-.buttons{}
-#next-room-button{}
-#exit-button{}
-#back-to-main-button{}
+.asr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 700px;
+}
 
-.text-container{}
-#rur-text{}
-#mhe-text{}
-#transformers-text{}
-#asr-text{}
-#dbh-text{}
-#welcome-text{}
-#next-room-text{}
+.dbh-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 700px;
+}
+
+#rur-img {
+    position: absolute;
+    height: 350px;
+}
+
+#mhe-img {
+    position: absolute;
+    height: 350px;
+}
+
+#transformers-img {
+    position: absolute;
+    width: 300px;
+}
+
+#asr-img {
+    position: absolute;
+    width: 300px;
+}
+
+#dbh-img {
+    position: absolute;
+    width: 450px;
+}
