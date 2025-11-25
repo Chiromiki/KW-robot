@@ -23,11 +23,42 @@ body {
     height: 50%;
     top: 45%;
     left: 9.5%;
+    z-index: 90;
 }
 
-.img-container {
-    display: flex;
-    top: 0%;
+
+@keyframes milo-rur {
+    100%{
+        left: 38%;
+        top: 50%;
+    }
+}
+
+@keyframes milo-back-to-start {
+    0%{
+        left: 38%;
+        top: 50%;
+    }
+    100%{
+        left: 9.5%;
+        top: 45%
+    }
+}
+
+#rur-toggle:checked ~ #milo-front {
+    animation-name: milo-rur;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#rur-toggle:not(:checked) ~ #milo-front {
+    animation-name: milo-back-to-start ;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.hidden-checkbox:checked ~ #welcome-speechbubble {
+    display: none;
 }
 
 #rur-img {
@@ -37,12 +68,80 @@ body {
     width: 40%;
 }
 
+#rur-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 57%;
+    left: 50%;
+    width: 30%;
+    height: 25%;
+    padding: 10px;
+    display: none;
+}
+
+#rur-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+
+.hidden-checkbox:checked + label + #rur-speechbubble {
+    display: block;
+}
+
 #mhe-img {
     position: absolute;
     top: 15%;
     left: 80%;
     width: 40%;
 }
+
+#mhe-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 55%;
+    left: 85%;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    display: none;
+}
+
+#mhe-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox:checked + label + #mhe-speechbubble {
+    display: block;
+} 
 
 #transformers-img {
     position: absolute;
@@ -51,6 +150,38 @@ body {
     width: 20%;
 }
 
+#transformers-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 71%;
+    left: 125%;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    display: none;
+}
+
+#transformers-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox:checked + label + #transformers-speechbubble {
+    display: block;
+} 
+
 #asr-img {
     position: absolute;
     top: 15%;
@@ -58,12 +189,78 @@ body {
     width: 18%;
 }
 
+#asr-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 70%;
+    left: 150%;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    display: none;
+}
+
+#asr-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox:checked + label + #asr-speechbubble {
+    display: block;
+} 
+
 #dbh-img {
     position: absolute;
     top: 15%;
     left: 170%;
     width: 25%;
 }
+
+#dbh-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 62%;
+    left: 169%;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    display: none;
+}
+
+#dbh-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox:checked + label + #dbh-speechbubble {
+    display: block;
+} 
+
+
 
 p {
     z-index: 100;
@@ -81,7 +278,7 @@ p {
     width: 20%;
     height: 18%;
     padding: 10px;
-    display: none;
+    display: block;
 }
 
 #welcome-speechbubble:after {
@@ -99,31 +296,7 @@ p {
 	margin-left: -20px;
 }
 
-/* Fikk hjelp av AI for hvordan å koble bear:hover og speechbubble-bear */
-#welcome-speechbubble {
-    display: block;
-}
 
-/* .speech-bubble {
-	position: relative;
-	background: #ad120e;
-	border-radius: .4em;
-}
-
-.speech-bubble:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-right-color: #ad120e;
-	border-left: 0;
-	border-bottom: 0;
-	margin-top: -10px;
-	margin-left: -20px;
-} */
 
 
 /* .rur-container, .mhe-container, .transformers-container, .asr-container, .dbh-container {
