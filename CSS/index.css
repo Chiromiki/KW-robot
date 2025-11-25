@@ -29,8 +29,6 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
     
     padding: 0;
     margin: 0 auto;
-    
-    
 }
 
 #sliding_door_side_img{
@@ -38,7 +36,6 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
     height: auto;
     
     margin: 0;
-    
 }
 
 #sliding_door_left{
@@ -79,19 +76,35 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
     justify-content: center;
     align-items: center;
 
+    width: 40%;
+    height: auto;
+
     top: 68%;
     left: 50%;
 
     transform: translate(-50%, -50%);
 }
 
-#title_sign_img{
-    width: 60%;
-    height: auto;
-}
+#title_sign_trigger:checked
 
 #title_sign_trigger{
     display: none;
+}
+
+#title_sign_label{
+    z-index: 11;
+    position: absolute;
+
+    width: 60%;
+    height: auto;
+    aspect-ratio: 385/404;
+
+    cursor: pointer;
+}
+
+#title_sign_img{
+    width: 100%;
+    height: auto;
 }
 
 .main_container{
