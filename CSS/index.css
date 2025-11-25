@@ -11,6 +11,10 @@ body{
 }
 
 /*
+starten av css for forgrunn
+*/
+
+/*
 z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til elementene.
 1 er bakerst og 10 er fremste i rekkefølge i lagene
 */
@@ -85,10 +89,10 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
     transform: translate(-50%, -50%);
 }
 
-#title_sign_trigger:checked
-
 #title_sign_trigger{
     display: none;
+    visibility: hidden;
+    opacity: 0%;
 }
 
 #title_sign_label{
@@ -107,6 +111,48 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
     height: auto;
 }
 
+/*
+starten av css for animasjoner av forgrunn
+*/
+
+@keyframes incoming_sliding_door_left{
+    0%{
+        opacity: 1;
+        top: 50%;
+        left: 42%;  
+        transform: translate(-50%, -50%) scale(1);
+    }
+    20%{
+        opacity: 1;
+        top: 50%;
+        left: 32%;
+        transform: translate(-50%, -50%) scale(1.1);
+
+    }
+    95%{
+        opacity: 1;
+        top: 50%;
+        left: 27%;
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+    100%{
+        opacity: 0;
+        top: 50%;
+        left: 0%;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+#title_sign_trigger:checked ~ #sliding_door_left{
+    animation-name: incoming_sliding_door_left;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/*
+starten av css for entree
+*/
 .main_container{
     z-index: 7;
 }
