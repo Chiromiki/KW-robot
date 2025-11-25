@@ -35,7 +35,8 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
     margin: 0 auto;
 }
 
-#sliding_door_side_img{
+#sliding_door_side{
+    position: relative;
     width: 100%;
     height: auto;
     
@@ -122,31 +123,184 @@ starten av css for animasjoner av forgrunn
         left: 42%;  
         transform: translate(-50%, -50%) scale(1);
     }
-    20%{
+    85%{
         opacity: 1;
         top: 50%;
-        left: 32%;
-        transform: translate(-50%, -50%) scale(1.1);
-
+        left: 0%;
+        transform: translate(-50%, -50%) scale(2.9);
+    }
+    87%{
+        opacity: 1;
+        top: 50%;
+        left: -10%;
+        transform: translate(-50%, -50%) scale(2.95);
     }
     95%{
         opacity: 1;
         top: 50%;
-        left: 27%;
-        transform: translate(-50%, -50%) scale(1.3);
+        left: -20%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 1;
+        top: 50%;
+        left: -20%;
+        transform: translate(-50%, -50%) scale(3);
     }
     100%{
         opacity: 0;
         top: 50%;
-        left: 0%;
-        transform: translate(-50%, -50%) scale(2);
+        left: -20%;
+        transform: translate(-50%, -50%) scale(3);
     }
 }
 
 #title_sign_trigger:checked ~ #sliding_door_left{
     animation-name: incoming_sliding_door_left;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes incoming_sliding_door_right{
+    0%{
+        opacity: 1;
+        top: 50%;
+        left: 58%;  
+        transform: translate(-50%, -50%) scale(1);
+    }
+    85%{
+        opacity: 1;
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%) scale(2.9);
+    }
+    87%{
+        opacity: 1;
+        top: 50%;
+        left: 110%;
+        transform: translate(-50%, -50%) scale(2.95);
+    }
+    95%{
+        opacity: 1;
+        top: 50%;
+        left: 120%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 1;
+        top: 50%;
+        left: 120%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    100%{
+        opacity: 0;
+        top: 50%;
+        left: 120%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
+#title_sign_trigger:checked ~ #sliding_door_right{
+    animation-name: incoming_sliding_door_right;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes incoming_sliding_door_side{
+    0%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    85%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2.9);
+    }
+    87%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2.95);
+    }
+    95%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    100%{
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
+#title_sign_trigger:checked ~ #sliding_door_side{
+    animation-name: incoming_sliding_door_side;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes incoming_title_sign{
+    0%{
+        opacity: 1;
+        top: 68%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    85%{
+        opacity: 1;
+        top: 160%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2.9);
+    }
+    87%{
+        opacity: 1;
+        top: 170%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2.95);
+    }
+    95%{
+        opacity: 1;
+        top: 180%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 1;
+        top: 180%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    100%{
+        opacity: 0;
+        top: 1200%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
+#title_sign_trigger:checked ~ .title_sign{
+    animation-name: incoming_title_sign;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
 
@@ -215,10 +369,10 @@ dette gjør også at alle andre elementer(ex.robot og dører) forblir der de ska
     transform: translate(-50%,-50%);
     
     width: 7%;
-    height: 45%;
+    height: 53%;
 
-    left: 12%;
-    top: 60%; 
+    left: 9%;
+    top: 63%; 
 }
 
 .door_2_container{
@@ -230,11 +384,11 @@ dette gjør også at alle andre elementer(ex.robot og dører) forblir der de ska
     align-items: center;
     transform: translate(-50%,-50%);
     
-    width: 5%;
-    height: 37%;
+    width: 6%;
+    height: 39%;
 
-    left: 23%;
-    top: 57%; 
+    left: 21%;
+    top: 58%; 
 }
 
 .door_3_container{
@@ -246,11 +400,11 @@ dette gjør også at alle andre elementer(ex.robot og dører) forblir der de ska
     align-items: center;
     transform: translate(-50%,-50%);
     
-    width: 6%;
-    height: 29%;
+    width: 7%;
+    height: 31%;
 
     left: 50%;
-    top: 55%; 
+    top: 56%; 
 }
 
 .door_4_container{
@@ -262,11 +416,11 @@ dette gjør også at alle andre elementer(ex.robot og dører) forblir der de ska
     align-items: center;
     transform: translate(-50%,-50%);
     
-    width: 5%;
+    width: 6%;
     height: 37%;
 
-    left: 77%;
-    top: 57%; 
+    left: 79%;
+    top: 58%; 
 }
 
 .door_5_container{
@@ -279,8 +433,8 @@ dette gjør også at alle andre elementer(ex.robot og dører) forblir der de ska
     transform: translate(-50%,-50%);
     
     width: 7%;
-    height: 45%;
+    height: 52%;
 
-    left: 87%;
-    top: 60%; 
+    left: 90%;
+    top: 63%; 
 }
