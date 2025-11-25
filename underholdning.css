@@ -16,6 +16,29 @@ body {
 
 #bg-img {
     height: 100vh;
+    z-index: 1;
+}
+
+#next-room-button {
+    position: absolute;
+    left: 195%;
+    top: 85%;
+    width: 6%;
+    z-index: 2;
+}
+
+#exit-button {
+    position: absolute;
+    left: 191%;
+    top: -3%;
+    width: 10%;
+}
+
+#back-to-main-button {
+    position: absolute;
+    left: 2%;
+    top: -3%;
+    width: 10%;
 }
 
 #milo-front {
