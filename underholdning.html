@@ -1,65 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Underholdningsrom</title>
+    <link rel="stylesheet" href="underholdning.css">
 </head>
 <body>
-    <div id="bg-img">
-        <div class="img-container">
-            <div id="milo">
-                <img src="" alt="" id="milo-front">
-                <img src="" alt="" id="milo-side">
-            </div>
+    <div class="container">
+        
+        <img src="Assets/Underholdningsrom-ver1png.png" alt="" id="bg-img">
+        
+        <div id="milo">
+            <img src="Assets/Milo-underholdning-ver1.png" alt="Milo frontview" id="milo-front">
+            <!-- <img src="Assets/Milo-underholdning-sideview-ver1.png" alt="Milo sideview" id="milo-side"> -->
+        </div>
 
+        <div class="img-container">
+            <img src="Bilder_Anja/RUR.jpg" alt="R.U.R teaterstykke" id="rur-img">
+            <img src="Bilder_Anja/MaybeHappyEnding.jpg" alt="Maybe Happy Ending teaterstykke" id="mhe-img">
+            <img src="Bilder_Anja/Transformers1.jpg" alt="Transformers Bumblebee" id="transformers-img">
+            <img src="Bilder_Anja/AllSystemsRed.jpg" alt="All Systems Red bokomslag" id="asr-img">
+            <img src="Bilder_Anja/DetroitBecomeHuman.jpg" alt="Detroit: Become Human spillposter" id="dbh-img">
+<!-- 
             <div class="rur-container">
-                <img src="" alt="" id="rur-img">
+                
             </div>
 
             <div class="mhe-container">
-                <img src="" alt="" id="mhe-img">
+                
             </div>
 
             <div class="transformers-container">
-                <img src="" alt="" id="transformers-img">
+                
             </div>
 
             <div class="asr-container">
-                <img src="" alt="" id="asr-img">
+                
             </div>
 
             <div class="dbh-container">
-                <img src="" alt="" id="dbh-img">
-            </div>
 
-            <div class="buttons">
+            </div> -->
+
+
+        </div>
+
+        <div class="buttons">
                 <img src="" alt="" id="next-room-button">
                 <img src="" alt="" id="exit-button">
                 <img src="" alt="" id="back-to-main-button">
-            </div>
         </div>
 
         <div class="text-container">
-            <p id="rur-text">
+            <p class="welcome-speechbubble">
+                Velkommen til underholdningsrommet her i Robotmuseet. I dette rommet vil du kunne utforske og lære mer om hvordan roboter har blitt vist og brukt i underholdning opp igjennom årene. Du vil se teaterstykker, film, bok, og spill. Det er bare å trykke deg rundt og utforske, så skal jeg fortelle deg om det du er nysgjerrig på!
+            </p>
+            
+            <p id="rur-speechbubble">
+                R.U.R (kort for Rossum's Universal Robots) er et tsjekkisk teaterstykke fra 1920 laget av Karel Čapek. Det er fra dette teaterstykket ordet robot kommer fra. Skuespillet handler om en fabrikk som lager menneskelignende roboter (som med nåtiden terminologi ville blitt kalt for androider). Robotene har ikke noe imot å jobbe for menneskene i starten, men etter hvert gjør robotene opprør og utsletter menneskeheten (Wikipedia, 2025). Teaterstykket har siden blitt spilt mange steder i verden. R.U.R har påvirket og formet den science fiction-sjangeren vi kjenner i dag, og teaterstykket er på mange måter hedret og har blitt referert i mange moderne filmer, serier og bøker (Standard Ebooks, u.å.).
             </p>
 
-            <p id="mhe-text">
+            <p id="mhe-speechbubble">
+                Maybe Happy Ending er et koreansk teaterstykke som ble skrevet av Hue Park og Will Aronson. Stykket er satt litt frem i tid hvor humanoide roboter har blitt en del av folks hverdag. Vi møter robotene Oliver og Claire, som begge er forlatt av de menneskene som kjøpte dem. Etter en del tid sammen innser de at de har forelsket seg, og prøver å ha et menneskelig romantisk forhold (Wikipedia, 2025). Forestillingen vant mange priser i Korea, og har i ettertid blitt vist på Broadway i USA. Den engelske versjonen vant 6 Tony-priser (Maybe Happy Ending, u.å.).
             </p>
 
-            <p id="transformers-text">
+            <p id="transformers-speechbubble">
+                Transformers-franchisen startet i 1984 som en leketøylinje laget av Hasbro og Takara som kunne transformere en robot til forskjellige andre former, som biler, fly, dyr og andre ting. Samme året ble det også lansert en TV-serie og tegneserie basert på leketøyene. Siden den gang har det kommet mange filmer og serier, både animert og live-action, i tillegg til at de originale karakterene fra 1984 har blitt rebootet flere ganger. Franchisen har hatt stor påvirkning på filmindustrien og har flere ganger satt nye rekorder i mest innbringende filmer (Wikipedia, 2025).
             </p>
 
-            <p id="asr-text">
+            <p id="asr-speechbubble">
+                All Systems Red er den første kortromanen i serien Murderbot Diaries skrevet av Martha Wells. Novellen følger en cyborg som er med for å beskytte mennesker på et forskningsoppdrag. Cyborg har utviklet seg forbi dens programmering og har begynt å ta individuelle valg og utvikle menneskelige følelser. Den kaller seg selv for “Murderbot” (Wikipedia, 2025). Serien har 10 forskjellige verk (både romaner, kortromaner og noveller) og har vunnet mange priser, blant annet Hugo Award, Nebula Award og Locus Award (Martha Wells, u.å.). 
             </p>
 
-            <p id="dbh-text">
+            <p id="dbh-speechbubble">
+                Detroit: Become Human er et PlayStation-spill utgitt i 2018. Det er et historiedrevet oppdagelsesspill hvor man kan velge mellom å spille som tre forskjellige androider og følge deres historie, hvor spilleren tar valg underveis og påvirker hvordan historien utvikler seg. Spillet, som så mange andre underholdningsmedier, har et stort fokus på hvordan roboter studerer og får mer menneskelige personlighetstrekk og utvikler seg utenfor dens programmering. Detroit: Become Human var en av de mest solgte spillene i 2018 (Wikipedia, 2025).
             </p>
 
-            <p id="welcome-text">
+            <p id="next-room-speechbubble">
+                Du er klar for å gå videre til neste rom? Håper du har blitt inspirert og fascinert av hvordan roboter har blitt brukt i underholdning, og så gleder jeg meg til å fortelle deg mer om alle de andre spennende tingene robotmuseet har å by på. Kom, så går vi videre. Følg meg!
             </p>
 
-            <p id="next-room-text">
+            <p id="exit-speechbubble">
+                Er du ferdig med å utforske robotmuseet? Jeg håper du har lært masse nytt og fått et godt innblikk i robotens historie, hvordan roboter blir brukt i dag, og hva som kan skje i framtiden. Jeg skal følge deg ut av museet.
             </p>
         </div>
     </div>

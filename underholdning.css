@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+}
+
+.container {
+    /* width: 3443.3px;
+    height: auto; */
+    aspect-ratio: 34443.3 / 906;
+}
+
+#bg-img {
+    height: 100vh;
+}
+
+#milo-front {
+    position: absolute;
+    height: 50%;
+    top: 45%;
+    left: 9.5%;
+}
+
+.img-container {
+    display: flex;
+    top: 0%;
+}
+
+#rur-img {
+    position: absolute;
+    top: 15%;
+    left: 37%;
+    width: 40%;
+}
+
+#mhe-img {
+    position: absolute;
+    top: 15%;
+    left: 80%;
+    width: 40%;
+}
+
+#transformers-img {
+    position: absolute;
+    top: 15%;
+    left: 125%;
+    width: 20%;
+}
+
+#asr-img {
+    position: absolute;
+    top: 15%;
+    left: 148.5%;
+    width: 18%;
+}
+
+#dbh-img {
+    position: absolute;
+    top: 15%;
+    left: 170%;
+    width: 25%;
+}
+
+
+
+/* Fant speechbubble-koden på nettsiden https://projects.verou.me/bubbly/, men justert den til mitt behov. */
+.speech-bubble {
+	position: relative;
+	background: #ffeeb8;
+	border-radius: .4em;
+    top: 180px;
+    left: 600px;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    display: none;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #ffeeb8;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+/* Fikk hjelp av AI for hvordan å koble bear:hover og speechbubble-bear */
+#bear:hover + #speechbubble-bear {
+    display: block;
+}
+
+/* .speech-bubble {
+	position: relative;
+	background: #ad120e;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #ad120e;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+} */
+
+
+/* .rur-container, .mhe-container, .transformers-container, .asr-container, .dbh-container {
+    position: absolute;
+    top: 15%;
+    left: 170%;
+    width: 25%;
+} */
+
+/* .img-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    width: 2750px;
+    top: 0px;
+    left: 37%;
+} */
