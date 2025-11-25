@@ -1,0 +1,257 @@
+/* Bakgrunnscontainer */
+#bg-img {
+    height: 100vh;
+   
+}
+
+body {
+    margin: 0;
+}
+/*Setter opp bildene slik jeg vil ha de, i forhold til bakgrunnen*/
+#milo-front
+{ 
+top: 40%;
+position: absolute;
+left: 8%;
+width: 10%;
+}
+
+#Amazon-astro
+{
+top: 65%;
+position: absolute;
+left: 52%;
+width: 15%;
+}
+
+#Davinci
+{
+top: 48%;
+position: absolute;
+left: 73%;
+width: 35%;
+}
+
+#Paro-robot
+{
+top: 63%;
+position: absolute;
+left: 110%;
+width: 20%;
+}
+
+#Støvsuger
+{
+top: 72%;
+position: absolute;
+left: 140%;
+width: 23%;
+}
+
+/*Animasjoner for milo*/
+
+#milo-front 
+{ 
+animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(0);
+    }
+    50% { 
+        transform: translateY(-25px);
+    }
+}
+
+
+/*Setter opp tektsboksen til milo og designer denne*/
+.Velkommen-milo {
+	position: absolute;
+	background: #0aae15;
+	border-radius: .4em;
+    top: 50%;
+    left: 20%;
+    width: 23%;
+    height: 10%;
+    font-size: 35px;
+    padding: 25px;
+}
+
+.Velkommen-milo:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 52px solid transparent;
+	border-right-color: #0aae15;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -26px;
+	margin-left: -52px;
+}
+  /*Velkommen boksen til milo skal være der helt frem til han blir dirigert til noen andre roboter*/
+  /*Tektsboksene om de andre robotene skal ikke vises før de klikkes på, dette gjør jeg under her: */
+
+  .Tekst-Amazon-astro {
+    position: absolute;
+    background: #0aae15;
+	border-radius: .4em;
+    top: 30%;
+    left: 45%;
+    width: 30%;
+    height: 18%;
+    font-size: 35px;
+    padding: 23px;
+    display: none;
+  }
+
+  .Tekst-Amazon-astro:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 52px solid transparent;
+	border-right-color: #0aae15;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -26px;
+	margin-left: -52px;
+}
+
+.Tekst-Davinci { 
+    position: absolute;
+    background: #0aae15;
+	border-radius: .4em;
+    top: 26%;
+    left: 80%;
+    width: 22%;
+    height: 12%;
+    font-size: 30px;
+    padding: 28px;
+    display: none;
+}
+.Tekst-Davinci:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 52px solid transparent;
+	border-right-color: #0aae15;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -26px;
+	margin-left: -52px;
+}
+
+.Tekst-Paro {
+    position: absolute;
+    background: #0aae15;
+	border-radius: .4em;
+    top: 30%;
+    left: 111%;
+    width: 20%;
+    height: 20%;
+    font-size: 28px;
+    padding: 25px;
+    display: none;
+}
+.Tekst-Paro:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 52px solid transparent;
+	border-right-color: #0aae15;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -26px;
+	margin-left: -52px;
+}
+
+.Tekst-Støvsuger {
+    position: absolute;
+    background: #0aae15;
+	border-radius: .4em;
+    top: 38%;
+    left: 143%;
+    width: 20%;
+    height: 12%;
+    font-size: 28px;
+    padding: 28px;
+    display: none;
+}
+.Tekst-Støvsuger:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 52px solid transparent;
+	border-right-color: #0aae15;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -26px;
+	margin-left: -52px;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+
+.hidden-checkbox:checked + label + .Tekst-Amazon-astro{
+    display: block;
+}
+
+.hidden-checkbox:checked + label + .Tekst-Davinci {
+    display: block;
+}
+
+.hidden-checkbox:checked + label + .Tekst-Paro {
+    display: block;
+}
+
+.hidden-checkbox:checked + label + .Tekst-Støvsuger { 
+    display: block;
+}
+
+label img {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+                filter 0.4s ease;
+    transform-origin: center center;
+}
+
+
+label img:hover {
+    animation: float-glow 1.5s infinite alternate;
+    cursor: pointer;
+}
+
+@keyframes float-glow {
+    0% {
+        transform: scale(1.1) rotate(-2deg) translateY(-3px);
+        filter: brightness(1.2) saturate(1.1) drop-shadow(0 10px 20px rgba(8, 196, 18, 0.9));
+    }
+    50% {
+        transform: scale(1.14) rotate(2deg) translateY(-7px);
+        filter: brightness(1.3) saturate(1.2) drop-shadow(0 10px 25px rgba(2, 176, 17, 0.7));
+    }
+    100% {
+        transform: scale(1.12) rotate(-1deg) translateY(-5px);
+        filter: brightness(1.25) saturate(1.2) drop-shadow(0 8px 20px rgba(8, 185, 37, 0.6));
+    }
+}
+
+
+
+
+
+
