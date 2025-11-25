@@ -1,3 +1,9 @@
+/* Kilde til fonten: https://www.dafont.com/zekton.font */
+@font-face {
+    font-family: "Zekton";
+    src: url("Font/Zekton/Zekton\ Rg.otf");
+}
+
 body {
     margin: 0;
 }
@@ -59,38 +65,42 @@ body {
     width: 25%;
 }
 
+p {
+    z-index: 100;
+}
 
 
 /* Fant speechbubble-koden på nettsiden https://projects.verou.me/bubbly/, men justert den til mitt behov. */
-.speech-bubble {
-	position: relative;
-	background: #ffeeb8;
+#welcome-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
 	border-radius: .4em;
-    top: 180px;
-    left: 600px;
-    width: 150px;
-    height: 50px;
+    top: 50%;
+    left: 23%;
+    width: 20%;
+    height: 18%;
     padding: 10px;
     display: none;
 }
 
-.speech-bubble:after {
+#welcome-speechbubble:after {
 	content: '';
 	position: absolute;
-	bottom: 0;
-	left: 50%;
+	left: 0;
+	top: 50%;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-top-color: #ffeeb8;
+	border-right-color: #d53832;
+	border-left: 0;
 	border-bottom: 0;
-	border-right: 0;
-	margin-left: -10px;
-	margin-bottom: -20px;
+	margin-top: -10px;
+	margin-left: -20px;
 }
 
 /* Fikk hjelp av AI for hvordan å koble bear:hover og speechbubble-bear */
-#bear:hover + #speechbubble-bear {
+#welcome-speechbubble {
     display: block;
 }
 
