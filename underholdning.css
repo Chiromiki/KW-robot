@@ -1,9 +1,3 @@
-/* Kilde til fonten: https://www.dafont.com/zekton.font */
-@font-face {
-    font-family: "Zekton";
-    src: url("Font/Zekton/Zekton\ Rg.otf");
-}
-
 body {
     margin: 0;
 }
@@ -19,14 +13,6 @@ p {
 #bg-img {
     height: 100vh;
     z-index: 1;
-}
-
-#next-room-button {
-    position: absolute;
-    left: 195%;
-    top: 85%;
-    width: 6%;
-    z-index: 2;
 }
 
 #exit-button {
@@ -76,7 +62,6 @@ p {
 #welcome-speechbubble {
 	position: absolute;
 	background: #d53832;
-    font-family: "Zekton";
 	border-radius: .4em;
     top: 50%;
     left: 23%;
@@ -122,7 +107,7 @@ p {
 
 #rur-toggle:checked ~ #milo-front {
     top: 50%;
-    left: 38%;
+    left: 32%;
 }
 
 #rur-img {
@@ -135,12 +120,10 @@ p {
 #rur-speechbubble {
 	position: absolute;
 	background: #d53832;
-    font-family: "Zekton";
 	border-radius: .4em;
     top: 57%;
-    left: 50%;
+    left: 45%;
     width: 30%;
-    height: 25%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
@@ -183,12 +166,10 @@ p {
 #mhe-speechbubble {
 	position: absolute;
 	background: #d53832;
-    font-family: "Zekton";
 	border-radius: .4em;
     top: 55%;
     left: 85%;
     width: 30%;
-    height: 20%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
@@ -218,12 +199,12 @@ p {
 
 #transformers-toggle:checked ~ #milo-front {
     top: 50%;
-    left: 112%;
+    left: 108%;
 }
 
 #transformers-img {
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 125%;
     width: 20%;
 }
@@ -231,12 +212,10 @@ p {
 #transformers-speechbubble {
 	position: absolute;
 	background: #d53832;
-    font-family: "Zekton";
 	border-radius: .4em;
-    top: 71%;
-    left: 125%;
-    width: 30%;
-    height: 20%;
+    top: 67%;
+    left: 120%;
+    width: 23%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
@@ -266,7 +245,7 @@ p {
 
 #asr-toggle:checked ~ #milo-front {
     top: 50%;
-    left: 138%;
+    left: 136%;
 }
 
 #asr-img {
@@ -279,12 +258,10 @@ p {
 #asr-speechbubble {
 	position: absolute;
 	background: #d53832;
-    font-family: "Zekton";
 	border-radius: .4em;
     top: 68%;
-    left: 150%;
-    width: 30%;
-    height: 20%;
+    left: 147%;
+    width: 22%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
@@ -314,7 +291,7 @@ p {
 
 #dbh-toggle:checked ~ #milo-front {
     top: 50%;
-    left: 156%;
+    left: 161%;
 }
 
 #dbh-img {
@@ -327,12 +304,10 @@ p {
 #dbh-speechbubble {
 	position: absolute;
 	background: #d53832;
-    font-family: "Zekton";
 	border-radius: .4em;
     top: 62%;
-    left: 169%;
-    width: 30%;
-    height: 20%;
+    left: 173%;
+    width: 20%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
@@ -358,4 +333,39 @@ p {
     opacity: 1;
     visibility: visible;
     transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
-} 
+}
+
+#next-room-button {
+    position: absolute;
+    left: 195%;
+    top: 85%;
+    width: 6%;
+    z-index: 2;
+}
+
+#next-room-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 68%;
+    left: 177%;
+    width: 15%;
+    /* height: 26%; */
+    padding: 10px;
+    z-index: 100;
+}
+
+#next-room-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}

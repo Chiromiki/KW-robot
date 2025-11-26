@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Underholdningsrom</title>
     <link rel="stylesheet" href="underholdning.css">
+    <link rel="stylesheet" href="CSS/common.css">
 </head>
 <body>
     <div class="container">
         <img src="Assets/Underholdningsrom-ver1png.png" alt="" id="bg-img">
 
         <div class="img-text-container">
+            
             <input type="checkbox" id="rur-toggle" class="hidden-checkbox">
             <label for="rur-toggle">
                 <img src="Bilder_Anja/RUR.jpg" alt="R.U.R teaterstykke" id="rur-img">
@@ -55,10 +57,6 @@
                 Velkommen til underholdningsrommet her i Robotmuseet. I dette rommet vil du kunne utforske og lære mer om hvordan roboter har blitt vist og brukt i underholdning opp igjennom årene. Du vil se teaterstykker, film, bok, og spill. Det er bare å trykke deg rundt og utforske, så skal jeg fortelle deg om det du er nysgjerrig på!
             </p>
 
-            <p id="next-room-speechbubble">
-                Du er klar for å gå videre til neste rom? Håper du har blitt inspirert og fascinert av hvordan roboter har blitt brukt i underholdning, og så gleder jeg meg til å fortelle deg mer om alle de andre spennende tingene robotmuseet har å by på. Kom, så går vi videre. Følg meg!
-            </p>
-
             <p id="exit-speechbubble">
                 Er du ferdig med å utforske robotmuseet? Jeg håper du har lært masse nytt og fått et godt innblikk i robotens historie, hvordan roboter blir brukt i dag, og hva som kan skje i framtiden. Jeg skal følge deg ut av museet.
             </p>
@@ -68,7 +66,34 @@
         </div>
 
         <div class="buttons">
-            <a href="index.html">
+            <input type="checkbox" id="main-toggle" class="hidden-checkbox">
+            <label for="main-toggle">
+                <a href="index.html">
+                    <img src="Assets/MAIN.png" alt="Knapp for å gå tilbake til entréen" id="back-to-main-button">
+                </a>
+            </label>
+
+            <input type="checkbox" id="exit-toggle" class="hidden-checkbox">
+            <label for="exit-toggle">
+                <a href="end.html">
+                    <img src="Assets/exit.png" alt="Knapp for å avslutte omvisningen i museet" id="exit-button">
+                </a>
+            </label>
+
+            <input type="checkbox" id="next-room-toggle" class="hidden-checkbox">
+            <label for="next-room-toggle">
+                <img src="Assets/guide.png" alt="Knapp for å gå til neste rom i Milos anbefalte omvisningsrunde" id="next-room-button">
+            </label>
+            <p id="next-room-speechbubble">
+                Du er klar for å gå videre til neste rom? Håper du har blitt inspirert og fascinert av hvordan roboter har blitt brukt i underholdning, og så gleder jeg meg til å fortelle deg mer om alle de andre spennende tingene robotmuseet har å by på. Kom, så går vi videre. Følg meg!
+            </p>
+
+            Kryss linker til siden
+            <a href="militaer.html"></a>
+
+
+
+            <!-- <a href="index.html">
                 <img src="Assets/MAIN.png" alt="Knapp for å gå tilbake til entréen" id="back-to-main-button">
             </a>
 
@@ -77,8 +102,11 @@
             </a>
 
             <a href="militaer.html">
-                <img src="Assets/guide.png" alt="Knapp for å gå til neste rom i Milos anbefalte omvisningsrunde" id="next-room-button">
-            </a>                
+                <img src="Assets/guide.png" alt="Knapp for å gå til neste rom i Milos anbefalte omvisningsrunde" id="next-room-button">            
+            </a>
+            <p id="next-room-speechbubble">
+                Du er klar for å gå videre til neste rom? Håper du har blitt inspirert og fascinert av hvordan roboter har blitt brukt i underholdning, og så gleder jeg meg til å fortelle deg mer om alle de andre spennende tingene robotmuseet har å by på. Kom, så går vi videre. Følg meg!
+            </p>                 -->
         </div>
     </div>
 </body>
