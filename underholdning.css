@@ -1,27 +1,128 @@
+/* Kilde til fonten: https://www.dafont.com/zekton.font */
+@font-face {
+    font-family: "Zekton";
+    src: url("Font/Zekton/Zekton\ Rg.otf");
+}
+
 body {
     margin: 0;
 }
 
+p {
+    z-index: 100;
+}
+
 .container {
-    /* width: 3443.3px;
-    height: auto; */
     aspect-ratio: 34443.3 / 906;
 }
 
 #bg-img {
     height: 100vh;
+    z-index: 1;
+}
+
+#next-room-button {
+    position: absolute;
+    left: 195%;
+    top: 85%;
+    width: 6%;
+    z-index: 2;
+}
+
+#exit-button {
+    position: absolute;
+    left: 191%;
+    top: -3%;
+    width: 10%;
+    z-index: 2;
+}
+
+#back-to-main-button {
+    position: absolute;
+    left: 2%;
+    top: -3%;
+    width: 10%;
+    z-index: 2;
+}
+
+.hidden-checkbox {
+    visibility: hidden;
+}
+
+.hidden-checkbox:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
+
+.hidden-checkbox:checked + label img {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9d00, 0 0 40px #ff9d00, 0 0 50px #ff9d00, 0 0 60px #ff9d00, 0 0 70px #ff9d00;
+}
+
+@keyframes milo-float {
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* Fant speechbubble-koden på nettsiden https://projects.verou.me/bubbly/, men justert den til mitt behov. */
+#welcome-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 50%;
+    left: 23%;
+    width: 20%;
+    height: 18%;
+    padding: 10px;
+    opacity: 0;
+    animation: opacity;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+#welcome-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
 }
 
 #milo-front {
     position: absolute;
     height: 50%;
-    top: 45%;
+    top: 44%;
     left: 9.5%;
+    transition: top 2s ease, left 2s ease; /* Gir en jevn overgang */
+    z-index: 101;
+    opacity: 1;
+    animation-name: milo-float;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
-.img-container {
-    display: flex;
-    top: 0%;
+#rur-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 38%;
 }
 
 #rur-img {
@@ -31,11 +132,93 @@ body {
     width: 40%;
 }
 
+#rur-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 57%;
+    left: 50%;
+    width: 30%;
+    height: 25%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+}
+
+#rur-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox:checked + label + #rur-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+}
+
+#mhe-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 72%;
+}
+
 #mhe-img {
     position: absolute;
     top: 15%;
     left: 80%;
     width: 40%;
+}
+
+#mhe-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 55%;
+    left: 85%;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+}
+
+#mhe-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox:checked + label + #mhe-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+} 
+
+#transformers-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 112%;
 }
 
 #transformers-img {
@@ -45,11 +228,93 @@ body {
     width: 20%;
 }
 
+#transformers-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 71%;
+    left: 125%;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+}
+
+#transformers-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox:checked + label + #transformers-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+} 
+
+#asr-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 138%;
+}
+
 #asr-img {
     position: absolute;
     top: 15%;
     left: 148.5%;
     width: 18%;
+}
+
+#asr-speechbubble {
+	position: absolute;
+	background: #d53832;
+    font-family: "Zekton";
+	border-radius: .4em;
+    top: 68%;
+    left: 150%;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+}
+
+#asr-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.hidden-checkbox:checked + label + #asr-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+} 
+
+#dbh-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 156%;
 }
 
 #dbh-img {
@@ -59,48 +324,22 @@ body {
     width: 25%;
 }
 
-
-
-/* Fant speechbubble-koden på nettsiden https://projects.verou.me/bubbly/, men justert den til mitt behov. */
-.speech-bubble {
-	position: relative;
-	background: #ffeeb8;
-	border-radius: .4em;
-    top: 180px;
-    left: 600px;
-    width: 150px;
-    height: 50px;
-    padding: 10px;
-    display: none;
-}
-
-.speech-bubble:after {
-	content: '';
+#dbh-speechbubble {
 	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-top-color: #ffeeb8;
-	border-bottom: 0;
-	border-right: 0;
-	margin-left: -10px;
-	margin-bottom: -20px;
-}
-
-/* Fikk hjelp av AI for hvordan å koble bear:hover og speechbubble-bear */
-#bear:hover + #speechbubble-bear {
-    display: block;
-}
-
-/* .speech-bubble {
-	position: relative;
-	background: #ad120e;
+	background: #d53832;
+    font-family: "Zekton";
 	border-radius: .4em;
+    top: 62%;
+    left: 169%;
+    width: 30%;
+    height: 20%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
 }
 
-.speech-bubble:after {
+#dbh-speechbubble:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -108,26 +347,15 @@ body {
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-right-color: #ad120e;
+	border-right-color: #d53832;
 	border-left: 0;
-	border-bottom: 0;
+	border-top: 0;
 	margin-top: -10px;
 	margin-left: -20px;
-} */
+}
 
-
-/* .rur-container, .mhe-container, .transformers-container, .asr-container, .dbh-container {
-    position: absolute;
-    top: 15%;
-    left: 170%;
-    width: 25%;
-} */
-
-/* .img-container {
-    position: absolute;
-    display: flex;
-    justify-content: space-evenly;
-    width: 2750px;
-    top: 0px;
-    left: 37%;
-} */
+.hidden-checkbox:checked + label + #dbh-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+} 
