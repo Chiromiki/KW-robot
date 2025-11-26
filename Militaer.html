@@ -2,37 +2,85 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Militærroboter</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Militær- og overvåkningsroboter</title>
+    <link rel="stylesheet" href="Militaer.css">
 </head>
 <body>
 
-    <main id="room">
+<main id="museum-room">
 
-        -- Milo nederst til venstre --
-        <div id="milo">
-            <img src="milo.png" alt="Milo robot"id="milo">
-            <div class="bubble" id="milo-text">
-                -- Tekst kommer her --
-            </div>
-        </div>
+    <!-- Main-knapp øverst til venstre -->
+    <a href="#" id="main-button">
+        <img src="mainknapp.png" alt="Main">
+    </a>
 
-        -- Hovedroboten (det store bildet) --
-        <!-- Kilde til bilde: https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/MQ-9_Reaper_UAV_%28cropped%29.jpg/960px-MQ-9_Reaper_UAV_%28cropped%29.jpg -->
-        <div id="main-robot">
-            <img src="UAVDrone.jpg" alt="Hovedrobot" id="big-robot"id="UAVDrone">
-        </div>
+    <!-- Exit-knapp øverst til høyre -->
+    <a href="neste-side.html" id="exit-button">
+        <img src="exitknapp.png" alt="Exit">
+    </a>
 
-         -- De 3 små bildene du klikker på --
-        <div class="robot-thumbs">
-             <!-- Kilde: https://www.forsvaret.dk/da/materiel2/bomberobot/ -->
-            <img src="Bombe og minefjerner.jpg" alt="Robot 1"id="bombe-minefjerner">
-            <!-- Kilde: https://www.passengerterminaltoday.com/news/security/bordeaux-airport-deploys-perimeter-patrol-robot-to-train-ai-surveillance-algorithms.html -->
-            <img src="Patruljerobot.jpg " alt="Robot 2"id="patruljerobot">
-            <!-- Kilde: : https://www.militarytimes.com/news/your-military/2020/04/22/us-adds-military-surveillance-cameras-at-mexico-border-despite-drop-in-crossings/ -->
-            <img src="Overvåkningskamera.jpg " alt="Robot 3"id="overvåkningskamera">
-        </div>
+    <!-- Milo nederst til venstre med animasjon -->
+    <div id="milo">
+        <img src="milo.png" alt="Milo robot" id="milo-front">
+    </div>
 
-    </main>
+    <!-- Radioknapper for å bytte bilde -->
+    <input type="radio" name="robot" id="robot1">
+    <input type="radio" name="robot" id="robot2">
+    <input type="radio" name="robot" id="robot3">
+    <input type="radio" name="robot" id="robot4">
+
+    <!-- Stort hovedbilde -->
+    <div id="main-image">
+        <img src="robot1.jpg" class="display-img" alt="Robot 1">
+        <img src="robot2.jpg" class="display-img" alt="Robot 2">
+        <img src="robot3.jpg" class="display-img" alt="Robot 3">
+        <img src="robot4.jpg" class="display-img" alt="Robot 4">
+    </div>
+
+    <!-- Små klikkbare bilder -->
+    <div id="thumbs">
+        <label for="robot1"><img src="robot1.jpg" alt="Mini 1"></label>
+        <label for="robot2"><img src="robot2.jpg" alt="Mini 2"></label>
+        <label for="robot3"><img src="robot3.jpg" alt="Mini 3"></label>
+        <label for="robot4"><img src="robot4.jpg" alt="Mini 4"></label>
+    </div>
+
+    <!-- Tekst som Milo "sier" -->
+    <div id="text1" class="info-text">
+        Militære droner utviklet seg fra enkle radiostyrte fly til avanserte UAV-er på 1990–2000-tallet. 
+        De brukes i dag til overvåkning, etterretning, kartlegging og presisjonsangrep. 
+        Droner styres via satellitt, dataterminal eller følger programmerte ruter. 
+        De har kameraer, sensorer og infrarød teknologi, og kan operere lenge uten pause. 
+        Derfor er droner viktige i moderne militære operasjoner.
+    </div>
+
+    <div id="text2" class="info-text">
+        Bombe- og minefjerningsroboter ble utviklet på 1970-tallet for å håndtere eksplosiver tryggere. 
+        I dag brukes de over hele verden for å fjerne miner og uskadeliggjøre bomber uten å risikere menneskeliv. 
+        De styres med fjernkontroll og har kamera, robotarm og verktøy. 
+        Moderne modeller kan analysere terrenget selv. 
+        Disse robotene redder liv ved å ta de farligste oppgavene.
+    </div>
+
+    <div id="text3" class="info-text">
+        Militære overvåkningskameraer begynte på 1960–70-tallet, men i dag bruker de sensorer og kunstig intelligens. 
+        De overvåker baser og store områder og kan oppdage trusler på lang avstand. 
+        Kameraene kan zoome, rotere og filme i mørket, og datasystemer analyserer aktivitet automatisk. 
+        De varsler med en gang noe mistenkelig skjer.
+    </div>
+
+    <div id="text4" class="info-text">
+        Autonome patruljeroboter ble utviklet rundt 2000-tallet. 
+        De brukes på militærbaser for å overvåke områder, oppdage inntrengere og varsle vakter. 
+        De bruker GPS, radar og termiske kameraer for å orientere seg og analysere bevegelser. 
+        Robotene patruljerer døgnet rundt og oppdager detaljer mennesker kan overse.
+    </div>
+
+</main>
 
 </body>
+</html>
+
+
+
