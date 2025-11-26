@@ -309,6 +309,32 @@ starten av css for entree
 */
 .main_container{
     z-index: 6;
+
+    transform: scale(0.74);
+}
+
+@keyframes incoming_main_container{
+    0%{
+        transform: scale(0.74);
+    }
+
+    20%{
+        transform: scale(1);
+    }
+    85%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.sliding_doors:has(#title_sign_trigger:checked) ~ .main_container{
+    animation-name: incoming_main_container;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 /* 
@@ -446,7 +472,7 @@ css for snakkeboble
 /*
 speech bubble mal hentet fra https://projects.verou.me/bubbly/
 */
-.speech_bubble_1{
+#speech_bubble_1_label{
     z-index: 7;
 
     position: fixed;
@@ -464,7 +490,7 @@ speech bubble mal hentet fra https://projects.verou.me/bubbly/
 	border-radius: .4em;
 }
 
-.speech_bubble_1:after {
+#speech_bubble_1_label:after {
 
 	position: absolute;
 	width: 0;
@@ -497,6 +523,6 @@ speech bubble mal hentet fra https://projects.verou.me/bubbly/
     cursor: pointer;
 }
 
-#speech_bubble_trigger_1:checked ~ .speech_bubble_1{
+#speech_bubble_trigger_1:checked ~ #speech_bubble_1_label{
 
 }
