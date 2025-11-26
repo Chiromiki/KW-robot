@@ -308,7 +308,7 @@ starten av css for animasjoner av forgrunn
 starten av css for entree
 */
 .main_container{
-    z-index: 7;
+    z-index: 6;
 }
 
 /* 
@@ -437,4 +437,42 @@ dette gjør også at alle andre elementer(ex.robot og dører) forblir der de ska
 
     left: 90%;
     top: 63%; 
+}
+
+/*
+css for snakkeboble
+*/
+
+/*
+speech bubble mal hentet fra https://projects.verou.me/bubbly/
+*/
+.speech_bubble {
+    z-index: 7;
+
+	position: absolute;
+	background: #d2e0ec;
+
+    top: 30%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+	border-radius: .4em;
+}
+
+.speech_bubble:after {
+
+	position: absolute;
+	width: 0;
+	height: 0;
+
+	content: "";
+    border: 25px solid transparent;
+	border-top-color: #d2e0ec;
+	border-bottom: 0;
+	border-left: 0;
+    border-top-color: #d2e0ec;
+
+	margin-left: -12.5px;
+	margin-bottom: -25px;
 }
