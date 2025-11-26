@@ -20,7 +20,7 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
 */
 
 .sliding_doors{
-    z-index: 8;
+    z-index:10;
     
     position: fixed;
     display: grid;
@@ -41,10 +41,11 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
     height: auto;
     
     margin: 0;
+    pointer-events: auto;
 }
 
 #sliding_door_left{
-    z-index: 9;
+    z-index: 12;
     
     position: absolute;
     display: flex;
@@ -59,7 +60,7 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
 }
 
 #sliding_door_right{
-    z-index: 9;
+    z-index: 12;
     
     position: absolute;
     display: flex;
@@ -74,7 +75,7 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
 }
 
 .title_sign{
-    z-index: 10;
+    z-index: 13;
 
     display: flex;
     position: absolute;
@@ -97,7 +98,7 @@ z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til eleme
 }
 
 #title_sign_label{
-    z-index: 11;
+    z-index: 14;
     position: absolute;
 
     width: 60%;
@@ -235,8 +236,14 @@ starten av css for animasjoner av forgrunn
         left: 50%;
         transform: translate(-50%, -50%) scale(3);
     }
-    99%{
+    98%{
         opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 0;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) scale(3);
@@ -244,8 +251,8 @@ starten av css for animasjoner av forgrunn
     100%{
         opacity: 0;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(3);
+        left: -500%;
+        transform: translate(-50%, -50%) scale(0);
     }
 }
 
@@ -304,29 +311,132 @@ starten av css for animasjoner av forgrunn
     animation-fill-mode: forwards;
 }
 
+@keyframes incoming_snakkeboble_1{
+    0%{
+        opacity: 0;
+        top: -50%;
+        left: -50%;
+    }
+    90%{
+        opacity: 0;
+        top: 33%;
+        left: 53%;
+    }
+    100%{
+        opacity: 1;
+        top: 33%;
+        left: 53%;
+    }
+}
+
+.sliding_doors:has(#title_sign_trigger:checked) ~ .snakkeboble_1{
+    animation-name: incoming_snakkeboble_1;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/*
+css for snakkeboble
+*/
+
+/*
+speech bubble mal hentet fra https://projects.verou.me/bubbly/
+*/
+
+.snakkeboble_1{
+    opacity: 0;
+    z-index: 10000;
+
+    position: absolute;
+
+    top: -50%;
+    left: -50%;
+    
+    transform: translate(-50%, -50%);
+    
+    cursor: hidden;
+    pointer-events: auto;
+
+    border-radius: .4em;
+}
+
+#speech_bubble_1_label{
+    z-index: 20000;
+    display: block;
+
+    background: #d2e0ec;
+    padding: 10px;
+    border-radius: .4em;
+
+    height: 100%;
+    width: 100%;
+    
+    cursor: pointer;
+    pointer-events: auto;
+
+}
+
+#speech_bubble_1_label:after {
+
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    content: "";
+    border: 35px solid transparent;
+    border-top-color: #d2e0ec;
+    border-bottom: 0;
+    border-left: 0;
+    border-top-color: #d2e0ec;
+
+    margin-left: 15px;
+    margin-bottom: -15px;
+}
+
+#speech_bubble_1_trigger{
+    display: none;
+    visibility: hidden;
+}
+
+@keyframes outgoing_speech_bubble_1{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        top: -100%;
+    }
+}
+
+#speech_bubble_1_trigger:checked ~ #speech_bubble_1_label{
+    animation-name: outgoing_speech_bubble_1;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    pointer-events: none;
+}
+
 /*
 starten av css for entree
 */
 .main_container{
-    z-index: 6;
+    position: relative;
 
+    z-index: 1;
+    
     transform: scale(0.74);
+    transition: transform 1s ease-out;
 }
 
-@keyframes incoming_main_container{
-    0%{
-        transform: scale(0.74);
-    }
-
-    20%{
-        transform: scale(1);
-    }
-    85%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1);
-    }
+.sliding_doors:has(#title_sign_trigger:checked) ~ .main_container {
+    transform: scale(1);
 }
 
 .sliding_doors:has(#title_sign_trigger:checked) ~ .main_container{
@@ -465,64 +575,7 @@ dette gjør også at alle andre elementer(ex.robot og dører) forblir der de ska
     top: 63%; 
 }
 
-/*
-css for snakkeboble
-*/
 
-/*
-speech bubble mal hentet fra https://projects.verou.me/bubbly/
-*/
-#speech_bubble_1_label{
-    z-index: 7;
-
-    position: fixed;
-	background: #d2e0ec;
-
-    width: 240px;
-
-    top: 33%;
-    left: 53%;
-
-    padding: 10px;
-
-    transform: translate(-50%, -50%);
-
-	border-radius: .4em;
-}
-
-#speech_bubble_1_label:after {
-
-	position: absolute;
-	width: 0;
-	height: 0;
-
-	content: "";
-    border: 35px solid transparent;
-	border-top-color: #d2e0ec;
-	border-bottom: 0;
-	border-left: 0;
-    border-top-color: #d2e0ec;
-
-	margin-left: 15px;
-	margin-bottom: -15px;
-}
-
-#speech_bubble_1_trigger{
-    display: none;
-    visibility: hidden;
-    opacity: 0%;
-}
-
-#speech_bubble_1_label{
-    z-index: 7;
-    position: absolute;
-
-    width: 60%;
-    height: auto;
-
-    cursor: pointer;
-}
-
-#speech_bubble_trigger_1:checked ~ #speech_bubble_1_label{
-
+#link_to:hover{
+    transform: scale(3);
 }
