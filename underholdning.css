@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow-y: hidden; /* Deaktivere scroll nedover, ingenting under bakgrunnsbilde som synes, men det kom scroll likevel */
 }
 
 p {
@@ -11,37 +12,39 @@ p {
 }
 
 #bg-img {
-    height: 100vh;
+    height: 101vh;
     z-index: 1;
 }
 
-#exit-button {
-    position: absolute;
-    left: 191%;
-    top: -3%;
-    width: 10%;
-    z-index: 2;
-}
-
-#back-to-main-button {
-    position: absolute;
-    left: 2%;
-    top: -3%;
-    width: 10%;
-    z-index: 2;
-}
-
 .hidden-checkbox {
+    position: absolute;
     visibility: hidden;
+    top: 0%;
 }
 
-.hidden-checkbox:checked ~ #welcome-speechbubble {
-    visibility: hidden;
-}
+/* .hidden-checkbox:checked ~ #welcome-speechbubble {
+    visibility: visible;
+} */
 
 .hidden-checkbox:checked + label img {
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9d00, 0 0 40px #ff9d00, 0 0 50px #ff9d00, 0 0 60px #ff9d00, 0 0 70px #ff9d00;
 }
+
+.hidden-checkbox-button {
+    position: absolute;
+    visibility: hidden;
+    top: 0%;
+}
+
+.hidden-checkbox-button:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
+
+/* .img-text-container {
+    position: absolute;
+    top: 0%;
+} */
+
 
 @keyframes milo-float {
     50%{
@@ -66,7 +69,6 @@ p {
     top: 50%;
     left: 23%;
     width: 20%;
-    height: 18%;
     padding: 10px;
     opacity: 0;
     animation: opacity;
@@ -117,6 +119,12 @@ p {
     width: 40%;
 }
 
+#hanging-rur {
+    position: absolute;
+    left: 50%;
+    top: -19%;
+}
+
 #rur-speechbubble {
 	position: absolute;
 	background: #d53832;
@@ -145,10 +153,14 @@ p {
 	margin-left: -20px;
 }
 
-.hidden-checkbox:checked + label + #rur-speechbubble {
+#rur-toggle:checked ~ #rur-speechbubble {
     opacity: 1;
     visibility: visible;
     transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+}
+
+#rur-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
 }
 
 #mhe-toggle:checked ~ #milo-front {
@@ -161,6 +173,12 @@ p {
     top: 15%;
     left: 80%;
     width: 40%;
+}
+
+#hanging-mhe {
+    position: absolute;
+    left: 92%;
+    top: -19%;
 }
 
 #mhe-speechbubble {
@@ -191,11 +209,15 @@ p {
 	margin-left: -20px;
 }
 
-.hidden-checkbox:checked + label + #mhe-speechbubble {
+#mhe-toggle:checked ~ #mhe-speechbubble {
     opacity: 1;
     visibility: visible;
     transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
 } 
+
+#mhe-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
 
 #transformers-toggle:checked ~ #milo-front {
     top: 50%;
@@ -207,6 +229,12 @@ p {
     top: 10%;
     left: 125%;
     width: 20%;
+}
+
+#hanging-transformers {
+    position: absolute;
+    left: 127.5%;
+    top: -24%;
 }
 
 #transformers-speechbubble {
@@ -237,11 +265,15 @@ p {
 	margin-left: -20px;
 }
 
-.hidden-checkbox:checked + label + #transformers-speechbubble {
+#transformers-toggle:checked ~ #transformers-speechbubble {
     opacity: 1;
     visibility: visible;
     transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
 } 
+
+#transformers-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
 
 #asr-toggle:checked ~ #milo-front {
     top: 50%;
@@ -253,6 +285,12 @@ p {
     top: 15%;
     left: 148.5%;
     width: 18%;
+}
+
+#hanging-asr {
+    position: absolute;
+    left: 149.5%;
+    top: -19%;
 }
 
 #asr-speechbubble {
@@ -283,11 +321,15 @@ p {
 	margin-left: -20px;
 }
 
-.hidden-checkbox:checked + label + #asr-speechbubble {
+#asr-toggle:checked ~ #asr-speechbubble {
     opacity: 1;
     visibility: visible;
     transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
 } 
+
+#asr-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
 
 #dbh-toggle:checked ~ #milo-front {
     top: 50%;
@@ -299,6 +341,12 @@ p {
     top: 15%;
     left: 170%;
     width: 25%;
+}
+
+#hanging-dbh {
+    position: absolute;
+    left: 174%;
+    top: -19%;
 }
 
 #dbh-speechbubble {
@@ -329,33 +377,43 @@ p {
 	margin-left: -20px;
 }
 
-.hidden-checkbox:checked + label + #dbh-speechbubble {
+#dbh-toggle:checked ~ #dbh-speechbubble {
     opacity: 1;
     visibility: visible;
     transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
 }
 
-#next-room-button {
-    position: absolute;
-    left: 195%;
-    top: 85%;
-    width: 6%;
-    z-index: 2;
+#dbh-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
 }
 
-#next-room-speechbubble {
+
+#next-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 167%;
+}
+
+#next-img {
+    position: absolute;
+    left: 200%;
+    top: 85%;
+    width: 6%;
+}
+
+#next-speechbubble {
 	position: absolute;
 	background: #d53832;
 	border-radius: .4em;
-    top: 68%;
-    left: 177%;
-    width: 15%;
-    /* height: 26%; */
+    top: 62%;
+    left: 180%;
+    width: 20%;
     padding: 10px;
-    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
 }
 
-#next-room-speechbubble:after {
+#next-speechbubble:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -369,3 +427,117 @@ p {
 	margin-top: -10px;
 	margin-left: -20px;
 }
+
+#next-toggle:checked ~ #next-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+}
+
+#next-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
+
+#exit-toggle:checked ~ #milo-front {
+    top: 35%;
+    left: 187%;
+}
+
+#exit-img {
+    position: absolute;
+    left: 197%;
+    top: -3%;
+    width: 10%;
+}
+
+#exit-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 13%;
+    left: 180%;
+    width: 20%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+}
+
+#exit-speechbubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #d53832;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+#exit-toggle:checked ~ #exit-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+}
+
+#next-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
+
+#main-toggle:checked ~ #milo-front {
+    top: 35%;
+    left: 10%;
+}
+
+#main-img {
+    position: absolute;
+    left: 2%;
+    top: -3%;
+    width: 10%;
+}
+
+#main-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 15%;
+    left: 8%;
+    width: 13%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+}
+
+#main-speechbubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #d53832;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+#main-toggle:checked ~ #main-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+}
+
+#main-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
+
+/* #main-toggle:checked + label img {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4cd8ff, 0 0 40px #4cd8ff, 0 0 50px #4cd8ff, 0 0 60px #4cd8ff, 0 0 70px #4cd8ff;
+} */
