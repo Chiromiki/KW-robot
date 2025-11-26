@@ -1,0 +1,171 @@
+/* Bakgrunn */
+body {
+    margin: 0;
+    background-image: url('camouflage.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Hele rommet */
+#museum-room {
+    width: 100%;
+    min-height: 87vh;
+    position: relative;
+}
+
+/* Exit-knapp øverst til høyre */
+#exit-button {
+    position: fixed;   
+    top: 5px;          
+    right: 60px;       
+    z-index: 999;      
+}
+
+#exit-button img {
+    width: 150px;       
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#exit-button img:hover {
+    transform: scale(1.1);  
+}
+
+/* Main-knapp øverst til venstre */
+#main-button {
+    position: fixed;   
+    top: 5px;          
+    left: 20px;        
+    z-index: 999;      
+}
+
+#main-button img {
+    width: 150px;       
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#main-button img:hover {
+    transform: scale(1.1);  
+}
+
+/* Milo nederst til venstre */
+#milo {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 150px;
+}
+
+/* Milo animasjon */
+#milo-front { 
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(0);
+    }
+    50% { 
+        transform: translateY(-25px);
+    }
+}
+
+#milo img {
+    width: 100%;
+}
+
+/* Skjul radioknapper */
+input[type="radio"] {
+    display: none;
+}
+
+/* Stort bilde */
+#main-image {
+    width: 100%;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.display-img {
+    width: 40%;
+    display: none;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+/* Vis riktig bilde */
+#robot1:checked ~ #main-image img:nth-child(1),
+#robot2:checked ~ #main-image img:nth-child(2),
+#robot3:checked ~ #main-image img:nth-child(3),
+#robot4:checked ~ #main-image img:nth-child(4) {
+    display: inline-block;
+}
+
+/* Miniatyrbilder */
+#thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+#thumbs img {
+    width: 120px;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Info-bobler */
+.info-text {
+    display: none;
+    position: absolute;
+    bottom: 380px;
+    left: 40px;
+    width: 260px;
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    z-index: 15;
+}
+
+/* Pil til info-boblene */
+.info-text::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 60px;
+    border-width: 18px 12px 0 12px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+/* Skjul Milo standardboble når et bilde er valgt */
+#robot1:checked ~ #milo #bubble,
+#robot2:checked ~ #milo #bubble,
+#robot3:checked ~ #milo #bubble,
+#robot4:checked ~ #milo #bubble {
+    display: none;
+}
+
+/* Vis riktig info-tekst */
+#robot1:checked ~ #text1,
+#robot2:checked ~ #text2,
+#robot3:checked ~ #text3,
+#robot4:checked ~ #text4 {
+    display: block;
+}
+
+
+
+
+
+
+
+
