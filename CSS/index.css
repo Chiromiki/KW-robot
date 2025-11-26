@@ -547,13 +547,46 @@ speech bubble mal hentet fra https://projects.verou.me/bubbly/
 /*
 starten av css for entree
 */
+
+@keyframes incoming_main_container{
+0%{
+    transform: scale(0.75);
+}
+50%{
+    transform: scale(1);
+}
+100%{
+    transform: scale(1);
+}
+}
+
+.sliding_doors:has(#title_sign_trigger:checked) ~ .main_container{
+    animation-name: incoming_snakkeboble_1;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
 .main_container{
     position: relative;
 
     z-index: 1;
+
+    width: 100%;
+    height: auto;
+    max-width: 1920px;
+    max-height: 1055px;
+    aspect-ratio: 1920/1055;
     
-    transform: scale(0.74);
-    transition: transform 1s ease-out;
+/*     transform: scale(0.74);
+    transition: transform 1s ease-out; */
+    
+    animation-name: incoming_main_container;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .sliding_doors:has(#title_sign_trigger:checked) ~ .main_container {
@@ -635,28 +668,25 @@ css for dører
 */
 
 .door_1{
-    z-index: 8888;
+    z-index: 2;
 
     background-color: red;
     
     display: flex;
     position: absolute;
-    justify-content: center;
-    align-items: center;
-    transform: translate(-50%,-50%);
     
-    width: 9%;
-    height: 53%;
+    width: 9vw;
+    height: 53vh;
 
-    left: 8%;
-    top: 58%; 
+    left: 50px;
+    top: 180px; 
 
     border-top-left-radius: 20%;
     border-top-right-radius: 20%;
 }
 
 .door_2{
-    z-index: 8888;
+    z-index: 2;
 
     background-color: red;
     
@@ -677,7 +707,7 @@ css for dører
 }
 
 .door_3{
-    z-index: 8888;
+    z-index: 2;
 
     background-color: red;
     
@@ -698,7 +728,7 @@ css for dører
 }
 
 .door_4{
-    z-index: 8888;
+    z-index: 2;
 
     background-color: red;
     
@@ -719,7 +749,7 @@ css for dører
 }
 
 .door_5{
-    z-index: 8888;
+    z-index: 2;
 
     background-color: red;
     
@@ -739,6 +769,10 @@ css for dører
     border-top-right-radius: 20%;
 }
 
+.snakkeboble_2:has(#speech_bubble_2_trigger:checked) ~ .door_1 .door_2 .door_3 .door_4 .door_5{
+    z-index: 8888;
+}
+
 .door_1:hover{
     background-color: blue;
 }
@@ -755,3 +789,26 @@ css for dører
     background-color: blue;
 }
 
+/*
+css for guidebook
+*/
+
+.guidebook{
+    z-index: 2;
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+    left: 60%;
+    top: 70%;
+}
+
+#guidebook_img{
+    width: 80px;
+    height: auto;
+}
+
+.snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ .guidebook{
+    z-index: 7777;
+}
