@@ -1,0 +1,347 @@
+body {
+    margin: 0;  /* Fjerner standard margin på body (8px) - påvirker hele siden */
+}
+
+#historierommet > img {  /* Selector: velger <img> som er direkte child av #historierommet */
+    display: flex;
+}
+
+/* plasserer xexit øverst til høyre */
+#xexit {
+    position: absolute;
+    top: 2%;
+    /*right: 2%;    /* Plasserer i høyre hjørne */
+    left: 195%;   /* Overstyrerer tidligere 'left' */
+    width: 5%;
+    cursor: pointer;
+    z-index: 1001; /* sikrer at den ligger over bakgrunnen */
+}
+
+#xguidebok {
+    position: absolute;
+    bottom: 2%;    /* Plasserer nede */
+    /*right: 2%;     /* Plasserer til høyre */
+    width: 5%;
+    left: 195%;
+    cursor: pointer;
+    z-index: 1001; /* sikrer at den ligger over bakgrunnen */
+}
+
+#bakgrunn {
+    position: relative;  /* Posisjonering: relativt til sin normale posisjon */
+    height: 100vh;  /* Høyde: 100% av viewport height (hele skjermhøyden) */
+}
+
+#miloForsiden {  /* Selector: velger element med id="miloForsiden" - dette er CHILD av .ClickbareElementer */
+    position: absolute;  /* Posisjonering: absolutt - posisjoneres i forhold til nærmeste positioned parent */
+    top: 60%;  /* Plassering: 60% fra toppen av parent */
+    width: 10%;  /* Bredde: 25% av parent-bredde */
+    left: 11%;  /* Plassering: 15% fra venstre side av parent */
+
+
+/* 2. Bruk animasjonen */
+    animation: miloFloat 5s ease-in-out infinite;  /* Animasjon: bruker miloFloat, varer i 5 sekunder, ease-in-out timing, gjentas uendelig */
+    /*        navn   varighet  gjenta */
+
+    transition: all 0.8s ease;  /* Animerer alle endringer (top, left) over 0.8 sekunder */
+    /*          │   │    │
+                │   │    └─ ease = smooth hastighet (sakte start og slutt)
+                │   └────── 0.8s = varighet (0.8 sekunder)
+                └────────── all = animerer alle properties som endres (top, left, osv.)
+    */
+}
+
+#skilpadde {  /* Selector: velger element med id="skilpadde" - dette er CHILD av .ClickbareElementer */
+    position: absolute;  /* Posisjonering: absolutt - posisjoneres i forhold til nærmeste positioned parent */
+    top: 4%;  /* Plassering: 20% fra toppen av parent */
+    left: 40%;  /* Plassering: 40% fra venstre side av parent */
+    width: 30%;  /* Bredde: 50% av parent-bredde */
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+#skilpaddeToggle:checked ~ #miloForsiden {
+    top: 20%;  /* Flytter milo opp når unimateToggle er sjekket */
+    left: 31%;  /* Flytter milo til venstre når unimateToggle er sjekket */
+
+}
+
+#unimate {  /* Selector: velger element med id="unimate" - dette er CHILD av .ClickbareElementer */
+    position: absolute;  /* Posisjonering: absolutt - posisjoneres i forhold til nærmeste positioned parent */
+    top: 4%;  /* Plassering: 55% fra toppen av parent */
+    left: 72%;  /* Plassering: 65% fra venstre side av parent */
+    width: 25%;  /* Bredde: 30% av parent-bredde */
+    cursor: pointer;  /* Musepeker: endres til hånd-ikon når du holder over */
+    border-radius: 8em;
+}
+
+#unimateToggle:checked ~ #miloForsiden {
+    top: 20%;  /* Flytter milo opp når unimateToggle er sjekket */
+    left: 63%;  /* Flytter milo til venstre når unimateToggle er sjekket */
+
+}
+
+#wabot1 {  /* Selector: velger element med id="wabot1" - dette er CHILD av .ClickbareElementer */
+    position: absolute;  /* Posisjonering: absolutt - posisjoneres i forhold til nærmeste positioned parent */
+    top: 4%;  /* Plassering: 60% fra toppen av parent */
+    left: 100%;  /* Plassering: 85% fra venstre side av parent */
+    width: 15%;  /* Bredde: 20% av parent-bredde */
+    cursor: pointer;  /* Musepeker: endres til hånd-ikon når du holder over */
+    border-radius: 8em;
+}
+
+#wabot1Toggle:checked ~ #miloForsiden {
+    top: 20%;  /* Flytter milo opp når unimateToggle er sjekket */
+    left: 90%;  /* Flytter milo til venstre når unimateToggle er sjekket */
+
+}
+
+
+#AIBO {  /* Selector: velger element med id="AIBO" - dette er CHILD av .ClickbareElementer */
+    position: absolute;  /* Posisjonering: absolutt - posisjoneres i forhold til nærmeste positioned parent */
+    top: 4%;  /* Plassering: 70% fra toppen av parent */
+    left: 125%;  /* Plassering: 105% fra venstre side av parent */
+    width: 20%;  /* Bredde: 20% av parent-bredde */
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+#AIBOToggle:checked ~ #miloForsiden {
+    top: 20%;  /* Flytter milo opp når unimateToggle er sjekket */
+    left: 115%;  /* Flytter milo til venstre når unimateToggle er sjekket */
+}
+
+#TeslaRobot {  /* Selector: velger element med id="TeslaRobot" - dette er CHILD av .ClickbareElementer */
+    position: absolute;  /* Posisjonering: absolutt - posisjoneres i forhold til nærmeste positioned parent */
+    top: 4%;  /* Plassering: 80% fra toppen av parent */
+    left: 180%;  /* Plassering: 125% fra venstre side av parent */
+    width: 13%;  /* Bredde: 20% av parent-bredde */
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+#TeslaRobotToggle:checked ~ #miloForsiden {
+    top: 20%;  /* Flytter milo opp når unimateToggle er sjekket */
+    left: 170%;  /* Flytter milo til venstre når unimateToggle er sjekket */
+}
+
+#greyWaltersSkilpaddeTekst {
+    top: 50%;
+    left: 45%;
+    width: 400px;
+	position: absolute;
+	background: #7dd3db;
+	border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    display: none;
+    padding: 10px;
+}
+
+#unimateTekst {
+    top: 50%;
+    left: 80%;
+    width: 400px;
+	position: absolute;
+	background: #7dd3db;
+	border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    display: none;
+    padding: 10px;
+}
+
+/*#robotTekst {
+    top: 50%;
+    left: 88%;
+    width: 2300px;
+	position: absolute;
+	background: #2ab9c6;
+	border-radius: .8em;
+    z-index: 1000;
+    font-size: 100px;
+    display: none;
+}
+*/
+#wabot1Tekst {
+    top: 50%;
+    left: 105%;
+    width: 400px;
+	position: absolute;
+	background: #7dd3db;
+	border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    display: none;
+    padding: 10px;
+}
+
+#AIBOTekst {
+    top: 50%;
+    left: 140%;
+    width: 400px;
+    position: absolute;
+    background: #7dd3db;
+    border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    display: none;
+    padding: 10px;
+}
+
+#TeslaRobotTekst {
+    top: 50%;
+    left: 180%;
+    width: 400px;
+    position: absolute;
+    background: #7dd3db;
+    border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    display: none;
+    padding: 10px;
+}
+
+#Y1921 {
+    top: 58%;
+    left: 45%;
+    width: 230px;
+    position: absolute;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    /*display: none;*/
+    padding: 10px;
+}
+
+#Y1970 {
+    top: 58%;
+    left: 85%;
+    width: 250px;
+    position: absolute;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    /*display: none;*/
+    padding: 10px;
+}
+
+#Y1980-1990 {
+    top: 58%;
+    left: 110%;
+    width: 350px;
+    position: absolute;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    /*display: none;*/
+    padding: 10px;
+}
+
+#Y2000-2009 {
+    top: 58%;
+    left: 137%;
+    width: 300px;
+    position: absolute;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    /*display: none;*/
+    padding: 10px;
+}
+
+#Y2010-2019 {
+    top: 58%;
+    left: 155%;
+    width: 200px;
+    position: absolute;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    /*display: none;*/
+    padding: 10px;
+}
+
+#Y2020 {
+    top: 58%;
+    left: 170%;
+    width: 250px;
+    position: absolute;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    /*display: none;*/
+    padding: 10px;
+    box-shadow: 0 10px #8fb996;
+}
+
+#xmain {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 5%;
+    cursor: pointer;
+}
+
+#robotTekst:after, #TeslaRobotTekst:after, #AIBOTekst:after, #wabot1Tekst:after, #unimateTekst:after, #greyWaltersSkilpaddeTekst:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 44px solid transparent;
+	border-bottom-color: #7dd3db;
+	border-top: 0;
+	margin-left: -44px;
+	margin-top: -44px;
+}
+
+.hiddenCheckBox {
+    display: none;  /* Skjuler elementet helt */
+}
+
+.hiddenCheckBox:checked + label + #greyWaltersSkilpaddeTekst{
+    display: block;  /* Viser teksten når checkbox er sjekket */
+}
+
+.hiddenCheckBox:checked + label + 
+#unimateTekst{
+    display: block;  /* Viser teksten når checkbox er sjekket */
+}
+
+.hiddenCheckBox:checked + label + 
+#wabot1Tekst{
+    display: block;  /* Viser teksten når checkbox er sjekket */
+}   
+.hiddenCheckBox:checked + label + 
+#AIBOTekst{
+    display: block;  /* Viser teksten når checkbox er sjekket */
+}
+.hiddenCheckBox:checked + label + #TeslaRobotTekst{  /* ▲ ENDRET: fra .hiddenCheckboks til #TeslaRobotToggle OG fjernet ekstra T i TTeslaRobotTekst */
+    display: block;  /* Viser teksten når checkbox er sjekket */
+}
+
+/* 1. Definer animasjonen */
+@keyframes miloFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-200px); }
+    100% { transform: translateY(0); }
+}
+
+
+.stor-tekst {
+    font-size: 1.5em;      /* Dobbel så stor som vanlig tekst */
+    font-weight: bold;   /* Fet skrift */
+    display: block;      /* Får egen linje */
+}
+
+.hiddenCheckBox:checked + label img {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9d00, 0 0 40px #ff9d00, 0 0 50px #ff9d00, 0 0 60px #ff9d00, 0 0 70px #ff9d00;
+}

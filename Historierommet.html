@@ -3,46 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kodestruktur</title>
+    <title>Historierommet</title>
+        <link rel="stylesheet" href="historierommet_ny.css">
+        <link rel="stylesheet" href="CSS/commmon.css">
 </head>
 <body>
-    <div id="bakgrunnsbildet">
-        <div class="ClickbareElementer">
-            <div id="MiloForfra">
-                <img id="MiloFraSiden">
-            </div>
-            <div id="skilpadde">
-                <img id="greyWaltersSkilpadde">
-                <p id="greyWaltersSkilpaddeTekst"></p> 
-            </div>
-            <div>
-                <img id="unmate">
-                <p id="unmateTekst"></p>
-            </div>
-            <div>
-                <img id="wabot1">
-                <p id="wabot1Tekst"></p>
-            </div>
-            <div>
-                <img id="TeslaRobot">
-                <p id="TeslaRobotTekst"></p>
-            </div>
-            <div>
-                <img id="AIBO">
-                <p id="AIBOTekst"></p>
-            </div>
-        </div>
+    <div id="historierommet">
+        <img src="historierommet_11.png" alt="historierommet" id="bakgrunn">
 
+
+        <a href="index.html"><img src="MAIN.png" alt="main" id="xmain"></a>
+        <a href="exit.html"><img src="exit.png" alt="exit" id="xexit"></a>
+        <a href="underholdning.html"><img src="guidebok.png" alt="guidebok" id="xguidebok"></a>
+        
+        <input type="radio" name="robot" id="skilpaddeToggle" class="hiddenCheckBox">
+        <label for="skilpaddeToggle">
+            <img id="skilpadde" src="Grey Walters skilpadde.jpg" alt="grey walters skilpadde">
+        </label>
+        <p id="greyWaltersSkilpaddeTekst">
+            <strong><span class="stor-tekst">1948–49 
+                <br>Grey Walters skilpadder</strong>
+                    Små robot-skilpadder, Elmer og Elsie, ble bygget med sensorer og motorstyring.
+                    De kunne navigere mot lys, unngå hindringer og returnere til lading når batteriet var lavt.
+                    Disse regnes som de første virkelig autonome, elektroniske robotene i historien.
+                </p> 
+
+                <input type="radio" name="robot" id="unimateToggle" class="hiddenCheckBox">
+                <label for="unimateToggle">
+                <img id="unimate" src="Unimate.jpg" alt="unimate">
+                </label>
+                <p id="unimateTekst">
+                    <strong><span class="stor-tekst">1954 
+                        <br>Unimate</strong>
+                    Den aller første industrielle roboten.
+                    George Devol oppfant og patenterte roboten dette året.
+                    Den ble først installert i en General Motors fabrikk i 1961 for å utføre repeterende oppgaver som sveising og materialhåndtering.
+                    Unimate revolusjonerte produksjonsindustrien ved å øke effektiviteten og redusere behovet for menneskelig arbeidskraft i farlige miljøer.
+                </p>
+        
+                <input type="radio" name="robot" id="TeslaRobotToggle" class="hiddenCheckBox">  <!-- ▲ ENDRET: fra robotToggle til TeslaRobotToggle -->
+                <label for="TeslaRobotToggle">  <!-- ▲ ENDRET: fra robotToggle til TeslaRobotToggle -->
+                    <img id="TeslaRobot" src="tesla robot optimus gen 2.jpg" alt="TeslaRobot">
+                </label>
+                <p id="TeslaRobotTekst">
+                  <strong><span class="stor-tekst">2023 
+                    <br>Tesla Bot Gen 2</strong>
+                    Også kjent som Optimus Gen 2, er en humanoid robot utviklet av Tesla, Inc.
+                    først demonstrert i 2023 og skal ha full produksjon i 2026. 
+                    Roboter integreres i samfunnet som hjelpere, guider og servicearbeidere med realistiske bevegelser og AI.
+                    Overgangen fra teknologi til sosiale verktøy er nå i full gang.
+                </p>
+
+                <input type="radio" name="robot" id="wabot1Toggle" class="hiddenCheckBox">
+                <label for="wabot1Toggle">
+               <img id="wabot1" src="WABOT-1-1973.jpg" alt="wabot1">
+                </label>
+                <p id="wabot1Tekst">
+                    <strong><span class="stor-tekst">1973 
+                        <br>WABOT-1</strong>
+                    Japans første humanoide robot
+                    <br>
+                    Bygget av Waseda University. Den kunne gå, gripe objekter med hender og kommunisere på japansk.
+                    Den hadde sensorer for å måle avstand og lyd, og kunne spille musikk på et piano.
+                    WABOT-1 representerte et tidlig skritt mot humanoide roboter med avanserte motoriske og sensoriske evner. 
+                </p>
+
+                <input type="radio" name="robot" id="AIBOToggle" class="hiddenCheckBox">
+                <label for="AIBOToggle">
+                    <img id="AIBO" src="AIBO.jpg" alt="AIBO">
+                </label>
+                <p id="AIBOTekst">
+                    <strong><span class="stor-tekst">1999 
+                        <br>AIBO</strong>
+                    Sonys robotkjæledyr.
+                    AIBO (Artificial Intelligence robot) er en serie av robotiske hunder designet for å være interaktive kjæledyr.
+                    den kunne lære fra sine omgivelser, gjenkjenne ansikter, respondere på kommandoer og vise unike personligheter basert på interaksjon med eiere.
+                    Den kombinerer avansert robotteknologi med kunstig intelligens for å skape en engasjerende opplevelse for brukerne.
+                </p>
+                    <!-- Milo -->
+             <img id="miloForsiden" src="milo_front_1.png" alt="milo front" >
+                <!--img id="miloFraSiden" src="milo_side_2.png" alt="milo siden"> -->
+            </div>
+
+        <!--tekstinnhold-->
         <div class="tekstContainer">
-            <p id="1921">tekst her</p>
+            <p id="Y1921"><strong>1921!</strong> 
+                <br>Første bruk av ordet robot.
+            </p>
 
-            <p id="1970">tekst her</p>
+            <p id="Y1970"><strong>1970!</strong> 
+                <br>Robotintelligens forskes på.
+            </p>
 
-            <p id="1980-1990">tekst her</p>
+            <p id="Y1980-1990"><strong>1980-1990!</strong> 
+                <br>Roboter tas i bruk i helsevesen, forskning og som leker. 
+            </p>
 
-            <p id="2000-2009">tekst her</p>
+            <p id="Y2000-2009"><strong>2000-2009!</strong> 
+                <br>Roboter lærer å samhandle med mennesker i utdanning og dagligliv.
+            </p>
 
-            <p id="2020">tekst her</p>
+            <p id="Y2010-2019"><strong>2010-2019!</strong> 
+                <br>Roboter med AI-integrasjon.
+            </p>
+
+            <p id="Y2020"><strong>2020+!</strong> 
+                <br>Kommersiell vekst og sosial integrasjon.
+            </p>
         </div>
     </div>
 </body>
