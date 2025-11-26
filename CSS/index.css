@@ -446,33 +446,57 @@ css for snakkeboble
 /*
 speech bubble mal hentet fra https://projects.verou.me/bubbly/
 */
-.speech_bubble {
+.speech_bubble_1{
     z-index: 7;
 
-	position: absolute;
+    position: fixed;
 	background: #d2e0ec;
 
-    top: 30%;
-    left: 50%;
+    width: 240px;
+
+    top: 33%;
+    left: 53%;
+
+    padding: 10px;
 
     transform: translate(-50%, -50%);
 
 	border-radius: .4em;
 }
 
-.speech_bubble:after {
+.speech_bubble_1:after {
 
 	position: absolute;
 	width: 0;
 	height: 0;
 
 	content: "";
-    border: 25px solid transparent;
+    border: 35px solid transparent;
 	border-top-color: #d2e0ec;
 	border-bottom: 0;
 	border-left: 0;
     border-top-color: #d2e0ec;
 
-	margin-left: -12.5px;
-	margin-bottom: -25px;
+	margin-left: 15px;
+	margin-bottom: -15px;
+}
+
+#speech_bubble_1_trigger{
+    display: none;
+    visibility: hidden;
+    opacity: 0%;
+}
+
+#speech_bubble_1_label{
+    z-index: 7;
+    position: absolute;
+
+    width: 60%;
+    height: auto;
+
+    cursor: pointer;
+}
+
+#speech_bubble_trigger_1:checked ~ .speech_bubble_1{
+
 }
