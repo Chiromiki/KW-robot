@@ -1,0 +1,13 @@
+/* Kilde til fonten: https://www.dafont.com/zekton.font */
+@font-face {
+    font-family: "Zekton";
+    src: url("Font/Zekton/Zekton\ Rg.otf");
+}
+
+body {
+    font-family: "Zekton";
+}
+
+p {
+    font-family: "Zekton";
+}
