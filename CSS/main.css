@@ -1,0 +1,502 @@
+body{
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background-color: #2F2F35;
+}
+
+/*
+starten av css for forgrunn
+*/
+
+/*
+z-index ble hentet fra KI for å kunne bestemme rekkefølge på lagene til elementene.
+1 er bakerst og 10 er fremste i rekkefølge i lagene
+*/
+
+.sliding_doors{
+    z-index: 8;
+    
+    position: fixed;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    
+    width: 110%;
+    height: auto;
+    
+    padding: 0;
+    margin: 0 auto;
+}
+
+#sliding_door_side{
+    position: relative;
+    width: 100%;
+    height: auto;
+    
+    margin: 0;
+}
+
+#sliding_door_left{
+    z-index: 9;
+    
+    position: absolute;
+    display: flex;
+    
+    width: auto;
+    height: 55%;
+    
+    top: 50%;
+    left: 42%;
+    
+    transform: translate(-50%, -50%);
+}
+
+#sliding_door_right{
+    z-index: 9;
+    
+    position: absolute;
+    display: flex;
+    
+    width: auto;
+    height: 55%;
+    
+    top: 50%;
+    left: 58%;
+    
+    transform: translate(-50%, -50%);
+}
+
+.title_sign{
+    z-index: 10;
+
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: auto;
+
+    top: 68%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+#title_sign_trigger{
+    display: none;
+    visibility: hidden;
+    opacity: 0%;
+}
+
+#title_sign_label{
+    z-index: 11;
+    position: absolute;
+
+    width: 60%;
+    height: auto;
+    aspect-ratio: 385/404;
+
+    cursor: pointer;
+}
+
+#title_sign_img{
+    width: 100%;
+    height: auto;
+}
+
+/*
+starten av css for animasjoner av forgrunn
+*/
+
+@keyframes incoming_sliding_door_left{
+    0%{
+        opacity: 1;
+        top: 50%;
+        left: 42%;  
+        transform: translate(-50%, -50%) scale(1);
+    }
+    85%{
+        opacity: 1;
+        top: 50%;
+        left: 0%;
+        transform: translate(-50%, -50%) scale(2.9);
+    }
+    87%{
+        opacity: 1;
+        top: 50%;
+        left: -10%;
+        transform: translate(-50%, -50%) scale(2.95);
+    }
+    95%{
+        opacity: 1;
+        top: 50%;
+        left: -20%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 1;
+        top: 50%;
+        left: -20%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    100%{
+        opacity: 0;
+        top: 50%;
+        left: -20%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
+#title_sign_trigger:checked ~ #sliding_door_left{
+    animation-name: incoming_sliding_door_left;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes incoming_sliding_door_right{
+    0%{
+        opacity: 1;
+        top: 50%;
+        left: 58%;  
+        transform: translate(-50%, -50%) scale(1);
+    }
+    85%{
+        opacity: 1;
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%) scale(2.9);
+    }
+    87%{
+        opacity: 1;
+        top: 50%;
+        left: 110%;
+        transform: translate(-50%, -50%) scale(2.95);
+    }
+    95%{
+        opacity: 1;
+        top: 50%;
+        left: 120%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 1;
+        top: 50%;
+        left: 120%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    100%{
+        opacity: 0;
+        top: 50%;
+        left: 120%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
+#title_sign_trigger:checked ~ #sliding_door_right{
+    animation-name: incoming_sliding_door_right;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes incoming_sliding_door_side{
+    0%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    85%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2.9);
+    }
+    87%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2.95);
+    }
+    95%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    100%{
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
+#title_sign_trigger:checked ~ #sliding_door_side{
+    animation-name: incoming_sliding_door_side;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes incoming_title_sign{
+    0%{
+        opacity: 1;
+        top: 68%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    85%{
+        opacity: 1;
+        top: 160%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2.9);
+    }
+    87%{
+        opacity: 1;
+        top: 170%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2.95);
+    }
+    95%{
+        opacity: 1;
+        top: 180%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    99%{
+        opacity: 1;
+        top: 180%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+    100%{
+        opacity: 0;
+        top: 1200%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+}
+
+#title_sign_trigger:checked ~ .title_sign{
+    animation-name: incoming_title_sign;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/*
+starten av css for entree
+*/
+.main_container{
+    z-index: 6;
+}
+
+/* 
+aspect-ratio ble hentet fra KI for å beholde samme bredde/høyde på bildet uansett vindusstørrelse.
+
+dette gjør også at alle andre elementer(ex.robot og dører) forblir der de skal være fordi alt er relativt til aspect-ratio
+*/
+.background_museum{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    
+    position: relative;
+    
+    padding: 2vh 2vw;
+    margin: 0 auto;
+    
+    width: 100%;
+    height: auto;
+    max-width: 1920px;
+    max-height: 1055px;
+    aspect-ratio: 1920/1055;
+
+
+    border: black 6px;
+} 
+
+#background_img{
+    width: 100%;
+    height: 100%;
+}
+
+#robot_front{
+    width: 180%;
+}
+
+.robot_container{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+
+    width: 5%;
+
+    top: 67%;
+    left: 37%;
+    transform: translate(-50%,-50%);
+}
+
+.door_1_container{
+    background-color: red;
+    
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    
+    width: 7%;
+    height: 53%;
+
+    left: 9%;
+    top: 63%; 
+}
+
+.door_2_container{
+    background-color: red;
+    
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    
+    width: 6%;
+    height: 39%;
+
+    left: 21%;
+    top: 58%; 
+}
+
+.door_3_container{
+    background-color: red;
+    
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    
+    width: 7%;
+    height: 31%;
+
+    left: 50%;
+    top: 56%; 
+}
+
+.door_4_container{
+    background-color: red;
+    
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    
+    width: 6%;
+    height: 37%;
+
+    left: 79%;
+    top: 58%; 
+}
+
+.door_5_container{
+    background-color: red;
+    
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    
+    width: 7%;
+    height: 52%;
+
+    left: 90%;
+    top: 63%; 
+}
+
+/*
+css for snakkeboble
+*/
+
+/*
+speech bubble mal hentet fra https://projects.verou.me/bubbly/
+*/
+.speech_bubble_1{
+    z-index: 7;
+
+    position: fixed;
+	background: #d2e0ec;
+
+    width: 240px;
+
+    top: 33%;
+    left: 53%;
+
+    padding: 10px;
+
+    transform: translate(-50%, -50%);
+
+	border-radius: .4em;
+}
+
+.speech_bubble_1:after {
+
+	position: absolute;
+	width: 0;
+	height: 0;
+
+	content: "";
+    border: 35px solid transparent;
+	border-top-color: #d2e0ec;
+	border-bottom: 0;
+	border-left: 0;
+    border-top-color: #d2e0ec;
+
+	margin-left: 15px;
+	margin-bottom: -15px;
+}
+
+#speech_bubble_1_trigger{
+    display: none;
+    visibility: hidden;
+    opacity: 0%;
+}
+
+#speech_bubble_1_label{
+    z-index: 7;
+    position: absolute;
+
+    width: 60%;
+    height: auto;
+
+    cursor: pointer;
+}
+
+#speech_bubble_trigger_1:checked ~ .speech_bubble_1{
+
+}
