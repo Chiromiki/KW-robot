@@ -12,13 +12,9 @@ a {
 }
 
 #bg-img {
-    /* height: 105vh; */
-    /* height: 30%; */
-    height: 100vh;
-    /* height: 940px; */
+    width: 220%;
     z-index: 1;
 }
-
 
 .hidden-checkbox {
     position: absolute;
@@ -358,7 +354,7 @@ a {
 	border-radius: .4em;
     top: 67%;
     left: 120%;
-    width: 23%;
+    width: 30%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
@@ -419,7 +415,7 @@ a {
 	border-radius: .4em;
     top: 64%;
     left: 147%;
-    width: 22%;
+    width: 27%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
@@ -480,7 +476,7 @@ a {
 	border-radius: .4em;
     top: 62%;
     left: 173%;
-    width: 20%;
+    width: 27%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
