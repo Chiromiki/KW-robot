@@ -121,8 +121,8 @@ css for dører
     width: auto;
     height: 70px;
 
-    left: -2vw;
-    top: 55vh; 
+    left: -2%;
+    top: 50%; 
 
     visibility: hidden;
     display: none;
@@ -155,8 +155,8 @@ css for dører
     width: auto;
     height: 60px;
 
-    left: 10vw;
-    top: 52vh; 
+    left: 11%;
+    top: 50%; 
 
     visibility: hidden;
     display: none;
@@ -189,8 +189,8 @@ css for dører
     width: auto;
     height: 60px;
 
-    left: 42vw;
-    top: 48vh; 
+    left: 41%;
+    top: 46%; 
 
     visibility: hidden;
     display: none;
@@ -223,8 +223,8 @@ css for dører
     width: auto;
     height: 65px;
 
-    left: 71vw;
-    top: 50vh; 
+    left: 71%;
+    top: 48%;  
 
     visibility: hidden;
     display: none;
@@ -257,8 +257,8 @@ css for dører
     width: auto;
     height: 70px;
 
-    left: 81vw;
-    top: 55vh; 
+    left: 81%;
+    top: 48%; 
 
     visibility: hidden;
     display: none;
