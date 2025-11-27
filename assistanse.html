@@ -11,7 +11,10 @@
 <div> 
     <input type="radio" name="robot" id="none" class="hidden-checkbox" checked>
 
-
+<!--Under her hadde jeg i utgangspunktet ikke noe radio, jeg hadde checkbox, 
+men jeg ønsket å få tektsboksene til å forsvinne når man trykket på neste 
+tektsboks, da spurte jeg KI om tips, og KI anbefalte en radio input, fremfor
+checkbox, endret derfor fra checkbox til radio input type med hjelp fra KI -->
     
     <input type="radio" name="robot" id="Astro-toggle" class="hidden-checkbox">
     <label for="Astro-toggle"> 
@@ -37,6 +40,13 @@
     </label>
  <p class="Tekst-Støvsuger" id="Tekst-Støvsuger">En robotstøvsuger er en automatisk selvkjørende støvsuger som gjør rent i hjemmet ditt. Den har sensorer som oppdager hindringer og som kartlegger og navigerer rundt møbler o.l. i rommet. </p>
   
+<!--Etter jeg hadde lagt inn input type radio, gjorde det at milo ikke
+gikk tilbake til startposisjon når man klikket et annet sted, dette måtte
+jeg og løse og spurte KI om hjelp til det. KI hjalp med at jeg burde
+legge inn en egen label for en "exit" knapp fra robotene, derfor har jeg 
+under her lagd utgangspunktet for en grønn knapp i venstre hjørnet, 
+som vil ta milo tilbake til utgangsposisjonen sin-->
+
  <label for="none" class="exit-button">Tilbake til Milo</label>
 
   <input type="radio" name="robot" id="Milo-toggle" class="hidden-checkbox"> 
@@ -55,6 +65,10 @@
 
     <img src="Bilder_Sivert/medisin-bakgrunn.png" alt="" id="bg-img">
  
+<!--Under her ser vi grunnlaget for de videre lenkene. Main tar deg til 
+main siden med sitt design, framtiden tar deg til fremtidsrommet, 
+og utgang tar deg til utgangssiden for museet.-->
+
     <a href="main.html">
         <img src="Bilder_Sivert/main.png" alt="" id="main">
     </a>
