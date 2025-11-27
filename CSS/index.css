@@ -695,13 +695,13 @@ css for dører
 }
 
 .door_2{
-    z-index: 2;
+    z-index: 8888;
   
     display: flex;
     position: absolute;
-    justify-content: center;
+  /*  justify-content: center;
     align-items: center;
-    
+    */
     width: 6vw;
     height: 42vh;
 
@@ -711,6 +711,7 @@ css for dører
     border-top-left-radius: 20%;
     border-top-right-radius: 20%;
 }
+
 
 #popup_door_2_img{
     z-index: 2;
@@ -729,13 +730,13 @@ css for dører
 }
 
 .door_3{
-    z-index: 2;
+    z-index: 8888;
    
     display: flex;
     position: absolute;
-    justify-content: center;
+   /* justify-content: center;
     align-items: center;
-    
+    */
     width: 8vw;
     height: 33vh;
 
@@ -763,13 +764,13 @@ css for dører
 }
 
 .door_4{
-    z-index: 2;
+    z-index: 8888;
  
     display: flex;
     position: absolute;
-    justify-content: center;
+    /*justify-content: center;
     align-items: center;
-    
+    */
     width: 6vw;
     height: 40vh;
 
@@ -797,13 +798,13 @@ css for dører
 }
 
 .door_5{
-    z-index: 2;
+    z-index: 8888;
 
     display: flex;
     position: absolute;
-    justify-content: center;
+/*    justify-content: center;
     align-items: center;
-    
+  */  
     width: 8vw;
     height: 58vh;
 
