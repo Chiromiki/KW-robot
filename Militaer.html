@@ -4,49 +4,57 @@
     <meta charset="UTF-8">
     <title>Militær- og overvåkningsroboter</title>
     <link rel="stylesheet" href="Militaer.css">
+    <link rel="stylesheet" href="CSS/common.css">
 </head>
 <body>
 
 <main id="museum-room">
 
-    <!-- Main-knapp øverst til venstre -->
-    <a href="#" id="main-button">
-        <img src="mainknapp.png" alt="Main">
+    <!-- Main-knapp oppe til venstre (Ble laget av Nyny) -->
+    <a href="index.html" id="main-button">
+        <img src="Bilder-Uzair/MAIN-2.png" alt="Main">
     </a>
 
-    <!-- Exit-knapp øverst til høyre -->
-    <a href="neste-side.html" id="exit-button">
-        <img src="exitknapp.png" alt="Exit">
+    <!-- Exit-knapp øverst til høyre (Laget og designet av Nyny) -->
+    <a href="Utgang.html" id="exit-button">
+        <img src="Bilder-Uzair/exit.png" alt="Exit">
     </a>
 
-    <!-- Milo nederst til venstre med animasjon -->
+    <!-- Milo nederst til venstre med animasjon (Designet av Nyny) -Fått hjelp av AI til å gjøre hoppe animasjonen. -->
     <div id="milo">
-        <img src="milo.png" alt="Milo robot" id="milo-front">
+        <img src="Bilder-Uzair/Milo.png" alt="Milo robot" id="milo-front">
     </div>
 
-    <!-- Radioknapper for å bytte bilde -->
+    <!-- Radioknapper (uten javascript - fikk hjelp av AI til struktur) -->
     <input type="radio" name="robot" id="robot1">
     <input type="radio" name="robot" id="robot2">
     <input type="radio" name="robot" id="robot3">
     <input type="radio" name="robot" id="robot4">
 
-    <!-- Stort hovedbilde -->
+    <!-- Liten velkomstboble - Jeg plasserte teksten selv. -->
+<div id="welcome-bubble">
+    Hei, velkommen til militærrommet! <br>
+    Trykk på bildene for å lære mer!
+</div>
+
+    <!-- Store hovedbilde på toppen (Kilde til robotbilder:) -->
     <div id="main-image">
-        <img src="robot1.jpg" class="display-img" alt="Robot 1">
-        <img src="robot2.jpg" class="display-img" alt="Robot 2">
-        <img src="robot3.jpg" class="display-img" alt="Robot 3">
-        <img src="robot4.jpg" class="display-img" alt="Robot 4">
+        <img src="Bilder-Uzair/robot1.jpg" class="display-img" alt="Robot 1"> <!-- Kilde:: https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/MQ-9_Reaper_UAV_%28cropped%29.jpg/960px-MQ-9_Reaper_UAV_%28cropped%29.jpg -->
+        <img src="Bilder-Uzair/robot2.jpg" class="display-img" alt="Robot 2"> <!-- Kilde: https://www.forsvaret.dk/da/materiel2/bomberobot/ -->
+        <img src="Bilder-Uzair/robot3.jpg" class="display-img" alt="Robot 3"> <!-- Kilde: https://www.passengerterminaltoday.com/news/security/bordeaux-airport-deploys-perimeter-patrol-robot-to-train-ai-surveillance-algorithms.html -->
+        <img src="Bilder-Uzair/robot4.jpg" class="display-img" alt="Robot 4"> <!-- Kilde: https://www.militarytimes.com/news/your-military/2020/04/22/us-adds-military-surveillance-cameras-at-mexico-border-despite-drop-in-crossings/ -->
     </div>
 
-    <!-- Små klikkbare bilder -->
+    <!-- Små klikkbare bilder (under den store) -->
     <div id="thumbs">
-        <label for="robot1"><img src="robot1.jpg" alt="Mini 1"></label>
-        <label for="robot2"><img src="robot2.jpg" alt="Mini 2"></label>
-        <label for="robot3"><img src="robot3.jpg" alt="Mini 3"></label>
-        <label for="robot4"><img src="robot4.jpg" alt="Mini 4"></label>
+        <label for="robot1"><img src="Bilder-Uzair/robot1.jpg" alt="Mini 1"></label> <!-- Kilde:: https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/MQ-9_Reaper_UAV_%28cropped%29.jpg/960px-MQ-9_Reaper_UAV_%28cropped%29.jpg -->
+        <label for="robot2"><img src="Bilder-Uzair/robot2.jpg" alt="Mini 2"></label> <!--Kilde: https://www.forsvaret.dk/da/materiel2/bomberobot/ -->
+        <label for="robot3"><img src="Bilder-Uzair/robot3.jpg" alt="Mini 3"></label> <!-- https://www.passengerterminaltoday.com/news/security/bordeaux-airport-deploys-perimeter-patrol-robot-to-train-ai-surveillance-algorithms.html -->
+        <label for="robot4"><img src="Bilder-Uzair/robot4.jpg" alt="Mini 4"></label> <!-- Kilde: https://www.militarytimes.com/news/your-military/2020/04/22/us-adds-military-surveillance-cameras-at-mexico-border-despite-drop-in-crossings/ -->
     </div>
 
-    <!-- Tekst som Milo "sier" -->
+    <!-- Info tekst når man klikker et bilde (Tekst skrevet selv) -->
+     <!-- AI hjalp kun med  posisjonering av boblen, ikke innholdet -->
     <div id="text1" class="info-text">
         Militære droner utviklet seg fra enkle radiostyrte fly til avanserte UAV-er på 1990–2000-tallet. 
         De brukes i dag til overvåkning, etterretning, kartlegging og presisjonsangrep. 
@@ -77,10 +85,16 @@
         Robotene patruljerer døgnet rundt og oppdager detaljer mennesker kan overse.
     </div>
 
+    <!-- Guideknapp nederst til høyre (designet av Nyny) -->
+    <a href="assistanse.html" id="guidebook-button">
+        <img src="Bilder-Uzair/guide.png" alt="Guidebok">
+    </a>
+
 </main>
 
 </body>
 </html>
+
 
 
 
