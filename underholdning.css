@@ -12,7 +12,10 @@ a {
 }
 
 #bg-img {
-    height: 102vh;
+    /* height: 105vh; */
+    /* height: 30%; */
+    height: 104vh;
+    /* height: 940px; */
     z-index: 1;
 }
 
