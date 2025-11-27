@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    overflow-y: hidden;
 }
 
 p {
@@ -476,7 +475,7 @@ a {
 	border-radius: .4em;
     top: 62%;
     left: 173%;
-    width: 27%;
+    width: 25%;
     padding: 10px;
     opacity: 0;
     visibility: hidden;
