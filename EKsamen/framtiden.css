@@ -211,8 +211,8 @@ hvordan teksten skal passe bra med snakkebobla */
 
 /* Ulike robot-bokser med egne størrelser og hvilke stile de figurene har */
 .box1 {
-    width: 280px;
-    height: 200px;
+    width: 20%;
+    height: auto;
     order: 1;
 }
 .box1 img {
@@ -221,10 +221,10 @@ hvordan teksten skal passe bra med snakkebobla */
 }
 
 .box2 {
-    width: 240px;
-    height: 240px;
+    width: 25%;
+    height: auto;
     order: 3;
-    right: -50px;
+    right: -3%;
 }
 .box2 img {
     border-radius: 50%;
@@ -232,10 +232,10 @@ hvordan teksten skal passe bra med snakkebobla */
 }
 
 .box3 {
-    width: 180px;
-    height: 320px;
+    width: 15%;
+    height: auto;
     order: 5;
-    right: -90px;
+    right: -5%;
 }
 .box3 img {
     border-radius: 5px;
@@ -243,10 +243,10 @@ hvordan teksten skal passe bra med snakkebobla */
 }
 
 .box4 {
-    width: 320px;
-    height: 220px;
+    width: 25%;
+    height: auto;
     order: 7;
-    right: -100px;
+    right: -8%;
 }
 .box4 img {
     border-radius: 25px;
@@ -254,58 +254,58 @@ hvordan teksten skal passe bra med snakkebobla */
 }
 
 .box5 {
-    width: 160px;
-    height: 160px;
+    width: 17%;
+    height: auto;
     order: 9;
     background-color: transparent;
     box-shadow: none;
     cursor: default;
     position: absolute;
-    top: 260px;
-    left: 210px;
+    top: 40%;
+    left: 15%;
     border: 3px solid #800080;
 }
-
-/* Fast plasserte figurer */
 .box5 img {
-    border-radius: 50%;
+    border-radius: 20%;
     border: none;
 }
 
+/* Fast plasserte figurer */
+
 .box6 {
-    width: 140px;
-    height: 220px;
+    width: 13%;
+    height: 30%;
     position: absolute;
-    top: 280px;
-    left: 20px;
+    top: 35%;
+    left: 1%;
     background: transparent;
 }
 .box6 img { border-radius: 12px; }
 
 .box7 {
-    width: 280px;
-    height: 130px;
+    width: 22%;
+    height: 20%;
     position: absolute;
-    top: 300px;
-    left: 400px;
+    top: 44%;
+    left: 33%;
 }
 .box7 img { border-radius: 8px; }
 
 .box8 {
-    width: 190px;
-    height: 190px;
+    width: 15%;
+    height: 20%;
     position: absolute;
-    top: 280px;
-    left: 850px;
+    top: 50%;
+    left: 60%;
 }
 .box8 img { border-radius: 50%; }
 
 .box9 {
-    width: 240px;
-    height: 170px;
+    width: 20%;
+    height: 20%;
     position: absolute;
-    top: 280px;
-    left: 1070px;
+    top: 45%;
+    left: 75%;
 }
 .box9 img { border-radius: 15px; }
 
@@ -316,29 +316,29 @@ hvordan teksten skal passe bra med snakkebobla */
 }
 
 .box10 {
-    width: 100px; 
-    height: 100px;
+    width: 7%; 
+    height: 14%;
     position: absolute;
-    top: 25px; 
-    right: 40px;
+    top: 3.5%; 
+    right: 3%;
    }
 
 .box11 {
-    width: 100px; 
-    height: 100px;
+    width: 7%; 
+    height: 14%;
     position: absolute;
-    top: 115px; 
-    right: 40px;
+    top: 16%; 
+    right: 3%;
 }
 
 
 /* box 12 (Guidebok)*/
 .box12 {
-    width: 100px; 
-    height: 100px;
+    width: 7%; 
+    height: 19%;
     position: absolute;
-    top: 500px; 
-    right: 50px;
+    top: 66%; 
+    right: 3%;
 }
 
 /* Hover-effekt på interaktive roboter fikk litt hjelp av ki */
