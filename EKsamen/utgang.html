@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inngang</title>
+    <link rel="stylesheet" href="CSS/common.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!--sliding doors-->
+    <div class="sliding_doors">   
+        <img id="sliding_door_side" src="index_main_exit/side_doors.png" alt="utsiden av et museum med skyvende dører">
+        <img id="sliding_door_left" src="index_main_exit/left_sliding_door.png" alt="venstredel av en automatisk skyvedør">
+        <img id="sliding_door_right" src="index_main_exit/right_sliding_door.png" alt="høyredel av en automaisk skyvedør">        
+    </div>
+    
+    <!--snakkeboble-->
+    <div class="snakkeboble_1">
+        <input type="checkbox" id="speech_bubble_1_trigger">
+        <label for="speech_bubble_1_trigger" id="speech_bubble_1_label">
+            Velkommen til Robotmuseet!
+            Mitt navn er Milo og jeg skal veilede deg gjennom denne spennende og kunnskapsrike reisen om oss roboter! 
+            <br>
+            <br>
+            Klikk på snakkeboblen min for å fortsette.
+        </label>
+    </div>
+
+    <div class="snakkeboble_2">
+        <input type="checkbox" id="speech_bubble_2_trigger">
+        <label for="speech_bubble_2_trigger" id="speech_bubble_2_label">
+            Hovre over rommene for å se hvor du kan gå! Vi har også en liten guidebok spredt over gulvene der du kan gå til det neste anbefalte rommet. Vi har en på gulvet her også om du ikke vet hvor du skal starte!
+            <br>
+            <br>
+            Du kan når som helst gå tilbake til dette hovedrommet ved å klikke på en blå "MAIN" som henger på alle rommene! Om du føler deg ferdig med omvisningen, kan du også gå til utgangen ved å klikke på en grønn "EXIT" knapp. Jeg dømmer ikke!
+        </label>
+    </div>
+    <!--robot-->
+        
+    <div class="robot_container">
+        <div class="robot">
+            <div id="speech_bubble_1"></div>
+            <img id="robot_front" src="index_main_exit/milo_front_default.png" alt="En robotguide med lysegrå øyne, antenne og lys rundt magen">
+        </div>
+    </div>
+        
+</body>
+</html>
