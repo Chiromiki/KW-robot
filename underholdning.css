@@ -12,7 +12,7 @@ a {
 }
 
 #bg-img {
-    width: 220%;
+    height: 100vmin; /* Samme her for å sikre proporsjonal skala */
     z-index: 1;
 }
 
@@ -510,12 +510,12 @@ a {
 
 #next-toggle:checked ~ #milo-front {
     top: 50%;
-    left: 167%;
+    left: 162%;
 }
 
 #next-img {
     position: absolute;
-    left: 202%;
+    left: 192%;
     top: 85%;
     width: 6%;
     cursor: pointer;
@@ -526,7 +526,7 @@ a {
 	background: #d53832;
 	border-radius: .4em;
     top: 62%;
-    left: 180%;
+    left: 175%;
     width: 20%;
     padding: 10px;
     opacity: 0;
@@ -570,7 +570,7 @@ a {
 
 #exit-img {
     position: absolute;
-    left: 200%;
+    left: 190%;
     top: -3%;
     width: 10%;
     cursor: pointer;
