@@ -273,6 +273,7 @@ hvordan teksten skal passe bra med snakkebobla */
 /* Fast plasserte figurer */
 
 .box6 {
+    pointer-events: none;
     width: 13%;
     height: 30%;
     position: absolute;
@@ -283,6 +284,7 @@ hvordan teksten skal passe bra med snakkebobla */
 .box6 img { border-radius: 12px; }
 
 .box7 {
+    pointer-events: none;
     width: 22%;
     height: 20%;
     position: absolute;
@@ -292,6 +294,7 @@ hvordan teksten skal passe bra med snakkebobla */
 .box7 img { border-radius: 8px; }
 
 .box8 {
+    pointer-events: none;
     width: 15%;
     height: 20%;
     position: absolute;
@@ -301,6 +304,7 @@ hvordan teksten skal passe bra med snakkebobla */
 .box8 img { border-radius: 50%; }
 
 .box9 {
+    pointer-events: none;
     width: 20%;
     height: 20%;
     position: absolute;
@@ -320,7 +324,7 @@ hvordan teksten skal passe bra med snakkebobla */
     height: 14%;
     position: absolute;
     top: 3.5%; 
-    right: 3%;
+    right: 1%;
    }
 
 .box11 {
@@ -328,7 +332,7 @@ hvordan teksten skal passe bra med snakkebobla */
     height: 14%;
     position: absolute;
     top: 16%; 
-    right: 3%;
+    right: 1%;
 }
 
 
