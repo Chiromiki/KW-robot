@@ -894,3 +894,4 @@ css for guidebook
 .snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ .guidebook{
     z-index: 7777;
 }
+
