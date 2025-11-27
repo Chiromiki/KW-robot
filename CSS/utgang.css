@@ -14,10 +14,10 @@ font-size: small;
 
 @keyframes robot_float{
     0%{
-        top: 67%;
+        top: 73%;
     }
     50%{
-        top: 69%;
+        top: 76%;
     }
 }
 
@@ -26,6 +26,8 @@ font-size: small;
 }
 
 .robot_container{
+    z-index: 10;
+
     display: flex;
     position: absolute;
     justify-content: center;
@@ -33,7 +35,7 @@ font-size: small;
     
     width: 5%;
     
-    top: 67%;
+    top: 73%;
     left: 37%;
     transform: translate(-50%,-50%);
     
@@ -41,4 +43,255 @@ font-size: small;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+}
+
+/*
+snakkeboble
+*/
+
+.snakkeboble_1{
+    z-index: 10000;
+    opacity: 1;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    
+    cursor: hidden;
+    pointer-events: auto;
+
+    border-radius: .4em;
+}
+
+#speech_bubble_1_trigger{
+    display: none;
+    visibility: hidden;
+}
+
+#speech_bubble_1_label{
+    z-index: 20000;
+    display: block;
+
+    background: #d2e0ec;
+    padding: 10px;
+    border-radius: .4em;
+
+    height: 100%;
+    width: 100%;
+    
+    cursor: pointer;
+    pointer-events: auto;
+
+}
+
+#speech_bubble_1_label:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    content: "";
+    border: 35px solid transparent;
+    border-top-color: #d2e0ec;
+    border-bottom: 0;
+    border-left: 0;
+    border-top-color: #d2e0ec;
+
+    margin-left: 105px;
+    margin-bottom: -5px;
+}
+
+@keyframes outgoing_speech_bubble_1{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        top: -100%;
+    }
+}
+
+#speech_bubble_1_trigger:checked ~ #speech_bubble_1_label{
+    animation-name: outgoing_speech_bubble_1;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    pointer-events: none;
+}
+
+.snakkeboble_2{
+    z-index: 10000;
+    opacity: 0;
+
+    position: absolute;
+
+    top: -50%;
+    left: -50%;
+    
+    transform: translate(-50%, -50%);
+    
+    cursor: hidden;
+    pointer-events: auto;
+
+    border-radius: .4em;
+}
+
+#speech_bubble_2_label{
+    z-index: 20000;
+    display: block;
+
+    background: #d2e0ec;
+    padding: 10px;
+    border-radius: .4em;
+
+    height: 100%;
+    width: 100%;
+    
+    cursor: pointer;
+    pointer-events: auto;
+
+}
+
+#speech_bubble_2_label:after {
+    z-index: 10000;
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    content: "";
+    border: 5px solid transparent;
+    border-top-color: #d2e0ec;
+    border-bottom: 0;
+    border-left: 0;
+    border-top-color: #d2e0ec;
+
+    margin-left: -300px;
+    margin-bottom: -150px;
+}
+
+#speech_bubble_2_trigger{
+    display: none;
+    visibility: hidden;
+}
+
+@keyframes incoming_speech_bubble_2{
+    0%{
+        opacity: 0;
+        top: 50%;
+        left: 50%;      
+    }
+    50%{
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+    }
+    100%{
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+.snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ .snakkeboble_2{
+    animation-name: incoming_speech_bubble_2;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    pointer-events: auto;
+}
+
+/* @keyframes outgoing_speech_bubble_2{
+    0%{
+        opacity: 1;
+        top: 32%;
+        left: 50%;      
+    }
+    50%{
+        opacity: 0;
+        top: 32%;
+        left: 50%;
+    }
+    100%{
+        opacity: 0;
+        top: -50%;
+        left: -50%;
+    }
+}
+
+#speech_bubble_2_trigger:checked ~ #speech_bubble_2_label{
+    animation-name: outgoing_speech_bubble_2;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    pointer-events: none;
+} */
+
+/*
+dører
+*/
+
+.sliding_doors{
+    z-index:1;
+    
+    position: fixed;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    
+    width: 110%;
+    height: auto;
+    
+    padding: 0;
+    margin: 0 auto;
+}
+
+#sliding_door_side{
+    position: relative;
+    width: 100%;
+    height: auto;
+    
+    margin: 0;
+    pointer-events: auto;
+}
+
+#sliding_door_left{
+    z-index: 12;
+    
+    position: absolute;
+    display: flex;
+    
+    width: auto;
+    height: 55%;
+    
+    top: 50%;
+    left: 42%;
+    
+    transform: translate(-50%, -50%);
+}
+
+#sliding_door_right{
+    z-index: 12;
+    
+    position: absolute;
+    display: flex;
+    
+    width: auto;
+    height: 55%;
+    
+    top: 50%;
+    left: 58%;
+    
+    transform: translate(-50%, -50%);
 }
