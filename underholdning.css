@@ -92,7 +92,7 @@ a {
     /* Fikk hjelp av AI for hva jeg måtte putte i dette elementet for at typing-animasjonen skulle funke optimalt. Justert i etterkant for å tilpasse til mitt bruk. */
     overflow: hidden; /* Ensures the text doesn't overflow the container */
     animation-name: typing;
-    animation-duration: 27s;
+    animation-duration: 18s;
     animation-timing-function: steps(317, end);
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -133,7 +133,7 @@ a {
 
 #line1 {
     animation-name: typing;
-    animation-duration: 6s;
+    animation-duration: 4s;
     animation-timing-function: steps(40, end);
     animation-fill-mode: forwards;
     animation-delay: 0s;
@@ -141,57 +141,57 @@ a {
 
 #line2 {
     animation-name: typing;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: steps(40, end);
     animation-fill-mode: forwards;
-    animation-delay: 6s;
+    animation-delay: 4s;
 }
 
 #line3 {
 
     animation-name: typing;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: steps(39, end);
     animation-fill-mode: forwards;
-    animation-delay: 9s;
+    animation-delay: 6s;
 }
 
 #line4 {
     animation-name: typing;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: steps(43, end);
     animation-fill-mode: forwards;
-    animation-delay: 12s;
+    animation-delay: 8s;
 }
 
 #line5 {
     animation-name: typing;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: steps(46, end);
     animation-fill-mode: forwards;
-    animation-delay: 15s;
+    animation-delay: 10s;
 }
 
 #line6 {
     animation-name: typing;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: steps(45, end);
     animation-fill-mode: forwards;
-    animation-delay: 18s;
+    animation-delay: 12s;
 }
 #line7 {
     animation-name: typing;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: steps(44, end);
     animation-fill-mode: forwards;
-    animation-delay: 21s;
+    animation-delay: 14s;
 }
 #line8 {
     animation-name: typing;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: steps(20, end);
     animation-fill-mode: forwards;
-    animation-delay: 24s;
+    animation-delay: 16s;
 }
 
 #milo-front {
