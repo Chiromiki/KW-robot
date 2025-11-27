@@ -5,51 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistanse/Helserom</title>
     <link rel="stylesheet" href="assistanse.css">
+    <link rel="stylesheet" href="CSS/common.css">
 </head>
 <body>
 <div> 
-    <input type="checkbox" id="Astro-toggle" class="hidden-checkbox">
+    <input type="radio" name="robot" id="none" class="hidden-checkbox" checked>
+
+<!--Under her hadde jeg i utgangspunktet ikke noe radio, jeg hadde checkbox, 
+men jeg ønsket å få tektsboksene til å forsvinne når man trykket på neste 
+tektsboks, da spurte jeg KI om tips, og KI anbefalte en radio input, fremfor
+checkbox, endret derfor fra checkbox til radio input type med hjelp fra KI -->
+    
+    <input type="radio" name="robot" id="Astro-toggle" class="hidden-checkbox">
     <label for="Astro-toggle"> 
-        <img src="amazon-astro.png" alt="Amazon-astro" id="Amazon-astro">
+        <img src="Bilder_Sivert/amazon-astro.png" alt="Amazon-astro" id="Amazon-astro">
     </label>
     <p class="Tekst-Amazon-astro" id="Tekst-Amazon-astro">Amazon Astro er en liten hjemmerobot med kameraer, sensorer og en skjerm som ansikt. Den fungerer som en mobil assistent som kan patruljere huset, vise videoanrop og styres fra hvor som helst. Den har innebygd Alexa, som gjør at du kan snakke til den og få hjelp med oppgaver og smarthjem-funksjoner.</p>
 
-    <input type="checkbox" id="Davinci-toggle" class="hidden-checkbox">
+    <input type="radio" name="robot" id="Davinci-toggle" class="hidden-checkbox">
     <label for="Davinci-toggle"> 
-        <img src="Da-vinci.png" alt="Davinci" id="Davinci">
+        <img src="Bilder_Sivert/Da-vinci.png" alt="Davinci" id="Davinci">
     </label>
     <p class="Tekst-Davinci" id="Tekst-Davinci">Da Vinci kirurg robot: Da Vinci er en kirurgisk robot som brukes for sine stødige "hender" og "armer". Da Vinci har vært en revolusjon for helsevesenet med sine unike egenskaper for de kirurgiske inngrepene. </p>
 
-     <input type="checkbox" id="Paro-toggle" class="hidden-checkbox">
+     <input type="radio" name="robot" id="Paro-toggle" class="hidden-checkbox">
     <label for="Paro-toggle">  
-        <img src="Paro-robot.png" alt="Paro-robot" id="Paro-robot">
+        <img src="Bilder_Sivert/Paro-robot.png" alt="Paro-robot" id="Paro-robot">
     </label>
   <p class="Tekst-Paro" id="Tekst-Paro">Paro roboten er en robot designet som en liten sel med myk pels. Den er utviklet for helsevesenet (sykehus, omsorgsboliger, sykehjem, terapimiljøer) som en fungerende robot for å kunne gi trøst, ro og sosial stimulering. Den er designet for å oppføre seg som et levende kjæledyr, uten utfordringene som følger med et kjæledyr. </p>
 
-  <input type="checkbox" id="Støvsuger-toggle" class="hidden-checkbox">
+  <input type="radio" name="robot" id="Støvsuger-toggle" class="hidden-checkbox">
     <label for="Støvsuger-toggle">  
-         <img src="støvsuger.png" alt="Støvsuger" id="Støvsuger">
+         <img src="Bilder_Sivert/støvsuger.png" alt="Støvsuger" id="Støvsuger">
     </label>
  <p class="Tekst-Støvsuger" id="Tekst-Støvsuger">En robotstøvsuger er en automatisk selvkjørende støvsuger som gjør rent i hjemmet ditt. Den har sensorer som oppdager hindringer og som kartlegger og navigerer rundt møbler o.l. i rommet. </p>
+  
+<!--Etter jeg hadde lagt inn input type radio, gjorde det at milo ikke
+gikk tilbake til startposisjon når man klikket et annet sted, dette måtte
+jeg og løse og spurte KI om hjelp til det. KI hjalp med at jeg burde
+legge inn en egen label for en "exit" knapp fra robotene, derfor har jeg 
+under her lagd utgangspunktet for en grønn knapp i venstre hjørnet, 
+som vil ta milo tilbake til utgangsposisjonen sin-->
 
-    <img src="medisin-bakgrunn.png" alt="" id="bg-img">
-    <div class="img-container">
-        <div id="milo"> 
-            <img src="milo-front.png" alt="Milo-front" id="milo-front">
-        </div>
-    </div>
+ <label for="none" class="exit-button">Tilbake til Milo</label>
 
-      <div class="tekst-container">
+  <input type="radio" name="robot" id="Milo-toggle" class="hidden-checkbox"> 
+    
+    <img src="Bilder_Sivert/milo-front.png" alt="Milo-front" id="milo-front">
+
+  
+
+<div class="tekst-container">
 
         <div class="Velkommen-milo"
         id="Velkommen-milo">
-        <p>Velkommen til assistanse og helserommet! Klikk på robotene for å lære om de forskjellige!</p>
+        <p>Velkommen til assistanse og helserommet! Klikk på robotene for å lære om de forskjellige! Trykk på main for startsiden, og guideboken i enden av rommet for neste rom!</p>
     </div>
-        
-    </div>
-
 </div>
 
+    <img src="Bilder_Sivert/medisin-bakgrunn.png" alt="" id="bg-img">
+ 
+<!--Under her ser vi grunnlaget for de videre lenkene. Main tar deg til 
+main siden med sitt design, framtiden tar deg til fremtidsrommet, 
+og utgang tar deg til utgangssiden for museet.-->
 
+    <a href="main.html">
+        <img src="Bilder_Sivert/main.png" alt="" id="main">
+    </a>
+    <a href="framtiden.html">
+        <img src="Bilder_Sivert/guidebok.png" alt="" id="guidebok">
+    </a>
+    <a href="utgang.html">
+        <img src="Bilder_Sivert/exit.png" alt="" id="exit">
+    </a>
+</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Bakgrunnscontainer */
+/* Bakgrunnsbildet */
 #bg-img {
     height: 100vh;
    
@@ -7,13 +7,14 @@
 body {
     margin: 0;
 }
-/*Setter opp bildene slik jeg vil ha de, i forhold til bakgrunnen*/
+/*Setter opp de andre bildene slik jeg vil ha de, i forhold til bakgrunnen*/
 #milo-front
 { 
-top: 40%;
+top: 49%;
 position: absolute;
 left: 8%;
 width: 10%;
+transition: all 2s ease-in-out;
 }
 
 #Amazon-astro
@@ -48,7 +49,7 @@ left: 140%;
 width: 23%;
 }
 
-/*Animasjoner for milo*/
+/*Animasjoner for milo til å være litt bevegelig på plassen sin*/
 
 #milo-front 
 { 
@@ -69,12 +70,16 @@ animation: bounce 2s ease-in-out infinite;
 	position: absolute;
 	background: #0aae15;
 	border-radius: .4em;
-    top: 50%;
-    left: 20%;
-    width: 23%;
-    height: 10%;
-    font-size: 35px;
-    padding: 25px;
+    top: 20%;
+    left: 3%;
+    width: 20%;
+    height: 12%;
+    font-size: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.8s ease;
 }
 
 .Velkommen-milo:after {
@@ -84,15 +89,15 @@ animation: bounce 2s ease-in-out infinite;
 	top: 50%;
 	width: 0;
 	height: 0;
-	border: 52px solid transparent;
+	border: 2px solid transparent;
 	border-right-color: #0aae15;
 	border-left: 0;
 	border-bottom: 0;
-	margin-top: -26px;
-	margin-left: -52px;
+	margin-top: -1px;
+	margin-left: -2px;
 }
-  /*Velkommen boksen til milo skal være der helt frem til han blir dirigert til noen andre roboter*/
-  /*Tektsboksene om de andre robotene skal ikke vises før de klikkes på, dette gjør jeg under her: */
+  /*Velkommen boksen til milo skal være der hele tiden*/
+  /*Tektsboksene om de andre robotene skal ikke vises før de klikkes på, dette gjør jeg under her. Her har jeg også lagt til en display:none så boksene slutter å vises når de neste robot blir trykket på.*/
 
   .Tekst-Amazon-astro {
     position: absolute;
@@ -102,7 +107,7 @@ animation: bounce 2s ease-in-out infinite;
     left: 45%;
     width: 30%;
     height: 18%;
-    font-size: 35px;
+    font-size: 17px;
     padding: 23px;
     display: none;
   }
@@ -126,11 +131,11 @@ animation: bounce 2s ease-in-out infinite;
     position: absolute;
     background: #0aae15;
 	border-radius: .4em;
-    top: 26%;
+    top: 22%;
     left: 80%;
-    width: 22%;
+    width: 23%;
     height: 12%;
-    font-size: 30px;
+    font-size: 17px;
     padding: 28px;
     display: none;
 }
@@ -146,7 +151,7 @@ animation: bounce 2s ease-in-out infinite;
 	border-left: 0;
 	border-bottom: 0;
 	margin-top: -26px;
-	margin-left: -52px;
+	margin-left: -45px;
 }
 
 .Tekst-Paro {
@@ -156,8 +161,8 @@ animation: bounce 2s ease-in-out infinite;
     top: 30%;
     left: 111%;
     width: 20%;
-    height: 20%;
-    font-size: 28px;
+    height: 26%;
+    font-size: 16px;
     padding: 25px;
     display: none;
 }
@@ -180,11 +185,11 @@ animation: bounce 2s ease-in-out infinite;
     position: absolute;
     background: #0aae15;
 	border-radius: .4em;
-    top: 38%;
+    top: 30%;
     left: 143%;
     width: 20%;
     height: 12%;
-    font-size: 28px;
+    font-size: 16px;
     padding: 28px;
     display: none;
 }
@@ -203,25 +208,31 @@ animation: bounce 2s ease-in-out infinite;
 	margin-left: -52px;
 }
 
+/*Kodene under her gjør at tektsboksene ikke vises, med mindre de trykkes på. Det under
+er altså matchet med radio input type
+spm jeg ble anbefalt av KI å legge inn.*/
+
 .hidden-checkbox {
     display: none;
 }
 
-.hidden-checkbox:checked + label + .Tekst-Amazon-astro{
+#Astro-toggle:checked + label + .Tekst-Amazon-astro{
     display: block;
 }
 
-.hidden-checkbox:checked + label + .Tekst-Davinci {
+#Davinci-toggle:checked + label + .Tekst-Davinci {
     display: block;
 }
 
-.hidden-checkbox:checked + label + .Tekst-Paro {
+#Paro-toggle:checked + label + .Tekst-Paro {
     display: block;
 }
 
-.hidden-checkbox:checked + label + .Tekst-Støvsuger { 
+#Støvsuger-toggle:checked + label + .Tekst-Støvsuger { 
     display: block;
 }
+
+/*Nå har jeg fått satt sammen så tekstboksene ikke vises, med mindre de trykkes på. Herfra legger jeg til til effekter på robotene når de trykkes på, med inspirasjon fra ki*/
 
 label img {
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
@@ -250,8 +261,67 @@ label img:hover {
     }
 }
 
+/*Koden under her er med på å gjøre at milo følger etter de robotene som man trykker på. For at denne koden skulle funke, er det også lagt inn en transition under linje 11*/
+#Astro-toggle:checked ~ #milo-front {
+top: 30%;
+left: 30%;
+}
 
+#Davinci-toggle:checked ~ #milo-front {
+top: 29%;
+left: 68%;
+}
 
+#Paro-toggle:checked ~ #milo-front {
+top: 29%;
+left: 98%;
+}
 
+#Støvsuger-toggle:checked ~ #milo-front {
+top: 35%;
+left: 129%;
+}
 
+/*Kodene under her er satt sammen for "exit" knappen, altså knappen man kan trykke på for å komme seg tilbake til Milo sin utgangsposisjon*/
+
+.exit-button {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    padding: 10px 18px;
+    background: #0aae15;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.exit-button:hover {
+    transform: scale(1.1);
+    background: #0ccf20;
+}
+
+/*Her legger jeg til posisjonering for litt ekstra. Det er main knappen, exit knappen og guidebok til neste rom knappen*/
+
+#main {
+    position: absolute;
+    top: -20%;
+    left: 2%;
+    width: 17%;
+}
+
+#guidebok {
+position: absolute;
+top: 70%;
+left: 160%;
+width: 12%;
+}
+
+#exit {
+    position: absolute;
+    top: -35%;
+    left: 150%;
+    width: 17%;
+}
 

@@ -3,47 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kodestruktur</title>
+    <title>Historierommet</title>
+    <link rel="stylesheet" href="historierommet_ny.css">
+    <link rel="stylesheet" href="CSS/common.css">
 </head>
 <body>
-    <div id="bakgrunnsbildet">
-        <div class="ClickbareElementer">
-            <div id="MiloForfra">
-                <img id="MiloFraSiden">
-            </div>
-            <div id="skilpadde">
-                <img id="greyWaltersSkilpadde">
-                <p id="greyWaltersSkilpaddeTekst"></p> 
-            </div>
-            <div>
-                <img id="unmate">
-                <p id="unmateTekst"></p>
-            </div>
-            <div>
-                <img id="wabot1">
-                <p id="wabot1Tekst"></p>
-            </div>
-            <div>
-                <img id="TeslaRobot">
-                <p id="TeslaRobotTekst"></p>
-            </div>
-            <div>
-                <img id="AIBO">
-                <p id="AIBOTekst"></p>
-            </div>
-        </div>
+    <!-- PARENT: #historierommet - Hovedcontainer for hele historierommet -->
+    <div id="historierommet">
+        
+        <!-- CHILD av #historierommet - Bakgrunnsbilde -->
+        <img src="Bilder_william/Historierommet12.png" alt="historierommet" id="bakgrunn">
 
-        <div class="tekstContainer">
-            <p id="1921">tekst her</p>
+        
+        <!-- ========================================
+             NAVIGASJON - Hovedknapper for navigering
+             ======================================== -->
+        
+        <!-- CHILD av #historierommet - Main/hjem-knapp (returnerer til hovedside) -->
+        <a href="index.html">
+            <img src="Bilder_william/MAIN.png" alt="main" id="xmain">
+        </a>
+        
+        <!-- CHILD av #historierommet - Exit-knapp (går til exit-side) -->
+        <a href="exit.html">
+            <img src="Bilder_william/exit.png" alt="exit" id="xexit">
+        </a>
+        
+        <!-- CHILD av #historierommet - Guidebook-knapp (går til underholdning) -->
+        <a href="underholdning.html">
+            <img src="Bilder_william/guidebok.png" alt="guidebok" id="xguidebok">
+        </a>
 
-            <p id="1970">tekst her</p>
+        
+        <!-- ========================================
+             VELKOMSTHILSEN
+             ======================================== -->
+        
+        <!-- CHILD av #historierommet - Velkomstmelding til besøkende -->
+        <p id="Velkomsthilsen">
+            ✨ <b>Velkommen til vårt museum</b>
+            <br>
+            Hvor fortidens visjoner og fremtidens muligheter møtes.
+            <br>    
+            Utforsk rommet hvor innovasjon, kreativitet og menneskelig fantasi har formet teknologien slik vi kjenner den i dag. 
+            <br>
+            Hver gjenstand, hver historie og hver tidslinje er nøye valgt for å gi deg en opplevelse som både inspirerer og overrasker.
+            <br>
+            Ta deg tid. Se deg rundt. Oppdag noe nytt – eller gjenoppdag det du trodde du visste.
+            Vi ønsker deg en flott reise gjennom historien!
+        </p>
 
-            <p id="1980-1990">tekst her</p>
+        
+        <!-- ========================================
+             SKILPADDE (1948-49) - Grey Walters skilpadder
+             ======================================== -->
+        
+        <!-- CHILD av #historierommet - Radio button for å toggle Skilpadde-info (skjult) -->
+        <input type="radio" name="robot" id="skilpaddeToggle" class="hiddenCheckBox">
+        
+        <!-- CHILD av #historierommet - Klikkbar label (trigger for checkbox) -->
+        <!-- PARENT for img -->
+        <label for="skilpaddeToggle">
+            <!-- CHILD av label - Bilde av Grey Walters skilpadde -->
+            <img id="skilpadde" src="Bilder_william/GreyWaltersSkilpadde.jpg" alt="grey walters skilpadde">
+        </label>
+        
+        <!-- CHILD av #historierommet - Tekstboks med info om Skilpadde -->
+        <p id="greyWaltersSkilpaddeTekst">
+            <strong><span class="stor-tekst">1948–49 </span></strong>
+            <strong>Grey Walters skilpadder</strong>
+            <br>Små robot-skilpadder, <strong>Elmer</strong> og <strong>Elsie</strong>, ble bygget med sensorer og motorstyring.
+            De kunne navigere mot lys, unngå hindringer og returnere til lading når batteriet var lavt.
+            Disse regnes som de første virkelig autonome, elektroniske robotene i historien.
+        </p>
 
-            <p id="2000-2009">tekst her</p>
+        
+        <!-- ========================================
+             UNIMATE (1954) - Første industrirobot
+             ======================================== -->
+        
+        <!-- CHILD av #historierommet - Radio button for å toggle Unimate-info (skjult) -->
+        <input type="radio" name="robot" id="unimateToggle" class="hiddenCheckBox">
+        
+        <!-- CHILD av #historierommet - Klikkbar label (trigger for checkbox) -->
+        <!-- PARENT for img -->
+        <label for="unimateToggle">
+            <!-- CHILD av label - Bilde av Unimate -->
+            <img id="unimate" src="Bilder_william/Unimate.jpg" alt="unimate">
+        </label>
+        
+        <!-- CHILD av #historierommet - Tekstboks med info om Unimate -->
+        <p id="unimateTekst">
+            <strong><span class="stor-tekst">1954 </span>
+            <br>Unimate</strong>
+            Den aller første industrielle roboten.
+            George Devol oppfant og patenterte roboten dette året.
+            Den ble først installert i en General Motors fabrikk i 1961 for å utføre repeterende oppgaver som sveising og materialhåndtering.
+            Unimate revolusjonerte produksjonsindustrien ved å øke effektiviteten og redusere behovet for menneskelig arbeidskraft i farlige miljøer.
+        </p>
 
-            <p id="2020">tekst her</p>
-        </div>
+        
+        <!-- ========================================
+             WABOT-1 (1973) - Japans første humanoide robot
+             ======================================== -->
+        
+        <!-- CHILD av #historierommet - Radio button for å toggle WABOT-1-info (skjult) -->
+        <input type="radio" name="robot" id="wabot1Toggle" class="hiddenCheckBox">
+        
+        <!-- CHILD av #historierommet - Klikkbar label (trigger for checkbox) -->
+        <!-- PARENT for img -->
+        <label for="wabot1Toggle">
+            <!-- CHILD av label - Bilde av WABOT-1 -->
+            <img id="wabot1" src="Bilder_william/WABOT-1-1973.jpg" alt="wabot1">
+        </label>
+        
+        <!-- CHILD av #historierommet - Tekstboks med info om WABOT-1 -->
+        <p id="wabot1Tekst">
+            <strong><span class="stor-tekst">1973 </span>
+            <br>WABOT-1</strong>
+            Japans første humanoide robot
+            <br>
+            Bygget av Waseda University. Den kunne gå, gripe objekter med hender og kommunisere på japansk.
+            Den hadde sensorer for å måle avstand og lyd, og kunne spille musikk på et piano.
+            WABOT-1 representerte et tidlig skritt mot humanoide roboter med avanserte motoriske og sensoriske evner. 
+        </p>
+
+        
+        <!-- ========================================
+             AIBO (1999) - Sonys robotkjæledyr
+             ======================================== -->
+        
+        <!-- CHILD av #historierommet - Radio button for å toggle AIBO-info (skjult) -->
+        <input type="radio" name="robot" id="AIBOToggle" class="hiddenCheckBox">
+        
+        <!-- CHILD av #historierommet - Klikkbar label (trigger for checkbox) -->
+        <!-- PARENT for img -->
+        <label for="AIBOToggle">
+            <!-- CHILD av label - Bilde av AIBO -->
+            <img id="AIBO" src="Bilder_william/AIBO.jpg" alt="AIBO">
+        </label>
+        
+        <!-- CHILD av #historierommet - Tekstboks med info om AIBO -->
+        <p id="AIBOTekst">
+            <strong><span class="stor-tekst">1999 </span>
+            <br>AIBO</strong>
+            Sonys robotkjæledyr.
+            AIBO (Artificial Intelligence robot) er en serie av robotiske hunder designet for å være interaktive kjæledyr.
+            den kunne lære fra sine omgivelser, gjenkjenne ansikter, respondere på kommandoer og vise unike personligheter basert på interaksjon med eiere.
+            Den kombinerer avansert robotteknologi med kunstig intelligens for å skape en engasjerende opplevelse for brukerne.
+        </p>
+
+        
+        <!-- ========================================
+             TESLA ROBOT (2023) - Tesla Bot Gen 2 / Optimus Gen 2
+             ======================================== -->
+        
+        <!-- CHILD av #historierommet - Radio button for å toggle Tesla Robot-info (skjult) -->
+        <input type="radio" name="robot" id="TeslaRobotToggle" class="hiddenCheckBox">
+        
+        <!-- CHILD av #historierommet - Klikkbar label (trigger for checkbox) -->
+        <!-- PARENT for img -->
+        <label for="TeslaRobotToggle">
+            <!-- CHILD av label - Bilde av Tesla Robot -->
+            <img id="TeslaRobot" src="Bilder_william/TeslaRobotOptimusGen2.jpg" alt="TeslaRobot">
+        </label>
+        
+        <!-- CHILD av #historierommet - Tekstboks med info om Tesla Robot -->
+        <p id="TeslaRobotTekst">
+            <strong><span class="stor-tekst">2023 </span>
+            <br>Tesla Bot Gen 2</strong>
+            Også kjent som Optimus Gen 2, er en humanoid robot utviklet av Tesla, Inc.
+            først demonstrert i 2023 og skal ha full produksjon i 2026. 
+            Roboter integreres i samfunnet som hjelpere, guider og servicearbeidere med realistiske bevegelser og AI.
+            Overgangen fra teknologi til sosiale verktøy er nå i full gang.
+        </p>
+
+        
+        <!-- ========================================
+             MILO - Hovedkarakteren som flyr rundt
+             ======================================== -->
+        
+        <!-- CHILD av #historierommet - Milo karakteren som beveger seg når roboter klikkes -->
+        <img id="miloForsiden" class="robot" src="Bilder_william/milo_front_1.png" alt="milo front">
+        
     </div>
+    <!-- Slutt på #historierommet -->
+
+    
+    <!-- ========================================
+         TIDSLINJE - Årstallsbokser med historiske milepæler
+         ======================================== -->
+    
+    <!-- PARENT: .tekstContainer - Container for alle tidslinjen-bokser -->
+    <div class="tekstContainer">
+        
+        <!-- CHILD av .tekstContainer - 1921: Første bruk av ordet "robot" -->
+        <p id="Y1921">
+            <strong>1921!</strong> 
+            <br>Første bruk av ordet robot.
+        </p>
+
+        <!-- CHILD av .tekstContainer - 1970: Robotintelligens forskes på -->
+        <p id="Y1970">
+            <strong>1970!</strong> 
+            <br>Robotintelligens forskes på.
+        </p>
+
+        <!-- CHILD av .tekstContainer - 1980-1990: Roboter i helsevesen og forskning -->
+        <p id="Y1980-1990">
+            <strong>1980-1990!</strong> 
+            <br>Roboter tas i bruk i helsevesen, forskning og som leker. 
+        </p>
+
+        <!-- CHILD av .tekstContainer - 2000-2009: Roboter lærer å samhandle -->
+        <p id="Y2000-2009">
+            <strong>2000-2009!</strong> 
+            <br>Roboter lærer å samhandle med mennesker i utdanning og dagligliv.
+        </p>
+
+        <!-- CHILD av .tekstContainer - 2010-2019: AI-integrasjon -->
+        <p id="Y2010-2019">
+            <strong>2010-2019!</strong> 
+            <br>Roboter med AI-integrasjon.
+        </p>
+
+        <!-- CHILD av .tekstContainer - 2020+: Kommersiell vekst -->
+        <p id="Y2020">
+            <strong>2020+!</strong> 
+            <br>Kommersiell vekst og sosial integrasjon.
+        </p>
+        
+    </div>
+    <!-- Slutt på .tekstContainer -->
+    
 </body>
 </html>

@@ -1,28 +1,15 @@
-/* Grunnoppsett for alle elementer */
-* {
+/* Grunnoppsett for alle elementer Bakgrunnsbilde og basis-layout */
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Jevn scroll i hele dokumentet */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Bakgrunnsbilde og basis-layout */
-body {
     font-family: Arial, sans-serif;
-    background-image: url('fremtidsrommet2.png');
+    background-image: url('bildeKW/fremtidsrommet2.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
     color: white;
     position: relative;
-    overflow-x: auto;
-    overflow-y: auto;
 }
 
 /* Stjerneeffekten er delvis inspirert av et mønster jeg fikk foreslått av KI,
@@ -34,7 +21,6 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     z-index: 0;
     background-image:
         radial-gradient(1px 1px at 10% 20%, white, transparent),
@@ -71,12 +57,12 @@ input[type="radio"] {
 /* Plassering av guide-robot og snakkeboble*/
 .guide-container {
     position: fixed;
-    top: 5%;
+    top: 3%;
     left: 8%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    margin-right: 20px;
     z-index: 100;
     transition: all 0.8s ease;
 }
@@ -85,15 +71,16 @@ input[type="radio"] {
    gjort etter et oppsett jeg fikk tips om fra KI */
 #robot1:checked ~ .guide-container { top: 25%; left: 5%; }
 #robot2:checked ~ .guide-container { top: 50%; left: 10%; }
-#robot3:checked ~ .guide-container { top: 20%; left: 70%; }
-#robot4:checked ~ .guide-container { top: 55%; left: 70%; }
+#robot3:checked ~ .guide-container { top: 20%; left: 50%; }
+#robot4:checked ~ .guide-container { top: 55%; left: 50%; } 
 #robot5:checked ~ .guide-container { top: 10%; left: 45%; }
+#robot6:checked ~ .guide-container { top: 50%; left: 60%; }
 
-/* Flytende bevegelse på guide-roboten –
+/* Flytende bevegelse på guide-roboten 
    animasjonen ble inspirert av et eksempel jeg fikk fra KI */
 .robot-guide {
     width: 130px;
-    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
+    filter: drop-shadow(0 0 25px #FFFFFF99);
     animation: float 3s ease-in-out infinite;
     flex-shrink: 0;
 }
@@ -103,17 +90,18 @@ input[type="radio"] {
     50% { transform: translateY(-12px); }
 }
 
-/* Snakkeboble rundt robotens forklaring, fikk litt hjelp av ki hvordan teksten skal passe bra med snakkebobla */
+/* Snakkeboble rundt robotens forklaring, fikk litt hjelp av ki 
+hvordan teksten skal passe bra med snakkebobla */
 .speech-bubble {
     position: relative;
     background: #00aabb;
     border-radius: 0.8em;
     padding: 20px;
     min-width: 280px;
-    max-width: 350px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    max-width: 200px;
+    box-shadow: 0 5px 20px #00000080;
     z-index: 101;
-    max-height: 400px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -134,12 +122,13 @@ input[type="radio"] {
 #robot2:checked ~ .guide-container .content-2,
 #robot3:checked ~ .guide-container .content-3,
 #robot4:checked ~ .guide-container .content-4,
-#robot5:checked ~ .guide-container .content-5 {
+#robot5:checked ~ .guide-container .content-5,
+#robot6:checked ~ .guide-container .content-6 {
     display: block;
 }
 
 /* Tekststil i boblen */
-.bubble-content h2 {
+.bubble-content {
     color: white;
     margin-bottom: 10px;
     font-size: 1.3rem;
@@ -151,7 +140,8 @@ input[type="radio"] {
     color: #f0f0f0;
 }
 
-/* Lukkeknapp til boblen */
+/* Lukkeknapp til boblen, fikk hjelp av ki hvilke kode som kan bli brukt for at
+ lukkeknappen ser mest bra ut */
 .close {
     position: absolute;
     top: 8px;
@@ -178,7 +168,7 @@ input[type="radio"] {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0 50px;
-    gap: 40px;
+    margin-right: 40px;
     padding-top: 50px;
 }
 
@@ -188,9 +178,9 @@ input[type="radio"] {
     cursor: pointer;
     transition: all 0.5s ease;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #0000004D;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px #00000080;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -214,12 +204,12 @@ input[type="radio"] {
     font-size: 0.9rem;
     font-weight: bold;
     color: #00aabb;
-    background-color: rgba(26, 26, 46, 0.8);
+    background-color: #1A1A2ECC;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
-/* Ulike robot-bokser med egne størrelser og stiler */
+/* Ulike robot-bokser med egne størrelser og hvilke stile de figurene har */
 .box1 {
     width: 280px;
     height: 200px;
@@ -234,6 +224,7 @@ input[type="radio"] {
     width: 240px;
     height: 240px;
     order: 3;
+    right: -50px;
 }
 .box2 img {
     border-radius: 50%;
@@ -244,6 +235,7 @@ input[type="radio"] {
     width: 180px;
     height: 320px;
     order: 5;
+    right: -90px;
 }
 .box3 img {
     border-radius: 5px;
@@ -252,15 +244,15 @@ input[type="radio"] {
 
 .box4 {
     width: 320px;
-    height: 200px;
+    height: 220px;
     order: 7;
+    right: -100px;
 }
 .box4 img {
     border-radius: 25px;
     border: 3px solid #06d6a0;
 }
 
-/* Fast plasserte dekorative figurer */
 .box5 {
     width: 160px;
     height: 160px;
@@ -273,6 +265,8 @@ input[type="radio"] {
     left: 210px;
     border: 3px solid #800080;
 }
+
+/* Fast plasserte figurer */
 .box5 img {
     border-radius: 50%;
     border: none;
@@ -315,51 +309,74 @@ input[type="radio"] {
 }
 .box9 img { border-radius: 15px; }
 
+/* disse er for om du skal et annet rom/side i musseet*/
+#main, #Exit {
+    width: 100%;
+    height: 100%;
+}
+
 .box10 {
     width: 100px; 
     height: 100px;
     position: absolute;
-    top: 30px; 
-    right: 50px;
+    top: 25px; 
+    right: 40px;
    }
 
-
-
-/* Hover-effekt på interaktive roboter fikk litt hjelp av ki */
-.robot-box:hover:not(.box6):not(.box7):not(.box8):not(.box9) {
-    transform: scale(1.08) translateY(-10px);
-    z-index: 50;
-    box-shadow: 0 15px 40px rgba(0, 170, 187, 0.8);
+.box11 {
+    width: 100px; 
+    height: 100px;
+    position: absolute;
+    top: 115px; 
+    right: 40px;
 }
 
-.robot-box:hover:not(.box6):not(.box7):not(.box8):not(.box9) img {
+
+/* box 12 (Guidebok)*/
+.box12 {
+    width: 100px; 
+    height: 100px;
+    position: absolute;
+    top: 500px; 
+    right: 50px;
+}
+
+/* Hover-effekt på interaktive roboter fikk litt hjelp av ki */
+.robot-box:hover:not(.box6):not(.box7):not(.box8):not(.box9):not(.box10):not(.box11) {
+    transform: scale(1.08) translateY(-10px);
+    z-index: 50;
+    box-shadow: 0 15px 40px #00AABBCC;
+}
+
+.robot-box:hover:not(.box6):not(.box7):not(.box8):not(.box9):not(.box10):not(.box11) img {
     filter: brightness(1.15);
 }
 
-/* Puls-effekt når en robot er valgt –
+/* Puls-effekt når en robot er valgt 
    animasjonen ble delvis inspirert av et forslag fra KI og justert videre */
 #robot1:checked ~ .robots-container .box1,
 #robot2:checked ~ .robots-container .box2,
 #robot3:checked ~ .robots-container .box3,
 #robot4:checked ~ .robots-container .box4,
-#robot5:checked ~ .robots-container .box5 {
+#robot5:checked ~ .robots-container .box5,
+#robot6:checked ~ .robots-container .box12 {
     animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 15px rgba(0, 170, 187, 0.8);
+        box-shadow: 0 0 15px #00AABBCC;
         transform: scale(1);
     }
     50% {
-        box-shadow: 0 0 35px rgba(0, 170, 187, 1);
+        box-shadow: 0 0 35px #00AABBFF;
         transform: scale(1.05);
     }
 }
 
 
-
-/* La inn et ekstra lag med små stjerner. Fant en konfetti-lignende teknikk jeg kunne bruke for å lage et stjernehav */
+/* La inn et ekstra lag med små stjerner. 
+Fant en konfetti-lignende teknikk som jeg fikk bruke */
 .star-layer {
     position: fixed;
     top: 0;
@@ -370,7 +387,8 @@ input[type="radio"] {
     z-index: 0;
 }
 
-/*stjerneprikkene fikk hjelp av ki med hvordan den kan se ut, men bearbeidet selv med det */
+/*stjerneprikkene fikk hjelp av ki med hvordan den kan se ut,
+ men bearbeidet selv med det */
 .star-points {
     width: 2px;
     height: 2px;
