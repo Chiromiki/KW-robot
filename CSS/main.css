@@ -294,7 +294,7 @@ css for dører
 css for guidebook
 */
 
-/* .guidebook{
+.guidebook{
     z-index: 2;
     position: absolute;
     display: block;
@@ -308,5 +308,5 @@ css for guidebook
 #guidebook_img{
     width: 80px;
     height: auto;
-} */
+} 
 
