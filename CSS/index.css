@@ -386,11 +386,9 @@ speech bubble mal hentet fra https://projects.verou.me/bubbly/
     
     cursor: pointer;
     pointer-events: auto;
-
 }
 
 #speech_bubble_1_label:after {
-
     position: absolute;
     width: 0;
     height: 0;
@@ -665,7 +663,7 @@ css for dører
 */
 
 .door_1{
-    z-index: 8888;
+    z-index: 2;
   
     display: flex;
     position: absolute;
@@ -681,7 +679,7 @@ css for dører
 }
 
 #popup_door_1_img{
-    z-index: 8888;
+    z-index: 2;
     
     display: flex;
     position: absolute;
@@ -715,7 +713,7 @@ css for dører
 }
 
 #popup_door_2_img{
-    z-index: 8888;
+    z-index: 2;
     
     display: flex;
     position: absolute;
@@ -749,7 +747,7 @@ css for dører
 }
 
 #popup_door_3_img{
-    z-index: 8888;
+    z-index: 2;
     
     display: flex;
     position: absolute;
@@ -783,7 +781,7 @@ css for dører
 }
 
 #popup_door_4_img{
-    z-index: 8888;
+    z-index: 2;
     
     display: flex;
     position: absolute;
@@ -817,7 +815,7 @@ css for dører
 }
 
 #popup_door_5_img{
-    z-index: 8888;
+    z-index: 2;
     
     display: flex;
     position: absolute;
@@ -856,6 +854,21 @@ css for dører
     visibility: visible;
     display: flex;
     pointer-events: none;
+}
+
+/*
+fikk tips av ki for å samle alle conditions
+*/
+/* .snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ #popup_door_1_img,
+.snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ #popup_door_2_img,
+.snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ #popup_door_3_img,
+.snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ #popup_door_4_img,
+.snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ #popup_door_5_img{
+    z-index: 8888;
+} */
+
+.snakkeboble_1:has(#speech_bubble_1_trigger:checked) ~ .door_wrap{
+    z-index: 8888;
 }
 
 /*
