@@ -11,14 +11,11 @@ a {
     color: #ff9d00;;
 }
 
-.container {
-    aspect-ratio: 34443.3 / 906;
-}
-
 #bg-img {
     height: 102vh;
     z-index: 1;
 }
+
 
 .hidden-checkbox {
     position: absolute;
@@ -26,6 +23,7 @@ a {
     top: 0%;
 }
 
+/* Lager box-shadow på alle bildene. */
 .hidden-checkbox:checked + label img {
     box-shadow: 0 0 20px #fff, 0 0 30px #ff9d00, 0 0 40px #ff9d00, 0 0 50px #ff9d00;
 }
@@ -52,8 +50,34 @@ a {
     }
 }
 
+/* Fikk starthjelp av AI for hvordan jeg skal bruke toggle med checked, not(:checked) osv med input og label i HTML, men har justert og tilpasset til min kode. */
+
+/* Skjuler (sender trekanten ut av bildet) når snakkeboblen skal bli borte. */
+#mhe-toggle:checked ~ #welcome-speechbubble1,
+#rur-toggle:checked ~ #welcome-speechbubble1,
+#transformers-toggle:checked ~ #welcome-speechbubble1,
+#asr-toggle:checked ~ #welcome-speechbubble1,
+#dbh-toggle:checked ~ #welcome-speechbubble1,
+#main-toggle:checked ~ #welcome-speechbubble1,
+#exit-toggle:checked ~ #welcome-speechbubble1,
+#next-toggle:checked ~ #welcome-speechbubble1 {
+    left: -50%;
+}
+
+/* Snakkeboblen med velkomsthilsen blir borte når brukeren trykker på bilder. */
+#mhe-toggle:checked ~ #welcome-speechbubble,
+#rur-toggle:checked ~ #welcome-speechbubble,
+#transformers-toggle:checked ~ #welcome-speechbubble,
+#asr-toggle:checked ~ #welcome-speechbubble,
+#dbh-toggle:checked ~ #welcome-speechbubble,
+#main-toggle:checked ~ #welcome-speechbubble,
+#exit-toggle:checked ~ #welcome-speechbubble,
+#next-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
+
 /* Fant speechbubble-koden på nettsiden https://projects.verou.me/bubbly/, men justert den til mitt behov. */
-/* Fant et kodeutgangspunkt her https://prismic.io/blog/css-text-animations#22-typewriter-text-animation for en typing-animasjon på velkomstteksten. Spurte deretter AI Kristiania om hjelp for å tilpasse koden til min velkomsttekst (t.o.m linje 137 er hjelp fra AI). Har justert og endret på koden i etterkant for å tilpasse den til slik jeg ville ha den. */
+/* Fant et kodeutgangspunkt her https://prismic.io/blog/css-text-animations#22-typewriter-text-animation for en typing-animasjon på velkomstteksten. Spurte deretter AI Kristiania om hjelp for å tilpasse koden til min velkomsttekst (t.o.m linje 190 er hjelp fra AI). Har justert og endret på koden i etterkant for å tilpasse den til slik jeg ville ha den. */
 #welcome-speechbubble {
 	position: absolute;
 	background: #d53832;
@@ -74,7 +98,7 @@ a {
     display: inline-block; /* Ensures the element behaves like a block */
     z-index: 1000;
 }
-/* Speechbubble-after sluttet å funke når jeg la på typing-animasjonen. Ved hjelp av AI og egne justeringer fikk jeg laget en ny kode for en trekant som kan funke likt som speechbubble-after har gjort. */
+/* Speechbubble-after sluttet å funke når jeg la på typing-animasjonen. Ved hjelp av AI og egne justeringer fikk jeg laget en ny kode for en trekant som kan funke ganske likt som speechbubble-after har gjort. */
 #welcome-speechbubble1 {
     position: absolute;
     top: 50%;
@@ -83,36 +107,13 @@ a {
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid #d53832; /* Farge på trekanten */
+    border-bottom: 100px solid #d53832;
     opacity: 0;
     animation-name: opacity;
     animation-duration: 0.5s;
     animation-delay: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-}
-
-/* Skjuler (sender trekanten ut av bildet) når snakkeboblen skal bli borte. */
-#mhe-toggle:checked ~ #welcome-speechbubble1,
-#rur-toggle:checked ~ #welcome-speechbubble1,
-#transformers-toggle:checked ~ #welcome-speechbubble1,
-#asr-toggle:checked ~ #welcome-speechbubble1,
-#dbh-toggle:checked ~ #welcome-speechbubble1,
-#main-toggle:checked ~ #welcome-speechbubble1,
-#exit-toggle:checked ~ #welcome-speechbubble1,
-#next-toggle:checked ~ #welcome-speechbubble1 {
-    left: -50%;
-}
-
-#mhe-toggle:checked ~ #welcome-speechbubble,
-#rur-toggle:checked ~ #welcome-speechbubble,
-#transformers-toggle:checked ~ #welcome-speechbubble,
-#asr-toggle:checked ~ #welcome-speechbubble,
-#dbh-toggle:checked ~ #welcome-speechbubble,
-#main-toggle:checked ~ #welcome-speechbubble,
-#exit-toggle:checked ~ #welcome-speechbubble,
-#next-toggle:checked ~ #welcome-speechbubble {
-    visibility: hidden;
 }
 
 @keyframes typing {
@@ -195,9 +196,12 @@ a {
     height: 50%;
     top: 44%;
     left: 9.5%;
-    transition: top 2s ease, left 2s ease; /* Transition på Milo sin posisjon når han skal flytte seg mellom bildene. */
     z-index: 101;
     opacity: 1;
+    /* Transition på Milo sin posisjon når han skal flytte seg mellom bildene. */
+    transition-property: top, left;
+    transition-duration: 2s, 2s;
+    transition-timing-function: ease, ease;
     animation-name: milo-float;
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
@@ -233,7 +237,11 @@ a {
     padding: 10px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
 }
 
 #rur-speechbubble:after {
@@ -254,7 +262,11 @@ a {
 #rur-toggle:checked ~ #rur-speechbubble {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
 }
 
 #mhe-toggle:checked ~ #milo-front {
@@ -286,7 +298,11 @@ a {
     padding: 10px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
 }
 
 #mhe-speechbubble:after {
@@ -307,7 +323,11 @@ a {
 #mhe-toggle:checked ~ #mhe-speechbubble {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
 }
 
 #transformers-toggle:checked ~ #milo-front {
@@ -339,7 +359,11 @@ a {
     padding: 10px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
 }
 
 #transformers-speechbubble:after {
@@ -360,7 +384,11 @@ a {
 #transformers-toggle:checked ~ #transformers-speechbubble {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
 }
 
 #asr-toggle:checked ~ #milo-front {
@@ -392,7 +420,11 @@ a {
     padding: 10px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
 }
 
 #asr-speechbubble:after {
@@ -413,7 +445,11 @@ a {
 #asr-toggle:checked ~ #asr-speechbubble {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
 }
 
 #dbh-toggle:checked ~ #milo-front {
@@ -466,7 +502,11 @@ a {
 #dbh-toggle:checked ~ #dbh-speechbubble {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
 }
 
 #next-toggle:checked ~ #milo-front {
@@ -492,7 +532,11 @@ a {
     padding: 10px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
 }
 
 #next-speechbubble:after {
@@ -513,7 +557,11 @@ a {
 #next-toggle:checked ~ #next-speechbubble {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
 }
 
 #exit-toggle:checked ~ #milo-front {
@@ -539,7 +587,11 @@ a {
     padding: 10px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
 }
 
 #exit-speechbubble:after {
@@ -560,7 +612,11 @@ a {
 #exit-toggle:checked ~ #exit-speechbubble {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
 }
 
 #main-toggle:checked ~ #milo-front {
@@ -586,7 +642,11 @@ a {
     padding: 10px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
 }
 
 #main-speechbubble:after {
@@ -607,7 +667,11 @@ a {
 #main-toggle:checked ~ #main-speechbubble {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1.5s ease-in-out 1s, visibility 0s 0s; /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
 }
 
 #main-toggle:checked + label img,
