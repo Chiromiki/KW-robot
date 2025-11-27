@@ -205,6 +205,19 @@ input[type="radio"] {
     display: none;
 }
 
+/* Fade-in animasjon for hovedbildene */
+.display-img {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity: 1;
+    }
+}
 
 
 
