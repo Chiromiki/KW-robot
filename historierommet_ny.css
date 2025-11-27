@@ -1,0 +1,563 @@
+/* 
+========================================
+   GLOBAL STYLING
+========================================
+*/
+
+/* PARENT: body - Fjerner standard margin (8px) som påvirker hele siden */
+body {
+    margin: 0;
+}
+
+/* PARENT: #historierommet 
+   CHILD: > img (direkte barn) - Velger bakgrunnsbildet */
+#historierommet > img {
+    display: flex;
+}
+
+
+/* 
+========================================
+   NAVIGASJON - Knapper for Exit, Guidebook og Main
+========================================
+*/
+
+/* CHILD av body - Exit-knapp øverst til høyre */
+#xexit {
+    position: absolute;
+    top: 1%;
+    left: 195%;
+    width: 5%;
+    cursor: pointer;
+    z-index: 1001;  /* Ligger over bakgrunnen */
+}
+
+/* CHILD av body - Guidebook-knapp nederst til høyre */
+#xguidebok {
+    position: absolute;
+    bottom: 2%;
+    left: 195%;
+    width: 5%;
+    cursor: pointer;
+    z-index: 1001;  /* Ligger over bakgrunnen */
+}
+
+/* CHILD av body - Main/hjem-knapp øverst til venstre */
+#xmain {
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    width: 5%;
+    cursor: pointer;
+}
+
+/* Spinner alle navigasjonsknapper kontinuerlig */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(360deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Gruppeselektor - Spinner alle navigasjonsknapper */
+#xexit, 
+#xguidebok, 
+#xmain {
+    animation: spin 5s linear infinite;
+}
+
+
+/* 
+========================================
+   BAKGRUNN
+========================================
+*/
+
+/* CHILD av #historierommet - Bakgrunnsbilde som fyller hele viewporten */
+#bakgrunn {
+    position: relative;
+    height: 100vh;  /* 100% av viewport height */
+}
+
+
+/* 
+========================================
+   MILO - Hovedkarakteren som flyr rundt
+========================================
+*/
+
+/* CHILD av #historierommet - Milo som beveger seg rundt på siden */
+#miloForsiden {
+    position: absolute;
+    top: 60%;
+    left: 11%;
+    width: 10%;
+    animation: miloFloat 5s ease-in-out infinite;  /* Kontinuerlig floating */
+    transition: all 0.8s ease;  /* Smooth bevegelse når posisjon endres */
+}
+
+/* Milo float animasjon - Svever opp og ned med litt scale-effekt */
+@keyframes miloFloat {
+    0% { transform: translateY(0) scale(1); }
+    25% { transform: translateY(-100px) scale(1.05); }
+    50% { transform: translateY(-200px) scale(1); }
+    75% { transform: translateY(-100px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* PARENT: #skilpaddeToggle (checkbox) 
+   CHILD: ~ #miloForsiden (sibling) - Flytter Milo til Skilpadde */
+#skilpaddeToggle:checked ~ #miloForsiden {
+    top: 20%;
+    left: 70%;
+}
+
+/* PARENT: #unimateToggle (checkbox)
+   CHILD: ~ #miloForsiden (sibling) - Flytter Milo til Unimate */
+#unimateToggle:checked ~ #miloForsiden {
+    top: 20%;
+    left: 63%;
+}
+
+/* PARENT: #wabot1Toggle (checkbox)
+   CHILD: ~ #miloForsiden (sibling) - Flytter Milo til WABOT-1 */
+#wabot1Toggle:checked ~ #miloForsiden {
+    top: 20%;
+    left: 90%;
+}
+
+/* PARENT: #AIBOToggle (checkbox)
+   CHILD: ~ #miloForsiden (sibling) - Flytter Milo til AIBO */
+#AIBOToggle:checked ~ #miloForsiden {
+    top: 20%;
+    left: 115%;
+}
+
+/* PARENT: #TeslaRobotToggle (checkbox)
+   CHILD: ~ #miloForsiden (sibling) - Flytter Milo til Tesla Robot */
+#TeslaRobotToggle:checked ~ #miloForsiden {
+    top: 20%;
+    left: 170%;
+}
+
+
+/* 
+========================================
+   ROBOTER - Klikkbare robot-bilder
+========================================
+*/
+
+/* GENERELL HOVER-EFFEKT - Gjelder alle elementer med klassen .robot */
+.robot:hover {
+    transform: rotate(5deg) scale(1.1);
+    filter: brightness(1.2);
+    transition: all 0.3s ease;
+}
+
+/* --- SKILPADDE (Grey Walters turtle robot) --- */
+
+/* CHILD av body - Skilpadde robot posisjonert til venstre */
+#skilpadde {
+    position: absolute;
+    top: 4%;
+    left: 40%;
+    width: 30%;
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+/* Glow-effekt ved hover på Skilpadde */
+#skilpadde:hover {
+    box-shadow: 0 0 20px #7dd3db, 0 0 40px #7dd3db;
+}
+
+/* --- UNIMATE (første industrirobot) --- */
+
+/* CHILD av body - Unimate robot */
+#unimate {
+    position: absolute;
+    top: 4%;
+    left: 72%;
+    width: 25%;
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+/* Wiggle-animasjon - Vipper frem og tilbake */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(4deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-4deg); }
+}
+
+/* Wiggle-effekt ved hover på Unimate */
+#unimate:hover {
+    animation: wiggle 2s ease infinite;
+}
+
+/* --- WABOT-1 (første humanoide robot) --- */
+
+/* CHILD av body - WABOT-1 robot */
+#wabot1 {
+    position: absolute;
+    top: 4%;
+    left: 100%;
+    width: 15%;
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+/* Pulse-animasjon - Pulserer i størrelse */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Pulse-effekt ved hover på WABOT-1 */
+#wabot1:hover {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* --- AIBO (robotkjæledyr) --- */
+
+/* CHILD av body - AIBO robotkjæledyr */
+#AIBO {
+    position: absolute;
+    top: 4%;
+    left: 122%;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+/* Skew-animasjon - Vibrerer med skewing */
+@keyframes skewShake {
+    0%, 100% { transform: skew(0deg, 0deg); }
+    25% { transform: skew(5deg, 2deg); }
+    75% { transform: skew(-5deg, -2deg); }
+}
+
+/* Skew-effekt ved hover på AIBO */
+#AIBO:hover {
+    animation: skewShake 0.5s ease-in-out infinite;
+}
+
+/* --- TESLA ROBOT (Optimus Gen 2) --- */
+
+/* CHILD av body - Tesla Robot til høyre */
+#TeslaRobot {
+    position: absolute;
+    top: 4%;
+    left: 180%;
+    width: 13%;
+    cursor: pointer;
+    border-radius: 8em;
+}
+
+/* Brightness-økning ved hover på Tesla Robot */
+#TeslaRobot:hover {
+    filter: brightness(1.3);
+    transition: filter 0.3s ease;
+}
+
+
+/* 
+========================================
+   CHECKBOX STYLING
+========================================
+*/
+
+/* Skjuler alle checkboxes visuelt */
+.hiddenCheckBox {
+    display: none;
+}
+
+/* Rainbow glow-animasjon - Farget glow som går i loop */
+@keyframes rainbow-glow {
+    0% { box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000; }
+    14% { box-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 30px #ff9900, 0 0 40px #ff9900; }
+    28% { box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00, 0 0 40px #ffff00; }
+    42% { box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+    57% { box-shadow: 0 0 10px #0099ff, 0 0 20px #0099ff, 0 0 30px #0099ff, 0 0 40px #0099ff; }
+    71% { box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff, 0 0 40px #0000ff; }
+    85% { box-shadow: 0 0 10px #9900ff, 0 0 20px #9900ff, 0 0 30px #9900ff, 0 0 40px #9900ff; }
+    100% { box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000; }
+}
+
+/* PARENT: .hiddenCheckBox (checkbox)
+   CHILD: + label img (neste sibling label, deretter img) 
+   Legger rainbow glow på robot-bilde når checkbox er checked */
+.hiddenCheckBox:checked + label img {
+    animation: rainbow-glow 3s linear infinite;
+}
+
+
+/* 
+========================================
+   TEKSTBOKSER - Speech bubbles med robot-info
+========================================
+*/
+
+/* --- SKILPADDE TEKSTBOKS --- */
+
+/* CHILD av body - Speech bubble for Skilpadde */
+#greyWaltersSkilpaddeTekst {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    width: 400px;
+    background: #7dd3db;
+    border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    padding: 10px;
+    display: none;  /* Skjult som default */
+}
+
+/* --- UNIMATE TEKSTBOKS --- */
+
+/* CHILD av body - Speech bubble for Unimate */
+#unimateTekst {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    width: 400px;
+    background: #7dd3db;
+    border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    padding: 10px;
+    display: none;
+}
+
+/* --- WABOT-1 TEKSTBOKS --- */
+
+/* CHILD av body - Speech bubble for WABOT-1 */
+#wabot1Tekst {
+    position: absolute;
+    top: 50%;
+    left: 97%;
+    width: 400px;
+    background: #7dd3db;
+    border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    padding: 10px;
+    display: none;
+}
+
+/* --- AIBO TEKSTBOKS --- */
+
+/* CHILD av body - Speech bubble for AIBO */
+#AIBOTekst {
+    position: absolute;
+    top: 50%;
+    left: 122%;
+    width: 400px;
+    background: #7dd3db;
+    border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    padding: 10px;
+    display: none;
+}
+
+/* --- TESLA ROBOT TEKSTBOKS --- */
+
+/* CHILD av body - Speech bubble for Tesla Robot */
+#TeslaRobotTekst {
+    position: absolute;
+    top: 50%;
+    left: 176.2%;
+    width: 400px;
+    background: #7dd3db;
+    border-radius: .8em;
+    z-index: 1000;
+    font-size: 20px;
+    padding: 10px;
+    display: none;
+}
+
+/* --- TEKSTBOKS ANIMASJONER --- */
+
+/* Gradient-animasjon - Beveger gradient fra side til side */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Gruppeselektor - Legger animert gradient på alle tekstbokser */
+#greyWaltersSkilpaddeTekst, 
+#unimateTekst, 
+#wabot1Tekst, 
+#AIBOTekst, 
+#TeslaRobotTekst {
+    background: linear-gradient(270deg, #7dd3db, #8fb996, #7dd3db);
+    background-size: 200% 200%;
+    animation: gradientMove 3s ease infinite;
+}
+
+/* --- SPEECH BUBBLE TREKANT --- */
+
+/* PSEUDO-ELEMENT: ::after - Lager trekant som peker oppover mot robot 
+   Gjelder for alle tekstbokser */
+#robotTekst:after, 
+#TeslaRobotTekst:after, 
+#AIBOTekst:after, 
+#wabot1Tekst:after, 
+#unimateTekst:after, 
+#greyWaltersSkilpaddeTekst:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 44px solid transparent;
+    border-bottom-color: #7dd3db;
+    border-top: 0;
+    margin-left: -44px;
+    margin-top: -44px;
+}
+
+/* --- VIS TEKSTBOKS VED CHECKBOX CHECKED --- */
+
+/* PARENT: .hiddenCheckBox (checkbox)
+   CHILD: + label + tekstboks (neste siblings)
+   Viser tekstboks når tilhørende checkbox er checked */
+.hiddenCheckBox:checked + label + #greyWaltersSkilpaddeTekst,
+.hiddenCheckBox:checked + label + #unimateTekst,
+.hiddenCheckBox:checked + label + #wabot1Tekst,
+.hiddenCheckBox:checked + label + #AIBOTekst,
+.hiddenCheckBox:checked + label + #TeslaRobotTekst {
+    display: block;
+}
+
+
+/* 
+========================================
+   TIDSLINJE - Årstallsbokser
+========================================
+*/
+
+/* --- 1921 BOKS --- */
+
+/* CHILD av body - Første bruk av ordet "robot" */
+#Y1921 {
+    position: absolute;
+    top: 58%;
+    left: 45%;
+    width: 230px;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* --- 1970 BOKS --- */
+
+/* CHILD av body - Robotintelligens forskes på */
+#Y1970 {
+    position: absolute;
+    top: 58%;
+    left: 85%;
+    width: 250px;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* --- 1980-1990 BOKS --- */
+
+/* CHILD av body - Roboter tas i bruk i helsevesen, forskning og leker */
+#Y1980-1990 {
+    position: absolute;
+    top: 58%;
+    left: 110%;
+    width: 350px;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* --- 2000-2009 BOKS --- */
+
+/* CHILD av body - Roboter lærer å samhandle med mennesker */
+#Y2000-2009 {
+    position: absolute;
+    top: 58%;
+    left: 137%;
+    width: 300px;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* --- 2010-2019 BOKS --- */
+
+/* CHILD av body - Roboter med AI-integrasjon */
+#Y2010-2019 {
+    position: absolute;
+    top: 58%;
+    left: 155%;
+    width: 200px;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* --- 2020+ BOKS --- */
+
+/* CHILD av body - Kommersiell vekst og sosial integrasjon */
+#Y2020 {
+    position: absolute;
+    top: 58%;
+    left: 170%;
+    width: 250px;
+    background: #8fb996;
+    border-radius: .8em;
+    z-index: 500;
+    font-size: 20px;
+    padding: 10px;
+    box-shadow: 0 10px #8fb996;
+}
+
+
+/* 
+========================================
+   TEKST STYLING
+========================================
+*/
+
+/* Større og fet tekst for viktige overskrifter/årstall */
+.stor-tekst {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+}
+
+/* --- VELKOMSTHILSEN BOKS --- */
+
+/* CHILD av body - Velkomsthilsen-boks (ikke i bruk i HTML-en) */
+#Velkomsthilsen {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 300px;
+    background: #9B82B9;
+    border-radius: .4em;
+    z-index: 1000;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
+}

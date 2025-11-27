@@ -14,21 +14,21 @@
         <div class="star-points"></div>
     </div>
 
-    <!-- Radio-knapper for å bytte mellom roboter (skjult funksjonalitet) -->
+    <!-- Radio-knapper for å bytte mellom roboter funksjonalitet er skjult -->
     <input type="radio" id="default" name="robot" checked>
     <input type="radio" id="robot1" name="robot">
     <input type="radio" id="robot2" name="robot">
     <input type="radio" id="robot3" name="robot">
     <input type="radio" id="robot4" name="robot">
     <input type="radio" id="robot5" name="robot">
+    <input type="radio" id="robot6" name="robot">
 
-    <!-- Container for guideroboten Milo og snakkeboblen -->
+    <!-- Container for milo (guideroboten) og snakkeboblen -->
     <div class="guide-container">
-        <img src="milo.png" alt="Robot Guide" class="robot-guide">
+        <img src="bildeKW/milo.png" alt="Robot Guide" class="robot-guide">
 
-        <!-- Snakkeboble med forskjellig innhold avhengig av hvilken robot som er valgt -->
+        <!-- Snakkeboble med forskjellig innhold. det kommer ann på hvilke du velger -->
         <div class="speech-bubble">
-            <!-- Standard velkomstmelding -->
             <div class="bubble-content content-default">
                 <h2>Hei!</h2>
                 <p>Klikk på robotene for å lære mer om fremtiden!</p>
@@ -36,37 +36,44 @@
 
             <!-- Innhold for Nanobot Healer -->
             <div class="bubble-content content-1">
-                <label for="default" class="close"></label>
+                <label for="default" class="close">&times;</label>
                 <h2>Nanobot Healer</h2>
                 <p>Mikroskopiske roboter som reparerer kroppen fra innsiden. Positivt: Kurerer sykdommer uten operasjon. Negativt: Veldig dyr og kan hackes.</p>
             </div>
 
             <!-- Innhold for Husholdningsrobot 3.0 -->
             <div class="bubble-content content-2">
-                <label for="default" class="close"></label>
+                <label for="default" class="close">&times;</label>
                 <h2>Husholdningsrobot 3.0</h2>
                 <p>Smart assistent som gjør husarbeid automatisk. Positivt: Frigjør tid for familie og arbeid. Negativt: Kan føre til arbeidsløshet og avhengighet.</p>
             </div>
 
             <!-- Innhold for Sikkerhetsdrone -->
             <div class="bubble-content content-3">
-                <label for="default" class="close"></label>
+                <label for="default" class="close">&times;</label>
                 <h2>Sikkerhetsdrone</h2>
                 <p>Autonome droner som overvåker og beskytter områder. Positivt: Øker sikkerhet og reagerer raskt. Negativt: Personvernproblemer og masseovervåking.</p>
             </div>
 
             <!-- Innhold for Terraforming-robot -->
             <div class="bubble-content content-4">
-                <label for="default" class="close"></label>
+                <label for="default" class="close">&times;</label>
                 <h2>Terraforming-robot</h2>
                 <p>Massive roboter som gjør planeter beboelige. Positivt: Sikrer menneskeheten og åpner nye verdener. Negativt: Enormt kostbar og tar hundrevis av år.</p>
             </div>
 
             <!-- Innhold for Emosjonell Assistent -->
             <div class="bubble-content content-5">
-                <label for="default" class="close"></label>
+                <label for="default" class="close">&times;</label>
                 <h2>Emosjonell Assistent</h2>
                 <p>Robot som gir psykologisk støtte og lytter. Positivt: Hjelper deprimerte mennesker 24/7. Negativt: Kan ikke erstatte ekte menneskelig forbindelse.</p>
+            </div>
+            
+            <!--innhold for guidebok-->
+            <div class="bubble-content content-6">
+                <label for="default" class="close">&times;</label>
+                <h2>Guidebok</h2>
+                <p>Du har kommet til siste rommet, trykk på main for å komme til entre, trykk på exit hvis du vil ut av museet</p>
             </div>
         </div>
     </div>
@@ -76,40 +83,51 @@
 
         <!-- Klikkbare robotbokser som aktiverer forskjellige radio-knapper -->
         <label for="robot1" class="robot-box box1">
-            <img src="nanobot-healer.png" alt="Nanobot Healer">
+            <img src="bildeKW/nanobot-healer.png" alt="Nanobot Healer">
         </label>
 
         <label for="robot2" class="robot-box box2">
-            <img src="husholdningsrbot3.0.png" alt="Husholdningsrobot">
+            <img src="bildeKW/husholdningsrbot3.0.png" alt="Husholdningsrobot">
         </label>
 
         <label for="robot3" class="robot-box box3">
-            <img src="sikkerhetsdrone.png" alt="Sikkerhetsdrone">
+            <img src="bildeKW/sikkerhetsdrone.png" alt="Sikkerhetsdrone">
         </label>
 
         <label for="robot4" class="robot-box box4">
-            <img src="terraformingrobot.png" alt="Terraforming Robot">
+            <img src="bildeKW/terraformingrobot.png" alt="Terraforming Robot">
         </label>
 
         <label for="robot5" class="robot-box box5">
-            <img src="emosjonelassistent.png" alt="Emosjonell Assistent">
+            <img src="bildeKW/emosjonelassistent.png" alt="Emosjonell Assistent">
         </label>
         
-        <!-- Dekorative robotbilder (ikke klikkbare) -->
+        <!--robotbilder for pynt (ikke klikkbare) -->
         <div class="robot-box box6">
-            <img src="robot6.jpg" alt="Pynt Robot 6">
+            <img src="bildeKW/robot6.jpg" alt="Pynt Robot 6">
         </div>
         <div class="robot-box box7">
-            <img src="robot7.jpg" alt="Pynt Robot 7">
+            <img src="bildeKW/robot7.jpg" alt="Pynt Robot 7">
         </div>
         <div class="robot-box box8">
-            <img src="robot8.jpg" alt="Pynt Robot 8">
+            <img src="bildeKW/robot8.jpg" alt="Pynt Robot 8">
         </div>
         <div class="robot-box box9">
-            <img src="robot5.jpg" alt="Pynt Robot 9">
+            <img src="bildeKW/robot5.jpg" alt="Pynt Robot 9">
         </div>
-        <div class="robot-box box10">
-    <img src="exit.png" alt="Exit bilde">
+
+
+        <!-- bilde for guidebok, exit og main. disse er for om du vil et annet sted eller tilbake til forsiden-->
+        <a href="utgang.html" class="robot-box box10">
+            <img src="bildeKW/exit.png" alt="Exit bilde" id="exit">
+        </a>
+        <a href="index.html" class="robot-box box11">
+            <img src="bildeKW/main.png" alt="" id="main">
+        </a>
+        <label for="robot6" class="robot-box box12">
+            <img src="bildeKW/guidebok.png" alt="guidbok bilde">
+        </label>
+
     </div>
 
 </body>
