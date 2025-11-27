@@ -12,6 +12,7 @@ font-size: small;
     background-color: #2F2F35;
 }
 
+
 @keyframes robot_float{
     0%{
         top: 67%;
