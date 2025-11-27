@@ -14,7 +14,7 @@ a {
 #bg-img {
     /* height: 105vh; */
     /* height: 30%; */
-    height: 104vh;
+    height: 100vh;
     /* height: 940px; */
     z-index: 1;
 }
@@ -401,7 +401,7 @@ a {
 
 #asr-img {
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 148.5%;
     width: 18%;
     cursor: pointer;
@@ -417,7 +417,7 @@ a {
 	position: absolute;
 	background: #d53832;
 	border-radius: .4em;
-    top: 68%;
+    top: 64%;
     left: 147%;
     width: 22%;
     padding: 10px;
@@ -519,7 +519,7 @@ a {
 
 #next-img {
     position: absolute;
-    left: 200%;
+    left: 195%;
     top: 85%;
     width: 6%;
     cursor: pointer;
@@ -574,7 +574,7 @@ a {
 
 #exit-img {
     position: absolute;
-    left: 197%;
+    left: 195%;
     top: -3%;
     width: 10%;
     cursor: pointer;
