@@ -1,4 +1,4 @@
-/* Bakgrunnscontainer */
+/* Bakgrunnsbildet */
 #bg-img {
     height: 100vh;
    
@@ -7,10 +7,10 @@
 body {
     margin: 0;
 }
-/*Setter opp bildene slik jeg vil ha de, i forhold til bakgrunnen*/
+/*Setter opp de andre bildene slik jeg vil ha de, i forhold til bakgrunnen*/
 #milo-front
 { 
-top: 40%;
+top: 49%;
 position: absolute;
 left: 8%;
 width: 10%;
@@ -72,9 +72,9 @@ animation: bounce 2s ease-in-out infinite;
 	border-radius: .4em;
     top: 20%;
     left: 3%;
-    width: 23%;
+    width: 20%;
     height: 12%;
-    font-size: 35px;
+    font-size: 20px;
     padding: 40px;
     display: flex;
     flex-direction: row;
@@ -97,7 +97,7 @@ animation: bounce 2s ease-in-out infinite;
 	margin-left: -2px;
 }
   /*Velkommen boksen til milo skal være der hele tiden*/
-  /*Tektsboksene om de andre robotene skal ikke vises før de klikkes på, dette gjør jeg under her. Her har jeg også lagt til en display:none så boksene slutter å vises når de neste robot blir trykket på*/
+  /*Tektsboksene om de andre robotene skal ikke vises før de klikkes på, dette gjør jeg under her. Her har jeg også lagt til en display:none så boksene slutter å vises når de neste robot blir trykket på.*/
 
   .Tekst-Amazon-astro {
     position: absolute;
@@ -107,7 +107,7 @@ animation: bounce 2s ease-in-out infinite;
     left: 45%;
     width: 30%;
     height: 18%;
-    font-size: 35px;
+    font-size: 17px;
     padding: 23px;
     display: none;
   }
@@ -131,11 +131,11 @@ animation: bounce 2s ease-in-out infinite;
     position: absolute;
     background: #0aae15;
 	border-radius: .4em;
-    top: 26%;
+    top: 22%;
     left: 80%;
-    width: 22%;
+    width: 23%;
     height: 12%;
-    font-size: 30px;
+    font-size: 17px;
     padding: 28px;
     display: none;
 }
@@ -151,7 +151,7 @@ animation: bounce 2s ease-in-out infinite;
 	border-left: 0;
 	border-bottom: 0;
 	margin-top: -26px;
-	margin-left: -52px;
+	margin-left: -45px;
 }
 
 .Tekst-Paro {
@@ -161,8 +161,8 @@ animation: bounce 2s ease-in-out infinite;
     top: 30%;
     left: 111%;
     width: 20%;
-    height: 20%;
-    font-size: 28px;
+    height: 26%;
+    font-size: 16px;
     padding: 25px;
     display: none;
 }
@@ -185,11 +185,11 @@ animation: bounce 2s ease-in-out infinite;
     position: absolute;
     background: #0aae15;
 	border-radius: .4em;
-    top: 38%;
+    top: 30%;
     left: 143%;
     width: 20%;
     height: 12%;
-    font-size: 28px;
+    font-size: 16px;
     padding: 28px;
     display: none;
 }
@@ -208,7 +208,9 @@ animation: bounce 2s ease-in-out infinite;
 	margin-left: -52px;
 }
 
-/*Kodene under her gjør at tektsboksene ikke vises, med mindre de trykkes på*/
+/*Kodene under her gjør at tektsboksene ikke vises, med mindre de trykkes på. Det under
+er altså matchet med radio input type
+spm jeg ble anbefalt av KI å legge inn.*/
 
 .hidden-checkbox {
     display: none;
@@ -280,6 +282,7 @@ top: 35%;
 left: 129%;
 }
 
+/*Kodene under her er satt sammen for "exit" knappen, altså knappen man kan trykke på for å komme seg tilbake til Milo sin utgangsposisjon*/
 
 .exit-button {
     position: fixed;
@@ -299,22 +302,26 @@ left: 129%;
     background: #0ccf20;
 }
 
-/*Her legger jeg til ekstra. Det er main knappen, exit knappen og guidebok til neste rom knappen*/
+/*Her legger jeg til posisjonering for litt ekstra. Det er main knappen, exit knappen og guidebok til neste rom knappen*/
 
 #main {
     position: absolute;
-    top: -16%;
+    top: -20%;
     left: 2%;
+    width: 17%;
 }
 
 #guidebok {
 position: absolute;
 top: 70%;
-left: 162%;
+left: 160%;
+width: 12%;
 }
 
 #exit {
     position: absolute;
     top: -35%;
     left: 150%;
+    width: 17%;
 }
+
