@@ -664,11 +664,9 @@ css for dører
 */
 
 .door_1{
-    z-index: 2;
-
-    background-color: red;
-    
-    display: flexbox;
+    z-index: 8888;
+  
+    display: flex;
     position: absolute;
     
     width: 9vw;
@@ -681,11 +679,25 @@ css for dører
     border-top-right-radius: 20%;
 }
 
+#popup_door_1_img{
+    z-index: 8888;
+    
+    display: flex;
+    position: absolute;
+    
+    width: auto;
+    height: 70px;
+
+    left: -2vw;
+    top: 55vh; 
+
+    visibility: hidden;
+    display: none;
+}
+
 .door_2{
     z-index: 2;
-
-    background-color: red;
-    
+  
     display: flex;
     position: absolute;
     justify-content: center;
@@ -701,11 +713,25 @@ css for dører
     border-top-right-radius: 20%;
 }
 
+#popup_door_2_img{
+    z-index: 8888;
+    
+    display: flex;
+    position: absolute;
+    
+    width: auto;
+    height: 60px;
+
+    left: 10vw;
+    top: 52vh; 
+
+    visibility: hidden;
+    display: none;
+}
+
 .door_3{
     z-index: 2;
-
-    background-color: red;
-    
+   
     display: flex;
     position: absolute;
     justify-content: center;
@@ -721,11 +747,25 @@ css for dører
     border-top-right-radius: 20%;
 }
 
+#popup_door_3_img{
+    z-index: 8888;
+    
+    display: flex;
+    position: absolute;
+    
+    width: auto;
+    height: 60px;
+
+    left: 42vw;
+    top: 48vh; 
+
+    visibility: hidden;
+    display: none;
+}
+
 .door_4{
     z-index: 2;
-
-    background-color: red;
-    
+ 
     display: flex;
     position: absolute;
     justify-content: center;
@@ -741,11 +781,25 @@ css for dører
     border-top-right-radius: 20%;
 }
 
+#popup_door_4_img{
+    z-index: 8888;
+    
+    display: flex;
+    position: absolute;
+    
+    width: auto;
+    height: 65px;
+
+    left: 71vw;
+    top: 50vh; 
+
+    visibility: hidden;
+    display: none;
+}
+
 .door_5{
     z-index: 2;
 
-    background-color: red;
-    
     display: flex;
     position: absolute;
     justify-content: center;
@@ -761,31 +815,46 @@ css for dører
     border-top-right-radius: 20%;
 }
 
-/*
-hjelp av ki
-*/
-.snakkeboble_2:has(#speech_bubble_2_trigger:checked) ~ .door_1,
-.snakkeboble_2:has(#speech_bubble_2_trigger:checked) ~ .door_2,
-.snakkeboble_2:has(#speech_bubble_2_trigger:checked) ~ .door_3,
-.snakkeboble_2:has(#speech_bubble_2_trigger:checked) ~ .door_4,
-.snakkeboble_2:has(#speech_bubble_2_trigger:checked) ~ .door_5 {
+#popup_door_5_img{
     z-index: 8888;
+    
+    display: flex;
+    position: absolute;
+    
+    width: auto;
+    height: 70px;
+
+    left: 81vw;
+    top: 55vh; 
+
+    visibility: hidden;
+    display: none;
 }
 
-.door_1:hover{
-    background-color: blue;
+.door_1:hover ~ #popup_door_1_img{
+    visibility: visible;
+    display: flex;
+    pointer-events: none;
 }
-.door_2:hover{
-    background-color: blue;
+.door_2:hover ~ #popup_door_2_img{
+    visibility: visible;
+    display: flex;
+    pointer-events: none;
 }
-.door_3:hover{
-    background-color: blue;
+.door_3:hover ~ #popup_door_3_img{
+    visibility: visible;
+    display: flex;
+    pointer-events: none;
 }
-.door_4:hover{
-    background-color: blue;
+.door_4:hover ~ #popup_door_4_img{
+    visibility: visible;
+    display: flex;
+    pointer-events: none;
 }
-.door_5:hover{
-    background-color: blue;
+.door_5:hover ~ #popup_door_5_img{
+    visibility: visible;
+    display: flex;
+    pointer-events: none;
 }
 
 /*
