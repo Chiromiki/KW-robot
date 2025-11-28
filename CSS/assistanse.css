@@ -19,25 +19,25 @@ transition: all 2s ease-in-out;
 
 #Amazon-astro
 {
-top: 65%;
+top: 67%;
 position: absolute;
-left: 52%;
+left: 64%;
 width: 15%;
 }
 
 #Davinci
 {
-top: 48%;
+top: 53%;
 position: absolute;
-left: 73%;
+left: 91%;
 width: 35%;
 }
 
 #Paro-robot
 {
-top: 63%;
+top: 67%;
 position: absolute;
-left: 110%;
+left: 136%;
 width: 20%;
 }
 
@@ -45,7 +45,7 @@ width: 20%;
 {
 top: 72%;
 position: absolute;
-left: 140%;
+left: 172%;
 width: 23%;
 }
 
@@ -302,7 +302,7 @@ left: 129%;
 
 #main {
     position: absolute;
-    top: -16%;
+    top: -14%;
     left: 2%;
     width: 17%;
 }
@@ -310,14 +310,14 @@ left: 129%;
 #guidebok {
 position: absolute;
 top: 70%;
-left: 165%;
+left: 195%;
 width: 12%;
 }
 
 #exit {
     position: absolute;
     top: -35%;
-    left: 158%;
+    left: 190%;
     width: 17%;
 }
 
