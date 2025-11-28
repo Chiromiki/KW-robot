@@ -222,7 +222,7 @@ a {
 #hanging-rur {
     position: absolute;
     left: 50%;
-    top: -19%;
+    top: -19.5%;
 }
 
 #rur-speechbubble {
@@ -283,7 +283,7 @@ a {
 #hanging-mhe {
     position: absolute;
     left: 92%;
-    top: -19%;
+    top: -19.5%;
 }
 
 #mhe-speechbubble {
@@ -344,7 +344,7 @@ a {
 #hanging-transformers {
     position: absolute;
     left: 127.5%;
-    top: -24%;
+    top: -24.5%;
 }
 
 #transformers-speechbubble {
@@ -405,7 +405,7 @@ a {
 #hanging-asr {
     position: absolute;
     left: 149.5%;
-    top: -19%;
+    top: -24.5%;
 }
 
 #asr-speechbubble {
@@ -466,7 +466,7 @@ a {
 #hanging-dbh {
     position: absolute;
     left: 174%;
-    top: -19%;
+    top: -19.5%;
 }
 
 #dbh-speechbubble {
