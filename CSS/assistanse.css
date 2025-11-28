@@ -104,7 +104,7 @@ animation: bounce 2s ease-in-out infinite;
     background: #0aae15;
 	border-radius: .4em;
     top: 30%;
-    left: 45%;
+    left: 64%;
     width: 30%;
     font-size: 17px;
     padding: 23px;
@@ -131,7 +131,7 @@ animation: bounce 2s ease-in-out infinite;
     background: #0aae15;
 	border-radius: .4em;
     top: 22%;
-    left: 80%;
+    left: 97%;
     width: 23%;
     font-size: 17px;
     padding: 28px;
@@ -157,7 +157,7 @@ animation: bounce 2s ease-in-out infinite;
     background: #0aae15;
 	border-radius: .4em;
     top: 30%;
-    left: 111%;
+    left: 137%;
     width: 20%;
     font-size: 16px;
     padding: 25px;
@@ -183,7 +183,7 @@ animation: bounce 2s ease-in-out infinite;
     background: #0aae15;
 	border-radius: .4em;
     top: 30%;
-    left: 143%;
+    left: 175%;
     width: 20%;
     font-size: 16px;
     padding: 28px;
@@ -260,22 +260,22 @@ label img:hover {
 /*Koden under her er med på å gjøre at milo følger etter de robotene som man trykker på. For at denne koden skulle funke, er det også lagt inn en transition under linje 11*/
 #Astro-toggle:checked ~ #milo-front {
 top: 30%;
-left: 30%;
+left: 50%;
 }
 
 #Davinci-toggle:checked ~ #milo-front {
 top: 29%;
-left: 68%;
+left: 82%;
 }
 
 #Paro-toggle:checked ~ #milo-front {
 top: 29%;
-left: 98%;
+left: 122%;
 }
 
 #Støvsuger-toggle:checked ~ #milo-front {
 top: 35%;
-left: 129%;
+left: 160%;
 }
 
 /*Kodene under her er satt sammen for "exit" knappen, altså knappen man kan trykke på for å komme seg tilbake til Milo sin utgangsposisjon*/
