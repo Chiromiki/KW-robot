@@ -1,0 +1,230 @@
+/* Bakgrunn for hele rommet */
+body {
+    background-size: cover;
+    background-position: center;
+    background-image: url('../Bilder-Uzair/camouflage.png');
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Hele rommet  */
+#museum-room {
+    min-height: 87vh;
+    position: relative;
+    width: 100%;
+}
+
+/* Exit-knapp øverst til høyre - egen passering, AI hjalp med små justeringer */
+#exit-button {
+    position: fixed;   
+    right: 20px;       
+    top: 5px;          
+    z-index: 999;      
+}
+
+/*Exit bilde (Laget av Nyny) */
+#exit-button img {
+    cursor: pointer;
+    height: auto;
+    transition: transform 0.2s;
+    width: 140px;       
+}
+
+#exit-button img:hover {
+    transform: scale(1.1);  
+}
+
+/* Main knappen */
+#main-button {
+    left: 20px;        
+    position: fixed;   
+    top: 5px;          
+    z-index: 999;      
+}
+
+#main-button img {
+    cursor: pointer;
+    height: auto;
+    transition: transform 0.2s;
+    width: 140px;       
+}
+
+#main-button img:hover {
+    transform: scale(1.1);  
+}
+
+/* Milo nederst til venstre i siden. Jeg plasserte han der selv */
+#milo {
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
+    width: 150px;
+}
+
+/* Milo hopper opp å ned - AI hjalp meg med å lage animasjonen uten javascript */
+#milo-front { 
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(0);
+    }
+    50% { 
+        transform: translateY(-25px);
+    }
+}
+
+#milo img {
+    width: 100%;
+}
+
+/* Radioknapper som skjules */
+input[type="radio"] {
+    display: none;
+}
+
+/* Stort hovedbilde - satte plasseringen selv */
+#main-image {
+    margin-top: 120px;
+    text-align: center;
+    width: 100%;
+}
+
+.display-img {
+    border: 3px solid white;
+    border-radius: 10px;
+    display: none;
+    width: 40%;
+}
+
+/* Viser riktig bilde (AI hjalp med kombinasjonen) */
+#robot1:checked ~ #main-image img:nth-child(1),
+#robot2:checked ~ #main-image img:nth-child(2),
+#robot3:checked ~ #main-image img:nth-child(3),
+#robot4:checked ~ #main-image img:nth-child(4) {
+    display: inline-block;
+}
+
+/* Thumnails - valgte størrelse selv */
+#thumbs {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#thumbs img {
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px;
+}
+
+/* Info tekst/bobler - skrev inn inholdet selv */
+.info-text {
+    bottom: 400px;
+    border-radius: 12px;
+    background: white;
+    display: none;
+    font-size: 14px;
+    left: 40px;
+    position: absolute;
+    padding: 12px;
+    width: 260px;
+    z-index: 15;
+}
+
+/* Pil til infoboblene - Fikk litt hjelp av AI */
+.info-text::after {
+    border-width: 18px 12px 0 12px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    bottom: -18px;
+    content: "";
+    left: 60px;
+    position: absolute;
+}
+
+/* Her vises riktig info tekst  */
+#robot1:checked ~ #text1,
+#robot2:checked ~ #text2,
+#robot3:checked ~ #text3,
+#robot4:checked ~ #text4 {
+    display: block;
+}
+
+/* Guidebok knappen i høyre hjørne */
+#guidebook-button {
+    bottom: 20px;
+    position: fixed;
+    right: 20px;
+    z-index: 2000;
+}
+
+#guidebook-button img {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 150px;
+}
+
+#guidebook-button img:hover {
+    transform: scale(1.1);
+}
+
+/* Velkomstboblen over Milo */
+#welcome-bubble {
+    bottom: 400px;   /* HØYT NOK TIL AT MILO KAN HOPPE */
+    background: white;
+    border-radius: 12px;
+    font-size: 14px;
+    left: 40px;      /* Samme horisontale plassering som Milo */
+    position: absolute;
+    padding: 14px 16px;
+    width: 260px;
+    z-index: 20;
+}
+
+/* Pil på velkomstboblen */
+#welcome-bubble::after {
+    border-width: 14px 12px 0 12px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    content: "";
+    left: 60px;
+    position: absolute;
+    top: 100%;
+}
+
+/* Den første velkomstboblen skjules når et bildet blir trykket på. */
+#robot1:checked ~ #welcome-bubble,
+#robot2:checked ~ #welcome-bubble,
+#robot3:checked ~ #welcome-bubble,
+#robot4:checked ~ #welcome-bubble {
+    display: none;
+}
+
+/* Fade-in animasjon for hovedbildene (Hjelp av AI) */
+.display-img {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
