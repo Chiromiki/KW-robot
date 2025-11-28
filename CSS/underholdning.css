@@ -514,7 +514,7 @@ a {
 
 #next-img {
     position: absolute;
-    left: 192%;
+    right: -100%;
     top: 85%;
     width: 6%;
     cursor: pointer;
@@ -569,7 +569,7 @@ a {
 
 #exit-img {
     position: absolute;
-    left: 190%;
+    right: -100%;
     top: -3%;
     width: 10%;
     cursor: pointer;
