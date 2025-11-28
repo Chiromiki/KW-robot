@@ -1,5 +1,5 @@
 body{
-font-size: small;
+    font-size: 25px;
 
     padding: 0;
     margin: 0;
@@ -400,8 +400,8 @@ speech bubble mal hentet fra https://projects.verou.me/bubbly/
     border-left: 0;
     border-top-color: #d2e0ec;
 
-    margin-left: 15px;
-    margin-bottom: -15px;
+    margin-left: -250px;
+    margin-top: 35px;
 }
 
 #speech_bubble_1_trigger{
@@ -466,21 +466,22 @@ speech bubble mal hentet fra https://projects.verou.me/bubbly/
 
 }
 
-#speech_bubble_2_label:after {
-
+/* #speech_bubble_2_label:after {
     position: absolute;
     width: 0;
     height: 0;
     bottom: 175px;
 
     content: "";
-    border: 19px solid transparent;
-	border-top-color: #d2e0ec;
-	border-bottom: 0;
-	border-left: 0;
-	margin-left: 190px;
-	margin-bottom: -190px;
-}
+    border: 35px solid transparent;
+    border-top-color: #d2e0ec;
+    border-bottom: 0;
+    border-left: 0;
+    border-top-color: #d2e0ec;
+
+    margin-left: 0px;
+    margin-top: 3px;
+} */
 
 #speech_bubble_2_trigger{
     display: none;
