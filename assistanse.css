@@ -106,7 +106,6 @@ animation: bounce 2s ease-in-out infinite;
     top: 30%;
     left: 45%;
     width: 30%;
-    height: 18%;
     font-size: 17px;
     padding: 23px;
     display: none;
@@ -134,7 +133,6 @@ animation: bounce 2s ease-in-out infinite;
     top: 22%;
     left: 80%;
     width: 23%;
-    height: 12%;
     font-size: 17px;
     padding: 28px;
     display: none;
@@ -161,7 +159,6 @@ animation: bounce 2s ease-in-out infinite;
     top: 30%;
     left: 111%;
     width: 20%;
-    height: 26%;
     font-size: 16px;
     padding: 25px;
     display: none;
@@ -188,7 +185,6 @@ animation: bounce 2s ease-in-out infinite;
     top: 30%;
     left: 143%;
     width: 20%;
-    height: 12%;
     font-size: 16px;
     padding: 28px;
     display: none;
@@ -306,7 +302,7 @@ left: 129%;
 
 #main {
     position: absolute;
-    top: -20%;
+    top: -16%;
     left: 2%;
     width: 17%;
 }
@@ -314,14 +310,14 @@ left: 129%;
 #guidebok {
 position: absolute;
 top: 70%;
-left: 160%;
+left: 165%;
 width: 12%;
 }
 
 #exit {
     position: absolute;
     top: -35%;
-    left: 150%;
+    left: 158%;
     width: 17%;
 }
 

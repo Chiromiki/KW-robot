@@ -663,7 +663,7 @@ css for dører
 */
 
 .door_1{
-    z-index: 8888;
+    z-index: 2;
   
     display: flex;
     position: absolute;
@@ -679,7 +679,7 @@ css for dører
 }
 
 #popup_door_1_img{
-    z-index: 8888;
+    z-index: 2;
     
     display: flex;
     position: absolute;
