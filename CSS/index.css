@@ -367,7 +367,7 @@ speech bubble mal hentet fra https://projects.verou.me/bubbly/
     
     transform: translate(-50%, -50%);
     
-    cursor: hidden;
+    cursor: none;
     pointer-events: auto;
 
     border-radius: .4em;
@@ -444,7 +444,7 @@ speech bubble mal hentet fra https://projects.verou.me/bubbly/
     
     transform: translate(-50%, -50%);
     
-    cursor: hidden;
+    cursor: none;
     pointer-events: auto;
 
     border-radius: .4em;

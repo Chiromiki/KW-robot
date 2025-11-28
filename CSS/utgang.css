@@ -61,7 +61,7 @@ snakkeboble
     
     transform: translate(-50%, -50%);
     
-    cursor: hidden;
+    cursor: none;
     pointer-events: auto;
 
     border-radius: .4em;
@@ -137,7 +137,7 @@ snakkeboble
     
     transform: translate(-50%, -50%);
     
-    cursor: hidden;
+    cursor: none;
     pointer-events: auto;
 
     border-radius: .4em;
