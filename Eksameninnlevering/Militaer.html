@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Militær- og overvåkningsroboter</title>
+    <link rel="stylesheet" href="CSS/Militaer.css">
+    <link rel="stylesheet" href="CSS/common.css">
+</head>
+<body>
+
+<main id="museum-room">
+
+    <!-- Main-knapp oppe til venstre (Ble laget av Nyny) -->
+    <a href="main.html" id="main-button">
+        <img src="militaer/MAIN-2.png" alt="Main">
+    </a>
+
+    <!-- Exit-knapp øverst til høyre (Laget og designet av Nyny) -->
+    <a href="utgang.html" id="exit-button">
+        <img src="militaer/exit.png" alt="Exit">
+    </a>
+
+    <!-- Milo nederst til venstre med animasjon (Designet av Nyny) -Fått hjelp av AI til å gjøre hoppe animasjonen. -->
+    <div id="milo">
+        <img src="militaer/Milo.png" alt="Milo robot" id="milo-front">
+    </div>
+
+    <!-- Radioknapper (uten javascript - fikk hjelp av AI til struktur) -->
+    <input type="radio" name="robot" id="robot1">
+    <input type="radio" name="robot" id="robot2">
+    <input type="radio" name="robot" id="robot3">
+    <input type="radio" name="robot" id="robot4">
+
+    <!-- Liten velkomstboble - Jeg plasserte teksten selv. -->
+<div id="welcome-bubble">
+    Hei, velkommen til militærrommet! <br>
+    Trykk på bildene for å lære mer!
+</div>
+
+    <!-- Store hovedbilde på toppen (Kilde til robotbilder:) -->
+    <div id="main-image">
+        <img src="militaer/robot1.jpg" class="display-img" alt="Robot 1"> <!-- Kilde:: https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/MQ-9_Reaper_UAV_%28cropped%29.jpg/960px-MQ-9_Reaper_UAV_%28cropped%29.jpg -->
+        <img src="militaer/robot2.jpg" class="display-img" alt="Robot 2"> <!-- Kilde: https://www.forsvaret.dk/da/materiel2/bomberobot/ -->
+        <img src="militaer/robot3.jpg" class="display-img" alt="Robot 3"> <!-- Kilde: https://www.passengerterminaltoday.com/news/security/bordeaux-airport-deploys-perimeter-patrol-robot-to-train-ai-surveillance-algorithms.html -->
+        <img src="militaer/robot4.jpg" class="display-img" alt="Robot 4"> <!-- Kilde: https://www.militarytimes.com/news/your-military/2020/04/22/us-adds-military-surveillance-cameras-at-mexico-border-despite-drop-in-crossings/ -->
+    </div>
+
+    <!-- Små klikkbare bilder (under den store) -->
+    <div id="thumbs">
+        <label for="robot1"><img src="militaer/robot1.jpg" alt="Mini 1"></label> <!-- Kilde:: https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/MQ-9_Reaper_UAV_%28cropped%29.jpg/960px-MQ-9_Reaper_UAV_%28cropped%29.jpg -->
+        <label for="robot2"><img src="militaer/robot2.jpg" alt="Mini 2"></label> <!--Kilde: https://www.forsvaret.dk/da/materiel2/bomberobot/ -->
+        <label for="robot3"><img src="militaer/robot3.jpg" alt="Mini 3"></label> <!-- https://www.passengerterminaltoday.com/news/security/bordeaux-airport-deploys-perimeter-patrol-robot-to-train-ai-surveillance-algorithms.html -->
+        <label for="robot4"><img src="militaer/robot4.jpg" alt="Mini 4"></label> <!-- Kilde: https://www.militarytimes.com/news/your-military/2020/04/22/us-adds-military-surveillance-cameras-at-mexico-border-despite-drop-in-crossings/ -->
+    </div>
+
+    <!-- Info tekst når man klikker et bilde (Tekst skrevet selv) -->
+     <!-- AI hjalp kun med  posisjonering av boblen, ikke innholdet -->
+    <div id="text1" class="info-text">
+        Militære droner utviklet seg fra enkle radiostyrte fly til avanserte UAV-er på 1990–2000-tallet. 
+        De brukes i dag til overvåkning, etterretning, kartlegging og presisjonsangrep. 
+        Droner styres via satellitt, dataterminal eller følger programmerte ruter. 
+        De har kameraer, sensorer og infrarød teknologi, og kan operere lenge uten pause. 
+        Derfor er droner viktige i moderne militære operasjoner.
+    </div>
+
+    <div id="text2" class="info-text">
+        Bombe- og minefjerningsroboter ble utviklet på 1970-tallet for å håndtere eksplosiver tryggere. 
+        I dag brukes de over hele verden for å fjerne miner og uskadeliggjøre bomber uten å risikere menneskeliv. 
+        De styres med fjernkontroll og har kamera, robotarm og verktøy. 
+        Moderne modeller kan analysere terrenget selv. 
+        Disse robotene redder liv ved å ta de farligste oppgavene.
+    </div>
+
+    <div id="text3" class="info-text">
+        Militære overvåkningskameraer begynte på 1960–70-tallet, men i dag bruker de sensorer og kunstig intelligens. 
+        De overvåker baser og store områder og kan oppdage trusler på lang avstand. 
+        Kameraene kan zoome, rotere og filme i mørket, og datasystemer analyserer aktivitet automatisk. 
+        De varsler med en gang noe mistenkelig skjer.
+    </div>
+
+    <div id="text4" class="info-text">
+        Autonome patruljeroboter ble utviklet rundt 2000-tallet. 
+        De brukes på militærbaser for å overvåke områder, oppdage inntrengere og varsle vakter. 
+        De bruker GPS, radar og termiske kameraer for å orientere seg og analysere bevegelser. 
+        Robotene patruljerer døgnet rundt og oppdager detaljer mennesker kan overse.
+    </div>
+
+    <!-- Guideknapp nederst til høyre (designet av Nyny) -->
+    <a href="assistanse.html" id="guidebook-button">
+        <img src="militaer/guide.png" alt="Guidebok">
+    </a>
+
+</main>
+
+</body>
+</html>
+
+
+
+

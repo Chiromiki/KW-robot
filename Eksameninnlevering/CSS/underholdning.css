@@ -1,0 +1,679 @@
+body {
+    margin: 0;
+}
+
+p {
+    z-index: 100;
+}
+
+a {
+    color: #ff9d00;;
+}
+
+#bg-img {
+    height: 100vmin; /* Samme her for å sikre proporsjonal skala */
+    z-index: 1;
+}
+
+.hidden-checkbox {
+    position: absolute;
+    visibility: hidden;
+    top: 0%;
+}
+
+/* Lager box-shadow på alle bildene. */
+.hidden-checkbox:checked + label img {
+    box-shadow: 0 0 20px #fff, 0 0 30px #ff9d00, 0 0 40px #ff9d00, 0 0 50px #ff9d00;
+}
+
+.hidden-checkbox-button {
+    position: absolute;
+    visibility: hidden;
+    top: 0%;
+}
+
+/* Fikk hjelp av AI for hvordan jeg kan bruke transform for å få Milo til å floate en viss høyde uavhengig av posisjonen hans */
+@keyframes milo-float {
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* Fikk starthjelp av AI for hvordan jeg skal bruke toggle med checked, not(:checked) osv med input og label i HTML, men har justert og tilpasset til min kode. */
+
+/* Skjuler (sender trekanten ut av bildet) når snakkeboblen skal bli borte. */
+#mhe-toggle:checked ~ #welcome-speechbubble1,
+#rur-toggle:checked ~ #welcome-speechbubble1,
+#transformers-toggle:checked ~ #welcome-speechbubble1,
+#asr-toggle:checked ~ #welcome-speechbubble1,
+#dbh-toggle:checked ~ #welcome-speechbubble1,
+#main-toggle:checked ~ #welcome-speechbubble1,
+#exit-toggle:checked ~ #welcome-speechbubble1,
+#next-toggle:checked ~ #welcome-speechbubble1 {
+    left: -50%;
+}
+
+/* Snakkeboblen med velkomsthilsen blir borte når brukeren trykker på bilder. */
+#mhe-toggle:checked ~ #welcome-speechbubble,
+#rur-toggle:checked ~ #welcome-speechbubble,
+#transformers-toggle:checked ~ #welcome-speechbubble,
+#asr-toggle:checked ~ #welcome-speechbubble,
+#dbh-toggle:checked ~ #welcome-speechbubble,
+#main-toggle:checked ~ #welcome-speechbubble,
+#exit-toggle:checked ~ #welcome-speechbubble,
+#next-toggle:checked ~ #welcome-speechbubble {
+    visibility: hidden;
+}
+
+/* Fant speechbubble-koden på nettsiden https://projects.verou.me/bubbly/, men justert den til mitt behov. */
+/* Fant et kodeutgangspunkt her https://prismic.io/blog/css-text-animations#22-typewriter-text-animation for en typing-animasjon på velkomstteksten. Spurte deretter AI Kristiania om hjelp for å tilpasse koden til min velkomsttekst (t.o.m linje 190 er hjelp fra AI). Har justert og endret på koden i etterkant for å tilpasse den til slik jeg ville ha den. */
+#welcome-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 50%;
+    left: 23%;
+    width: 20%;
+    padding: 10px;
+    /* Fikk hjelp av AI for hva jeg måtte putte i dette elementet for at typing-animasjonen skulle funke optimalt. Justert i etterkant for å tilpasse til mitt bruk. */
+    overflow: hidden; /* Ensures the text doesn't overflow the container */
+    animation-name: typing;
+    animation-duration: 18s;
+    animation-timing-function: steps(317, end);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    max-width: 338.4px; /* Optional: set a max-width for better control */
+    white-space: nowrap; /* Keeps the text on a single line */
+    display: inline-block; /* Ensures the element behaves like a block */
+    z-index: 1000;
+}
+/* Speechbubble-after sluttet å funke når jeg la på typing-animasjonen. Ved hjelp av AI og egne justeringer fikk jeg laget en ny kode for en trekant som kan funke ganske likt som speechbubble-after har gjort. */
+#welcome-speechbubble1 {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #d53832;
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typewriter-line {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    width: 0;
+}
+
+#line1 {
+    animation-name: typing;
+    animation-duration: 4s;
+    animation-timing-function: steps(40, end);
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+}
+
+#line2 {
+    animation-name: typing;
+    animation-duration: 2s;
+    animation-timing-function: steps(40, end);
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+}
+
+#line3 {
+
+    animation-name: typing;
+    animation-duration: 2s;
+    animation-timing-function: steps(39, end);
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+}
+
+#line4 {
+    animation-name: typing;
+    animation-duration: 2s;
+    animation-timing-function: steps(43, end);
+    animation-fill-mode: forwards;
+    animation-delay: 8s;
+}
+
+#line5 {
+    animation-name: typing;
+    animation-duration: 2s;
+    animation-timing-function: steps(46, end);
+    animation-fill-mode: forwards;
+    animation-delay: 10s;
+}
+
+#line6 {
+    animation-name: typing;
+    animation-duration: 2s;
+    animation-timing-function: steps(45, end);
+    animation-fill-mode: forwards;
+    animation-delay: 12s;
+}
+#line7 {
+    animation-name: typing;
+    animation-duration: 2s;
+    animation-timing-function: steps(44, end);
+    animation-fill-mode: forwards;
+    animation-delay: 14s;
+}
+#line8 {
+    animation-name: typing;
+    animation-duration: 2s;
+    animation-timing-function: steps(20, end);
+    animation-fill-mode: forwards;
+    animation-delay: 16s;
+}
+
+#milo-front {
+    position: absolute;
+    height: 50%;
+    top: 44%;
+    left: 9.5%;
+    z-index: 101;
+    opacity: 1;
+    /* Transition på Milo sin posisjon når han skal flytte seg mellom bildene. */
+    transition-property: top, left;
+    transition-duration: 2s, 2s;
+    transition-timing-function: ease, ease;
+    animation-name: milo-float;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#rur-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 32%;
+}
+
+#rur-img {
+    position: absolute;
+    top: 15%;
+    left: 37%;
+    width: 40%;
+    cursor: pointer;
+}
+
+#hanging-rur {
+    position: absolute;
+    left: 50%;
+    top: -19%;
+}
+
+#rur-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 57%;
+    left: 45%;
+    width: 30%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
+}
+
+#rur-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+#rur-toggle:checked ~ #rur-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
+}
+
+#mhe-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 72%;
+}
+
+#mhe-img {
+    position: absolute;
+    top: 15%;
+    left: 80%;
+    width: 40%;
+    cursor: pointer;
+}
+
+#hanging-mhe {
+    position: absolute;
+    left: 92%;
+    top: -19%;
+}
+
+#mhe-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 55%;
+    left: 85%;
+    width: 30%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
+}
+
+#mhe-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+#mhe-toggle:checked ~ #mhe-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
+}
+
+#transformers-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 108%;
+}
+
+#transformers-img {
+    position: absolute;
+    top: 10%;
+    left: 125%;
+    width: 20%;
+    cursor: pointer;
+}
+
+#hanging-transformers {
+    position: absolute;
+    left: 127.5%;
+    top: -24%;
+}
+
+#transformers-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 67%;
+    left: 120%;
+    width: 30%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
+}
+
+#transformers-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+#transformers-toggle:checked ~ #transformers-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
+}
+
+#asr-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 136%;
+}
+
+#asr-img {
+    position: absolute;
+    top: 10%;
+    left: 148.5%;
+    width: 18%;
+    cursor: pointer;
+}
+
+#hanging-asr {
+    position: absolute;
+    left: 149.5%;
+    top: -24%;
+}
+
+#asr-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 64%;
+    left: 147%;
+    width: 27%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
+}
+
+#asr-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+#asr-toggle:checked ~ #asr-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
+}
+
+#dbh-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 161%;
+}
+
+#dbh-img {
+    position: absolute;
+    top: 15%;
+    left: 170%;
+    width: 25%;
+    cursor: pointer;
+}
+
+#hanging-dbh {
+    position: absolute;
+    left: 174%;
+    top: -19%;
+}
+
+#dbh-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 62%;
+    left: 173%;
+    width: 25%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0s 0.2s; /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+}
+
+#dbh-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+#dbh-toggle:checked ~ #dbh-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
+}
+
+#next-toggle:checked ~ #milo-front {
+    top: 50%;
+    left: 162%;
+}
+
+#next-img {
+    position: absolute;
+    right: -103%;
+    top: 85%;
+    width: 6%;
+    cursor: pointer;
+}
+
+#next-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 62%;
+    left: 175%;
+    width: 20%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
+}
+
+#next-speechbubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #d53832;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+#next-toggle:checked ~ #next-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
+}
+
+#exit-toggle:checked ~ #milo-front {
+    top: 35%;
+    left: 187%;
+}
+
+#exit-img {
+    position: absolute;
+    right: -105%;
+    top: -3%;
+    width: 10%;
+    cursor: pointer;
+}
+
+#exit-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 13%;
+    left: 180%;
+    width: 20%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
+}
+
+#exit-speechbubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #d53832;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+#exit-toggle:checked ~ #exit-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
+}
+
+#main-toggle:checked ~ #milo-front {
+    top: 35%;
+    left: 10%;
+}
+
+#main-img {
+    position: absolute;
+    left: 2%;
+    top: -3%;
+    width: 10%;
+    cursor: pointer;
+}
+
+#main-speechbubble {
+	position: absolute;
+	background: #d53832;
+	border-radius: .4em;
+    top: 15%;
+    left: 8%;
+    width: 13%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    /* Rask transition ut så teksten blir fort borte når chechbox ikke lenger er checked. */
+    transition-property: opacity, visibility;
+    transition-duration: 0.2s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 0s, 0.2s;
+}
+
+#main-speechbubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #d53832;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+#main-toggle:checked ~ #main-speechbubble {
+    opacity: 1;
+    visibility: visible;
+    /* Sakte transition inn så Milo rekker å komme bort til snakkeboblen før teksten dukker opp. */
+    transition-property: opacity, visibility;
+    transition-duration: 1.5s, 0s;
+    transition-timing-function: ease-in-out, ease;
+    transition-delay: 1s, 0s;
+}
+
+#main-toggle:checked + label img,
+#exit-toggle:checked + label img,
+#next-toggle:checked + label img {
+    filter: drop-shadow(0 0 50px #ff9d00);
+}
