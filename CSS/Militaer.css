@@ -205,7 +205,7 @@ input[type="radio"] {
     display: none;
 }
 
-/* Fade-in animasjon for hovedbildene */
+/* Fade-in animasjon for hovedbildene (Hjelp av AI) */
 .display-img {
     animation: fadeIn 0.8s ease forwards;
 }
