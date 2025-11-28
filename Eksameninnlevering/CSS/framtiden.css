@@ -1,0 +1,421 @@
+/* Grunnoppsett for alle elementer Bakgrunnsbilde og basis-layout */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-image: url('../framtiden/fremtidsrommet2.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+/* Stjerneeffekten er delvis inspirert av et mønster jeg fikk foreslått av KI,
+   men tilpasset og justert manuelt for å passe siden */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1.5px 1.5px at 30% 40%, white, transparent),
+        radial-gradient(1px 1px at 50% 10%, white, transparent),
+        radial-gradient(1px 1px at 70% 60%, white, transparent),
+        radial-gradient(1.5px 1.5px at 90% 30%, white, transparent),
+        radial-gradient(1px 1px at 20% 80%, white, transparent),
+        radial-gradient(1px 1px at 60% 70%, white, transparent),
+        radial-gradient(1.5px 1.5px at 80% 90%, white, transparent),
+        radial-gradient(1px 1px at 40% 50%, white, transparent),
+        radial-gradient(1px 1px at 15% 55%, white, transparent),
+        radial-gradient(1.5px 1.5px at 75% 25%, white, transparent),
+        radial-gradient(1px 1px at 35% 15%, white, transparent),
+        radial-gradient(1px 1px at 85% 65%, white, transparent),
+        radial-gradient(1.5px 1.5px at 25% 35%, white, transparent),
+        radial-gradient(1px 1px at 55% 85%, white, transparent);
+    background-size: 100% 100%;
+    animation: starTwinkle 6s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+/* Glimring i stjernene */
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.95; }
+}
+
+/* Skjuler radio-knapper som brukes til interaktivitet */
+input[type="radio"] {
+    display: none;
+}
+
+/* Plassering av guide-robot og snakkeboble*/
+.guide-container {
+    position: fixed;
+    top: 3%;
+    left: 8%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+    z-index: 100;
+    transition: all 0.8s ease;
+}
+
+/* Flytting av guide-robot basert på valgt figur,
+   gjort etter et oppsett jeg fikk tips om fra KI */
+#robot1:checked ~ .guide-container { top: 25%; left: 5%; }
+#robot2:checked ~ .guide-container { top: 50%; left: 10%; }
+#robot3:checked ~ .guide-container { top: 20%; left: 50%; }
+#robot4:checked ~ .guide-container { top: 55%; left: 50%; } 
+#robot5:checked ~ .guide-container { top: 10%; left: 45%; }
+#robot6:checked ~ .guide-container { top: 50%; left: 60%; }
+
+/* Flytende bevegelse på guide-roboten 
+   animasjonen ble inspirert av et eksempel jeg fikk fra KI */
+.robot-guide {
+    width: 130px;
+    filter: drop-shadow(0 0 25px #FFFFFF99);
+    animation: float 3s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Snakkeboble rundt robotens forklaring, fikk litt hjelp av ki 
+hvordan teksten skal passe bra med snakkebobla */
+.speech-bubble {
+    position: relative;
+    background: #00aabb;
+    border-radius: 0.8em;
+    padding: 20px;
+    min-width: 280px;
+    max-width: 200px;
+    box-shadow: 0 5px 20px #00000080;
+    z-index: 101;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Pil til snakkeboblen */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 30%;
+    border: 15px solid transparent;
+    border-right-color: #00aabb;
+}
+
+/* Viser riktig tekst til riktig robot */
+.bubble-content { display: none; }
+#default:checked ~ .guide-container .content-default { display: block; }
+#robot1:checked ~ .guide-container .content-1,
+#robot2:checked ~ .guide-container .content-2,
+#robot3:checked ~ .guide-container .content-3,
+#robot4:checked ~ .guide-container .content-4,
+#robot5:checked ~ .guide-container .content-5,
+#robot6:checked ~ .guide-container .content-6 {
+    display: block;
+}
+
+/* Tekststil i boblen */
+.bubble-content {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.bubble-content p {
+    line-height: 1.5;
+    font-size: 0.9rem;
+    color: #f0f0f0;
+}
+
+/* Lukkeknapp til boblen, fikk hjelp av ki hvilke kode som kan bli brukt for at
+ lukkeknappen ser mest bra ut */
+.close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+}
+
+/* Container for alle robot-bildene */
+.robots-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 50px;
+    margin-right: 40px;
+    padding-top: 50px;
+}
+
+/* Standard robot-boks */
+.robot-box {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    background-color: #0000004D;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px #00000080;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+
+.robot-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+    border-radius: 15px;
+}
+
+/* Tittel på robotene */
+.robot-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #00aabb;
+    background-color: #1A1A2ECC;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Ulike robot-bokser med egne størrelser og hvilke stile de figurene har */
+.box1 {
+    width: 20%;
+    height: auto;
+    order: 1;
+}
+.box1 img {
+    border-radius: 15px;
+    border: 3px solid #00aabb;
+}
+
+.box2 {
+    width: 25%;
+    height: auto;
+    order: 3;
+    right: -3%;
+}
+.box2 img {
+    border-radius: 50%;
+    border: 3px solid #ff6b6b;
+}
+
+.box3 {
+    width: 15%;
+    height: auto;
+    order: 5;
+    right: -5%;
+}
+.box3 img {
+    border-radius: 5px;
+    border: 3px solid #ffd166;
+}
+
+.box4 {
+    width: 25%;
+    height: auto;
+    order: 7;
+    right: -8%;
+}
+.box4 img {
+    border-radius: 25px;
+    border: 3px solid #06d6a0;
+}
+
+.box5 {
+    width: 17%;
+    height: auto;
+    order: 9;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: default;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    border: 3px solid #800080;
+}
+.box5 img {
+    border-radius: 20%;
+    border: none;
+}
+
+/* Fast plasserte figurer */
+
+.box6 {
+    pointer-events: none;
+    width: 13%;
+    height: 30%;
+    position: absolute;
+    top: 35%;
+    left: 1%;
+    background: transparent;
+}
+.box6 img { border-radius: 12px; }
+
+.box7 {
+    pointer-events: none;
+    width: 22%;
+    height: 20%;
+    position: absolute;
+    top: 44%;
+    left: 33%;
+}
+.box7 img { border-radius: 8px; }
+
+.box8 {
+    pointer-events: none;
+    width: 15%;
+    height: 20%;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+}
+.box8 img { border-radius: 50%; }
+
+.box9 {
+    pointer-events: none;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 45%;
+    left: 75%;
+}
+.box9 img { border-radius: 15px; }
+
+/* disse er for om du skal et annet rom/side i musseet*/
+#main, #Exit {
+    width: 100%;
+    height: 100%;
+}
+
+.box10 {
+    width: 7%; 
+    height: 14%;
+    position: absolute;
+    top: 3.5%; 
+    right: 1%;
+   }
+
+.box11 {
+    width: 7%; 
+    height: 14%;
+    position: absolute;
+    top: 16%; 
+    right: 1%;
+}
+
+
+/* box 12 (Guidebok)*/
+.box12 {
+    width: 7%; 
+    height: 19%;
+    position: absolute;
+    top: 66%; 
+    right: 3%;
+}
+
+/* Hover-effekt på interaktive roboter fikk litt hjelp av ki */
+.robot-box:hover:not(.box6):not(.box7):not(.box8):not(.box9):not(.box10):not(.box11) {
+    transform: scale(1.08) translateY(-10px);
+    z-index: 50;
+    box-shadow: 0 15px 40px #00AABBCC;
+}
+
+.robot-box:hover:not(.box6):not(.box7):not(.box8):not(.box9):not(.box10):not(.box11) img {
+    filter: brightness(1.15);
+}
+
+/* Puls-effekt når en robot er valgt 
+   animasjonen ble delvis inspirert av et forslag fra KI og justert videre */
+#robot1:checked ~ .robots-container .box1,
+#robot2:checked ~ .robots-container .box2,
+#robot3:checked ~ .robots-container .box3,
+#robot4:checked ~ .robots-container .box4,
+#robot5:checked ~ .robots-container .box5,
+#robot6:checked ~ .robots-container .box12 {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px #00AABBCC;
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 35px #00AABBFF;
+        transform: scale(1.05);
+    }
+}
+
+
+/* La inn et ekstra lag med små stjerner. 
+Fant en konfetti-lignende teknikk som jeg fikk bruke */
+.star-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/*stjerneprikkene fikk hjelp av ki med hvordan den kan se ut,
+ men bearbeidet selv med det */
+.star-points {
+    width: 2px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+
+    box-shadow:
+        2vw 5vh white, 10vw 20vh white, 20vw 8vh white,
+        30vw 15vh white, 30vw 50vh white, 50vw 10vh white,
+        60vw 40vh white, 60vw 25vh white, 80vw 75vh white,
+        90vw 35vh white, 15vw 53vh white, 25vw 70vh white,
+        35vw 30vh white, 44vw 82vh white, 55vw 95vh white,
+        65vw 50vh white, 73vw 89vh white, 85vw 20vh white,
+        95vw 65vh white, 12vw 42vh white;
+
+    animation: starTwinkle2 6s ease-in-out infinite;
+}
+
+/* ekstra glimt */
+@keyframes starTwinkle2 {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
